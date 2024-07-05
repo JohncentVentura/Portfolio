@@ -26,7 +26,6 @@ import Work from "./pages/Work.jsx";
 import Contact from "./pages/Contact.jsx";
 
 function App() {
-  const location = useLocation();
   const [clrTheme, setClrTheme] = useState("");
   const [fgClr, setFgClr] = useState(
     getComputedStyle(document.body).getPropertyValue("--fgClr")
@@ -37,6 +36,7 @@ function App() {
   const [primaryClr, setPrimaryClr] = useState(
     getComputedStyle(document.body).getPropertyValue("--primaryClr")
   );
+  const location = useLocation();
 
   //Color theme
   useEffect(() => {
@@ -71,6 +71,7 @@ function App() {
   });
 
   //Log breakpoints for testing responsiveness
+  /*
   useEffect(() => {
     printBreakpoint();
     window.addEventListener("resize", () => printBreakpoint());
@@ -91,6 +92,7 @@ function App() {
       }
     }
   });
+  */
 
   return (
     <>
@@ -128,15 +130,5 @@ function App() {
     </>
   );
 }
-
-const ScrollToTop = () => {
-  // Extracts pathname property(key) from an object
-  const { pathname } = useLocation();
-
-  // Automatically scrolls to top whenever pathname changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-};
 
 export default App;

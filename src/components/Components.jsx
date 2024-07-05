@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
@@ -216,4 +217,13 @@ export const IconDiv = ({ className, iconSFX, iconHref, icon, iconName }) => {
   );
 };
 
+export const ScrollToTop = () => {
+  // Extracts pathname property(key) from an object
+  const { pathname } = useLocation();
+
+  // Automatically scrolls to top whenever pathname changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+};
 
