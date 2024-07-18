@@ -63,7 +63,7 @@ export const ImagePaths = {
 }
 
 export const ExternalPaths = {
-    cv: "/Carlos Johncent Ventura CV.pdf",
+    resume: "/Carlos Johncent Ventura Resume.pdf",
     facebook: "https://www.facebook.com/johncent.ventura.7",
     github: "https://github.com/JohncentVentura",
     pinterest: "https://ph.pinterest.com/johncentventura/pins/",

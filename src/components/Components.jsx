@@ -172,9 +172,9 @@ export const SocialLinks = ({ className }) => {
       >
         <SmRhombusIcon
           className={"shSocialLink lg:pt-[10vh] pt-[5vh]"}
-          href={ExternalPaths.cv}
+          href={ExternalPaths.resume}
           icon={<FaFileDownload size="40" />}
-          download={"Carlos Johncent Ventura CV"}
+          download={"Carlos Johncent Ventura Resume"}
         ></SmRhombusIcon>
         <SmRhombusIcon
           className={"shSocialLink lg:pt-[10vh] pt-[5vh]"}
