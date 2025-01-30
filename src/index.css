@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mainFont: "Pixelify Sans", serif;
+}
+
+.light-theme {
+  --fgClr: #191d2b;
+  --bgClr: #e6e6e6;
+  --mainClr: #3f4493;
+}
+
+.dark-theme {
+  --fgClr: #e6e6e6;
+  --bgClr: #191d2b;
+  --mainClr: #35aa90;
+}
+
+/*
+@layer base {
+  html {
+    font-size: 11px;
+    @screen sm {
+      font-size: 12px;
+    }
+    @screen md {
+      font-size: 13px;
+    }
+    @screen lg {
+      font-size: 14px;
+    }
+    @screen xl {
+      font-size: 15px;
+    }
+    @screen 2xl {
+      font-size: 16px;
+    }
+  }
+}
+*/
+
+@layer components {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply relative overflow-hidden;
+  }
+
+  #particles canvas {
+    @apply absolute -z-50;
+  }
+
+  header,
+  main,
+  section,
+  footer {
+    @apply relative size-fit flex flex-col justify-start items-center;
+  }
+
+  div,
+  ul,
+  li {
+    @apply relative font-mainFont;
+  }
+
+  svg {
+    @apply relative size-full;
+  }
+
+  img {
+    @apply relative size-full object-fill border-4 border-fgClr 
+    hover:border-[8px] hover:border-mainClr;
+  }
+
+  a,
+  .char,
+  .word {
+    @apply relative text-fgClr hover:text-mainClr;
+  }
+
+  h1 {
+    @apply relative 
+    2xl:text-[5.9rem] xl:text-[5.1rem] 
+    lg:text-[4.1rem] md:text-[3.6rem]
+    sm:text-5xl text-4xl;
+  }
+
+  h2 {
+    @apply relative 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl;
+  }
+
+  h3 {
+    @apply relative 2xl:text-5xl lg:text-4xl md:text-3xl text-2xl;
+  }
+
+  h4 {
+    @apply relative 2xl:text-4xl lg:text-3xl md:text-2xl text-xl;
+  }
+
+  p {
+    @apply relative 2xl:text-2xl lg:text-xl md:text-lg text-base;
+  }
+
+  span {
+    @apply relative 2xl:text-lg lg:text-base md:text-sm text-xs;
+  }
+}
