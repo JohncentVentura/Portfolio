@@ -21,11 +21,8 @@ import { VscPreview } from "react-icons/vsc";
 import { FaFilePdf } from "react-icons/fa6";
 
 import {
+  Section,
   Grid12ColsContainer,
-  FlexColContainer,
-  FlexRowContainer,
-  UnorderedList,
-  ListItem,
   Heading1,
   Heading2,
   Heading3,
@@ -63,7 +60,7 @@ import { ImagePaths } from "../components/Utilities";
 const About = () => {
   return (
     <>
-      <section className={"pt-[20vh]"}>
+      <Section className={"pt-[20vh]"}>
         <AvatarImage
           className={""}
           scrollFX={"imageFadeIn2"}
@@ -83,7 +80,7 @@ const About = () => {
           ></BorderLine>
         </Grid12ColsContainer>
 
-        <FlexColContainer className={"pt-[6vh] gap-[4vh] items-center"}>
+        <div className={"pt-8 flex flex-col items-center gap-8"}>
           <Heading3>Background</Heading3>
           <Paragraph>
             I'm a graduate from the University of Luzon, Dagupan City with a
@@ -99,97 +96,111 @@ const About = () => {
             share the same passion, and I hope I can continue creating and
             learning more things with you.
           </Paragraph>
-          <FlexColContainer
-            className={"flex sm:flex-row sm:gap-[2vw] gap-[2vh]"}
-          >
+          <div className={"flex sm:flex-row flex-col gap-4"}>
             <Button scrollFX={"buttonFadeIn0"} href={"#"} icon={<VscPreview />}>
               View Resume
             </Button>
             <Button scrollFX={"buttonFadeIn0"} href={"#"} icon={<FaFilePdf />}>
               Download Resume
             </Button>
-          </FlexColContainer>
+          </div>
           <BorderLine
             className={""}
             scrollFX={"borderFadeInCenter0"}
           ></BorderLine>
-        </FlexColContainer>
+        </div>
 
-        <FlexColContainer className={"items-center"}>
-          <Heading3 className={"pt-[6vh]"}>Education</Heading3>
-          <UnorderedList className={"gap-[2vh] justify-center"}>
-            <ListItem className={"gap-[1vw]"}>
+        <div className={"pt-8 w-full flex flex-col items-center gap-8"}>
+          <Heading3 className={""}>Education</Heading3>
+          <ul className={"flex flex-wrap justify-center gap-8"}>
+            <li
+              className={
+                "flex md:flex-row flex-col justify-center items-center"
+              }
+            >
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
                 imgSrc={ImagePaths.avatar}
               ></LogoImage>
-              <FlexColContainer>
-                <Paragraph>2023</Paragraph>
-                <Heading4>Bachelor of Science in</Heading4>
-                <Heading4>Information Technology</Heading4>
-                <Paragraph>University of Luzon</Paragraph>
-              </FlexColContainer>
-            </ListItem>
-            <ListItem className={"gap-[1vw]"}>
-              <LogoImage
-                scrollFX={"imageFadeIn3"}
-                href={"#"}
-                imgSrc={ImagePaths.avatar}
-              ></LogoImage>
-              <FlexColContainer>
+              <div>
                 <Span>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
-              </FlexColContainer>
-            </ListItem>
-          </UnorderedList>
+              </div>
+            </li>
+            <li
+              className={
+                "flex md:flex-row flex-col justify-center items-center"
+              }
+            >
+              <LogoImage
+                scrollFX={"imageFadeIn3"}
+                href={"#"}
+                imgSrc={ImagePaths.avatar}
+              ></LogoImage>
+              <div>
+                <Span>2023</Span>
+                <Heading4>Bachelor of Science in</Heading4>
+                <Heading4>Information Technology</Heading4>
+                <Span>University of Luzon</Span>
+              </div>
+            </li>
+          </ul>
           <BorderLine
-            className={"pt-[6vh]"}
+            className={""}
             scrollFX={"borderFadeInCenter0"}
           ></BorderLine>
-        </FlexColContainer>
+        </div>
 
-        <FlexColContainer className={"items-center"}>
-          <Heading3 className={"pt-[6vh]"}>Experience</Heading3>
-          <UnorderedList className={" justify-center gap-4"}>
-            <ListItem className={"flex-row-reverse gap-4"}>
+        <div className={"pt-8 w-full flex flex-col items-center gap-8"}>
+          <Heading3 className={""}>Experience</Heading3>
+          <ul className={"flex flex-wrap justify-center gap-8"}>
+            <li
+              className={
+                "flex md:flex-row-reverse flex-col justify-center items-center"
+              }
+            >
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
                 imgSrc={ImagePaths.avatar}
               ></LogoImage>
-              <FlexColContainer className={"items-end"}>
+              <div className={"flex flex-col items-end"}>
                 <Span>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
-              </FlexColContainer>
-            </ListItem>
-            <ListItem className={"flex-row-reverse gap-4"}>
+              </div>
+            </li>
+            <li
+              className={
+                "flex md:flex-row-reverse flex-col justify-center items-center"
+              }
+            >
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
                 imgSrc={ImagePaths.avatar}
               ></LogoImage>
-              <FlexColContainer className={"items-end"}>
+              <div className={"flex flex-col items-end"}>
                 <Span>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
-              </FlexColContainer>
-            </ListItem>
-          </UnorderedList>
+              </div>
+            </li>
+          </ul>
           <BorderLine
-            className={"pt-[6vh]"}
+            className={""}
             scrollFX={"borderFadeInCenter0"}
           ></BorderLine>
-        </FlexColContainer>
+        </div>
 
-        <FlexColContainer className={"items-center"}>
-          <Heading3 className={"pt-[6vh]"}>Tools</Heading3>
-          <FlexRowContainer className={"pt-[4vh] flex-wrap justify-center gap-[1  vw]"}>
+        <div className={"pt-8 flex flex-col items-center gap-8"}>
+          <Heading3 className={""}>Tools</Heading3>
+          <div className={"flex flex-wrap justify-center gap-4"}>
             <BtnAdobePhotoshop scrollFX={"buttonFadeIn0"}></BtnAdobePhotoshop>
             <BtnAseprite scrollFX={"buttonFadeIn1"}></BtnAseprite>
             <BtnCSharp scrollFX={"buttonFadeIn2"}></BtnCSharp>
@@ -208,13 +219,13 @@ const About = () => {
             <BtnTailwindCSS scrollFX={"buttonFadeIn14"}></BtnTailwindCSS>
             <BtnUnity scrollFX={"buttonFadeIn15"}></BtnUnity>
             <BtnVisualBasic scrollFX={"buttonFadeIn16"}></BtnVisualBasic>
-          </FlexRowContainer>
+          </div>
           <BorderLine
-            className={"pt-[6vh]"}
+            className={""}
             scrollFX={"borderFadeInCenter0"}
           ></BorderLine>
-        </FlexColContainer>
-      </section>
+        </div>
+      </Section>
     </>
   );
 };

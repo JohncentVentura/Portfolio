@@ -9,11 +9,8 @@ import {
 } from "react-icons/fa6";
 
 import {
+  Section,
   Grid12ColsContainer,
-  FlexColContainer,
-  FlexRowContainer,
-  UnorderedList,
-  ListItem,
   Heading1,
   Heading2,
   Heading3,
@@ -33,7 +30,7 @@ import { ImagePaths } from "../components/Utilities";
 const Work = () => {
   return (
     <>
-      <section className={"pt-[20vh] pb-[20vh]"}>
+      <Section className={"pt-[20vh] pb-[20vh]"}>
         <AvatarImage
           className={""}
           scrollFX={"imageFadeIn2"}
@@ -53,17 +50,21 @@ const Work = () => {
           ></BorderLine>
         </Grid12ColsContainer>
 
-        <Heading3 className={""}>Featured Projects</Heading3>
-        <UnorderedList className={" flex-col gap-4"}>
-          <ListItem className={"flex-col"}>
-            <FlexRowContainer className={"gap-4 xl:flex-row flex-col"}>
+        <Heading3 className={"pt-8"}>Featured Projects</Heading3>
+        <ul className={"pt-8 flex flex-col gap-8"}>
+          <li className={"flex flex-col gap-4"}>
+            <div
+              className={
+                "flex justify-center items-center md:flex-row flex-col gap-4 "
+              }
+            >
               <ProjectImage
                 className={"justify-start items-center"}
                 scrollFX={"imageFadeIn2"}
                 href={"#"}
                 imgSrc={ImagePaths.pulpRPG}
               ></ProjectImage>
-              <FlexColContainer className={"text-start"}>
+              <div className={"flex flex-col text-start gap-4"}>
                 <Heading4>Jourdan's Snack Corner</Heading4>
                 <Paragraph className={""}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
@@ -75,9 +76,9 @@ const Work = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                   fugit enim illo recusandae.
                 </Paragraph>
-              </FlexColContainer>
-            </FlexRowContainer>
-            <FlexRowContainer className={" flex-wrap justify-start gap-4"}>
+              </div>
+            </div>
+            <div className={"flex flex-wrap justify-start gap-4"}>
               <Button
                 scrollFX={"buttonFadeIn0"}
                 color={"border-[#ff7133] hover:bg-[#ff7133]"}
@@ -93,88 +94,132 @@ const Work = () => {
               >
                 Aseprite
               </Button>
-            </FlexRowContainer>
+            </div>
             <BorderLine
               className={""}
               scrollFX={"borderFadeInRight1"}
             ></BorderLine>
-          </ListItem>
-        </UnorderedList>
-
-        <Heading3 className={""}>Other Projects</Heading3>
-        <ul className={"grid grid-cols-2 gap-4"}>
-          <ListItem className={" flex-col"}>
-            <FlexRowContainer className={" gap-4 xl:flex-row flex-col"}>
-              <Heading4>Jourdan's Snack Corner</Heading4>
-            </FlexRowContainer>
-            <Paragraph className={""}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              fugit enim illo recusandae, adipisci earum ea qui cupiditate
-              maiores magni id asperiores possimus officia non deleniti
-              consequatur explicabo sed praesentium.
-            </Paragraph>
-            <FlexRowContainer className={"justify-center gap-4"}>
+          </li>
+          <li className={"flex flex-col gap-4"}>
+            <div
+              className={
+                "flex justify-center items-center md:flex-row-reverse flex-col gap-4 "
+              }
+            >
+              <ProjectImage
+                className={"justify-end items-center"}
+                scrollFX={"imageFadeIn2"}
+                href={"#"}
+                imgSrc={ImagePaths.pulpRPG}
+              ></ProjectImage>
+              <div className={"flex flex-col text-end gap-4"}>
+                <Heading4>Jourdan's Snack Corner</Heading4>
+                <Paragraph className={""}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                  fugit enim illo recusandae, adipisci earum ea qui cupiditate
+                  maiores magni id asperiores possimus officia non deleniti
+                  consequatur explicabo sed praesentium.
+                </Paragraph>
+                <Paragraph className={""}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                  fugit enim illo recusandae.
+                </Paragraph>
+              </div>
+            </div>
+            <div className={"flex flex-wrap justify-end gap-4"}>
               <Button
-                className={" self-end"}
+                scrollFX={"buttonFadeIn0"}
+                color={"border-[#ff7133] hover:bg-[#ff7133]"}
+                href={"#"}
+                icon={<SiAseprite />}
+              >
+                Aseprite
+              </Button>
+              <Button
                 color={"border-[#ff7133] hover:bg-[#ff7133]"}
                 scrollFX={"buttonFadeIn0"}
                 href={"#"}
               >
-                Github
+                Aseprite
               </Button>
-              <Button
-                className={" self-end"}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Link
-              </Button>
-            </FlexRowContainer>
-
+            </div>
             <BorderLine
               className={""}
               scrollFX={"borderFadeInRight1"}
             ></BorderLine>
-          </ListItem>
-          <ListItem className={" flex-col"}>
-            <FlexRowContainer className={" gap-4 xl:flex-row flex-col"}>
-              <Heading4>Jourdan's Snack Corner</Heading4>
-            </FlexRowContainer>
-            <Paragraph className={""}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              fugit enim illo recusandae, adipisci earum ea qui cupiditate
-              maiores magni id asperiores possimus officia non deleniti
-              consequatur explicabo sed praesentium. recusandae, adipisci earum
-              ea qui cupiditate maiores magni id asperiores possimus officia non
-              deleniti consequatur explicabo sed praesentium.
-            </Paragraph>
-            <FlexRowContainer className={"justify-center gap-4"}>
-              <Button
-                className={" self-end"}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Github
-              </Button>
-              <Button
-                className={" self-end"}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Link
-              </Button>
-            </FlexRowContainer>
-
-            <BorderLine
-              className={""}
-              scrollFX={"borderFadeInRight1"}
-            ></BorderLine>
-          </ListItem>
+          </li>
         </ul>
-      </section>
+
+        <Heading3 className={"pt-8"}>Other Projects</Heading3>
+        <ul className={"pt-8 grid md:grid-cols-2 grid-cols-1 gap-8"}>
+          <li className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-4"}>
+              <Heading4>Jourdan's Snack Corner</Heading4>
+              <Paragraph className={""}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                fugit enim illo recusandae, adipisci earum ea qui cupiditate
+                maiores magni id asperiores possimus officia non deleniti
+                consequatur explicabo sed praesentium.
+              </Paragraph>
+            </div>
+            <div className={"flex justify-center gap-4"}>
+              <Button
+                className={""}
+                color={"border-[#ff7133] hover:bg-[#ff7133]"}
+                scrollFX={"buttonFadeIn0"}
+                href={"#"}
+              >
+                Github
+              </Button>
+              <Button
+                className={""}
+                color={"border-[#ff7133] hover:bg-[#ff7133]"}
+                scrollFX={"buttonFadeIn0"}
+                href={"#"}
+              >
+                Link
+              </Button>
+            </div>
+            <BorderLine
+              className={""}
+              scrollFX={"borderFadeInRight1"}
+            ></BorderLine>
+          </li>
+          <li className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-4"}>
+              <Heading4>Jourdan's Snack Corner</Heading4>
+              <Paragraph className={""}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                fugit enim illo recusandae, adipisci earum ea qui cupiditate
+                maiores magni id asperiores possimus officia non deleniti
+                consequatur explicabo sed praesentium.
+              </Paragraph>
+            </div>
+            <div className={"flex justify-center gap-4"}>
+              <Button
+                className={""}
+                color={"border-[#ff7133] hover:bg-[#ff7133]"}
+                scrollFX={"buttonFadeIn0"}
+                href={"#"}
+              >
+                Github
+              </Button>
+              <Button
+                className={""}
+                color={"border-[#ff7133] hover:bg-[#ff7133]"}
+                scrollFX={"buttonFadeIn0"}
+                href={"#"}
+              >
+                Link
+              </Button>
+            </div>
+            <BorderLine
+              className={""}
+              scrollFX={"borderFadeInRight1"}
+            ></BorderLine>
+          </li>
+        </ul>
+      </Section>
     </>
   );
 };

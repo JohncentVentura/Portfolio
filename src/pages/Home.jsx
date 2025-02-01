@@ -8,11 +8,8 @@ import {
 } from "react-icons/fa6";
 
 import {
+  Section,
   Grid12ColsContainer,
-  FlexColContainer,
-  FlexRowContainer,
-  UnorderedList,
-  ListItem,
   Heading1,
   Heading2,
   Heading3,
@@ -32,7 +29,7 @@ import { ExternalPaths, ImagePaths } from "../components/Utilities";
 const Home = () => {
   return (
     <>
-      <section className={"pinPage0"}>
+      <Section scrollFX={"pinPage0"}>
         <AvatarImage
           className={""}
           scrollFX={"imageFadeIn0"}
@@ -40,28 +37,36 @@ const Home = () => {
           imgSrc={ImagePaths.avatar}
         ></AvatarImage>
 
-        <FlexColContainer className={"items-center gap-[2vh]"}>
-          <Grid12ColsContainer>
-            <BorderLine
-              className={"lg:col-span-4 col-span-3"}
-              scrollFX={"borderFadeInLeft0"}
-            ></BorderLine>
-            <Heading4 className={"lg:col-span-4 col-span-6"}>Hi! My name is</Heading4>
-            <BorderLine
-              className={"lg:col-span-4 col-span-3"}
-              scrollFX={"borderFadeInRight0"}
-            ></BorderLine>
-          </Grid12ColsContainer>
-          <Heading1>Johncent Ventura</Heading1>
-        </FlexColContainer>
+        <Grid12ColsContainer>
+          <BorderLine
+            className={"md:col-span-4 col-span-3"}
+            scrollFX={"borderFadeInLeft0"}
+          ></BorderLine>
+          <Heading4 className={"md:col-span-4 col-span-6"}>
+            Hi! My name is
+          </Heading4>
+          <BorderLine
+            className={"md:col-span-4 col-span-3"}
+            scrollFX={"borderFadeInRight0"}
+          ></BorderLine>
+        </Grid12ColsContainer>
 
-        <FlexColContainer className={"pt-[2vh] items-center"}>
-          <Heading4 >Just another fool chasing the dream of</Heading4>
-          <Heading4 >Web Development, Game Development,</Heading4>
-          <Heading4 >& Graphic Design</Heading4>
-        </FlexColContainer>
+        <div className="flex flex-wrap justify-center gap-2">
+          <Heading1>Johncent</Heading1>
+          <Heading1>Ventura</Heading1>
+        </div>
 
-        <FlexRowContainer className={"pt-[4vh] gap-[1vw] justify-center"}>
+        <div className={"flex flex-col text-center"}>
+          <Heading4 scrollFX={"wordFadeIn"}>
+            Just another fool chasing the dream of
+          </Heading4>
+          <Heading4 scrollFX={"wordFadeIn"}>
+            Web Development, Game Development,
+          </Heading4>
+          <Heading4 scrollFX={"wordFadeIn"}>& Graphic Design</Heading4>
+        </div>
+
+        <div className={"flex justify-center"}>
           <IconLink
             scrollFX={"iconFadeIn0"}
             href={"#"}
@@ -82,8 +87,8 @@ const Home = () => {
             href={"#"}
             icon={<FaLinkedin />}
           ></IconLink>
-        </FlexRowContainer>
-      </section>
+        </div>
+      </Section>
     </>
   );
 };

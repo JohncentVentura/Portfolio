@@ -20,10 +20,6 @@ import {
 
 import { ExternalPaths } from "./Utilities";
 
-function CheckClass(className) {
-  return className === undefined ? "" : className;
-}
-
 function CheckScrollFX(scrollFX, defaultScrollFX) {
   return scrollFX === undefined ? defaultScrollFX : scrollFX;
 }
@@ -41,54 +37,28 @@ function GetGroupHoverClass() {
 }
 
 /********************************************Containers*******************************************/
-export const Grid12ColsContainer = ({ className, children }) => {
-  className = CheckClass(className);
-
+export const Section = ({ className, scrollFX, children }) => {
   return (
     <>
-      <div className={`${className} w-full grid grid-cols-12 text-center`}>
+      <section
+        className={`${
+          className || ""
+        } ${scrollFX} relative w-full h-fit flex flex-col justify-start items-center`}
+      >
+        {children}
+      </section>
+    </>
+  );
+};
+
+export const Grid12ColsContainer = ({ className, children }) => {
+  return (
+    <>
+      <div
+        className={`${className || ""} w-full grid grid-cols-12 text-center`}
+      >
         {children}
       </div>
-    </>
-  );
-};
-
-export const FlexColContainer = ({ className, children }) => {
-  className = CheckClass(className);
-
-  return (
-    <>
-      <div className={`${className} flex flex-col`}>{children}</div>
-    </>
-  );
-};
-
-export const FlexRowContainer = ({ className, children }) => {
-  className = CheckClass(className);
-
-  return (
-    <>
-      <div className={`${className} flex`}>{children}</div>
-    </>
-  );
-};
-
-export const UnorderedList = ({ className, children }) => {
-  className = CheckClass(className);
-
-  return (
-    <>
-      <ul className={`${className} flex`}>{children}</ul>
-    </>
-  );
-};
-
-export const ListItem = ({ className, children }) => {
-  className = CheckClass(className);
-
-  return (
-    <>
-      <li className={`${className} flex`}>{children}</li>
     </>
   );
 };
@@ -96,87 +66,81 @@ export const ListItem = ({ className, children }) => {
 /********************************************Texts*******************************************/
 //Really Large Text
 export const Heading1 = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <h1 className={`${className} ${scrollFX}`}>{children}</h1>
+      <h1 className={`${className || ""} ${scrollFX}`}>{children}</h1>
     </>
   );
 };
 
 //Section Header Title
 export const Heading2 = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <h2 className={`${className} ${scrollFX}`}>{children}</h2>
+      <h2 className={`${className || ""} ${scrollFX}`}>{children}</h2>
     </>
   );
 };
 
 //Section Header Subtitles
 export const Heading3 = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <h3 className={`${className} ${scrollFX}`}>{children}</h3>
+      <h3 className={`${className || ""} ${scrollFX}`}>{children}</h3>
     </>
   );
 };
 
 //Larger than Paragraph
 export const Heading4 = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <h4 className={`${className} ${scrollFX}`}>{children}</h4>
+      <h4 className={`${className || ""} ${scrollFX}`}>{children}</h4>
     </>
   );
 };
 
 //Long Text
 export const Paragraph = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <p className={`${className} ${scrollFX}`}>{children}</p>
+      <p className={`${className || ""} ${scrollFX}`}>{children}</p>
     </>
   );
 };
 
 //Smaller than Paragraph
 export const Span = ({ className, scrollFX, children }) => {
-  className = CheckClass(className);
   scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
 
   return (
     <>
-      <span className={`${className} ${scrollFX} block`}>{children}</span>
+      <span className={`${className || ""} ${scrollFX} block`}>{children}</span>
     </>
   );
 };
 
 /********************************************Visuals*******************************************/
 export const BorderLine = ({ className, scrollFX }) => {
-  className = CheckClass(className);
-
   return (
     <>
       <div
-        className={`${className} w-full h-full flex justify-center items-center`}
+        className={`${
+          className || ""
+        } size-full flex justify-center items-center`}
       >
         <div
-          className={`${scrollFX} w-full border-2 border-fgClr
+          className={`${scrollFX} w-full h-auto border-2 border-fgClr
           hover:border-mainClr ${GetHoverClass()} `}
         ></div>
       </div>
@@ -185,13 +149,11 @@ export const BorderLine = ({ className, scrollFX }) => {
 };
 
 export const IconLink = ({ className, scrollFX, href, icon }) => {
-  className = CheckClass(className);
-
   return (
     <>
-      <div className={`${className} w-fit`}>
+      <div className={`${className || ""} size-12`}>
         <a
-          className={`${scrollFX} ${GetHoverClass()} block xl:size-20 md:size-16 size-14`}
+          className={`${scrollFX} ${GetHoverClass()} block size-full`}
           href={href}
           target="_blank"
           rel="noreferrer"
@@ -204,16 +166,15 @@ export const IconLink = ({ className, scrollFX, href, icon }) => {
 };
 
 export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
-  className = CheckClass(className);
-
   return (
     <>
-      <div className={`${className} flex justify-center items-center`}>
+      <div className={`${className || ""} size-32`}>
         <a
-          className={`${scrollFX} block xl:size-72 md:size-48 size-40`}
+          className={`${scrollFX} block size-full`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
+          loading="lazy"
         >
           <img
             src={imgSrc}
@@ -227,13 +188,11 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
 };
 
 export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
-  className = CheckClass(className);
-
   return (
     <>
-      <div className={`${className} flex justify-center items-center`}>
+      <div className={`${className || ""} size-20`}>
         <a
-          className={`${scrollFX} block xl:size-28 md:size-14 size-10`}
+          className={`${scrollFX} block size-full`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -250,13 +209,15 @@ export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
 };
 
 export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
-  className = CheckClass(className);
-
   return (
     <>
-      <div className={`${className} flex`}>
+      <div
+        className={`${
+          className || ""
+        } flex justify-center items-center w-64 h-48`}
+      >
         <a
-          className={`${scrollFX} block xl:w-96 xl:h-64 md:w-72 md:h-48 w-48 h-24`}
+          className={`${scrollFX} block size-full`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -280,7 +241,7 @@ export const NavButton = ({ onClick, download, icon }) => {
         <a
           className={`block rounded-full border-2 border-fgClr bg-fgClr text-bgClr 
             hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()}
-            size-12`}
+            size-8`}
           download={download || null}
         >
           {icon}
@@ -301,7 +262,6 @@ export const Button = ({
   icon,
   children,
 }) => {
-  className = CheckClass(className);
   color = CheckColor(
     color,
     "border-fgClr hover:border-mainClr hover:bg-mainClr"
@@ -309,25 +269,25 @@ export const Button = ({
 
   return (
     <>
-      <button className={`${className} w-fit`} onClick={onClick || null}>
+      <button className={`${className || ""} w-fit`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${color} border-2 rounded-3xl bg-bgClr px-[2vw] py-[1vh] flex justify-center items-center gap-2 
+          className={`${scrollFX} ${color} border-2 rounded-3xl bg-bgClr px-4 py-2 flex justify-center items-center gap-2 
           group ${GetHoverClass()}`}
           href={href || null}
           target={target || "_blank"}
           rel="noreferrer"
           download={download || null}
         >
-          <Paragraph
+          <Span
             className={`group-hover:text-bgClr ${GetGroupHoverClass()}`}
             scrollFX={""}
           >
             {children}
-          </Paragraph>
+          </Span>
           {icon !== undefined ? (
             <div
               className={`group-hover:text-bgClr ${GetGroupHoverClass()}
-              size-7`}
+              size-6`}
             >
               {icon}
             </div>

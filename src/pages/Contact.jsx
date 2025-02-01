@@ -1,11 +1,8 @@
 /* eslint-disable no-unused-vars */
 
 import {
+  Section,
   Grid12ColsContainer,
-  FlexColContainer,
-  FlexRowContainer,
-  UnorderedList,
-  ListItem,
   Heading1,
   Heading2,
   Heading3,
@@ -26,7 +23,7 @@ import { SiMessenger, SiDiscord, SiGmail, SiLinkedin } from "react-icons/si";
 const Contact = () => {
   return (
     <>
-      <section className={"pinPage1"}>
+      <Section scrollFX={"pinPage1"}>
         <AvatarImage
           className={""}
           scrollFX={"imageFadeIn2"}
@@ -46,13 +43,12 @@ const Contact = () => {
           ></BorderLine>
         </Grid12ColsContainer>
 
-        <FlexColContainer className={"items-center"}>
-          <Heading4>Send me a message if you have</Heading4>
-          <Heading4>opportunities for collaboration or</Heading4>
-          <Heading4>want to build something amazing.</Heading4>
-        </FlexColContainer>
+        <Heading4 className={"pt-8 text-center"} scrollFX={"wordFadeIn"}>
+          Send me a message if you have opportunities for collaboration or want
+          to build something amazing.
+        </Heading4>
 
-        <FlexRowContainer className={"justify-center gap-[1vw]"}>
+        <div className={"pt-8 flex justify-center gap-4"}>
           <IconLink
             scrollFX={"iconFadeIn0"}
             href={"#"}
@@ -73,8 +69,8 @@ const Contact = () => {
             href={"#"}
             icon={<SiLinkedin />}
           ></IconLink>
-        </FlexRowContainer>
-      </section>
+        </div>
+      </Section>
     </>
   );
 };

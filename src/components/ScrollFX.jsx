@@ -59,7 +59,7 @@ export const scrollFX = {
       end: `bottom ${this.pinnedScrollerPosition}`,
       pin: true,
       pinSpacing: false,
-      //*
+      /*
       markers: {
         startColor: "violet",
         endColor: "fuchsia",

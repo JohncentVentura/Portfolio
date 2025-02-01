@@ -7,11 +7,8 @@ import { TbFileCv } from "react-icons/tb";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
 
 import {
+  Section,
   Grid12ColsContainer,
-  FlexColContainer,
-  FlexRowContainer,
-  UnorderedList,
-  ListItem,
   Heading1,
   Heading2,
   Heading3,
@@ -44,6 +41,30 @@ function App() {
   const [mainClr, setMainClr] = useState(
     getComputedStyle(document.body).getPropertyValue("--mainClr")
   );
+
+  //DEBUG: Log breakpoints for responsiveness test
+  useEffect(() => {
+    printBreakpoint();
+    window.addEventListener("resize", () => printBreakpoint());
+
+    function printBreakpoint() {
+      if (window.innerWidth >= 1536) {
+        console.log("2xl desktop"); //Desktop
+      } else if (window.innerWidth >= 1280) {
+        console.log("xl laptop"); //Laptop
+      } else if (window.innerWidth >= 1024) {
+        console.log("lg h-tablet"); //Horizontal Tablet
+      } else if (window.innerWidth >= 768) {
+        console.log("md v-tablet"); //Vertical Tablet
+      } else if (window.innerWidth >= 640) {
+        console.log("sm h-phone"); //Horizontal Phone
+      } else if (window.innerWidth >= 320) {
+        console.log("df v-phone"); //Vertical Phone
+      } else {
+        console.log("invalid"); //Limit
+      }
+    }
+  });
 
   //Effect for setting color theme
   useEffect(() => {
@@ -85,40 +106,46 @@ function App() {
   });
 
   //Effect for using GSAP
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      scrollFX.init(fgClr, bgClr, mainClr);
-      //*
-      for (let i = 0; i < 20; i++) {
-        scrollFX.setFX(".pinPage" + i, (elem) => scrollFX.pinPage(elem));
-        scrollFX.setFX(".borderFadeInCenter" + i, (elem) =>
-          scrollFX.borderFadeInCenter(elem)
-        );
-        scrollFX.setFX(".borderFadeInLeft" + i, (elem) =>
-          scrollFX.borderFadeInCenter(elem)
-        );
-        scrollFX.setFX(".borderFadeInRight", (elem) =>
-          scrollFX.borderFadeInRight(elem)
-        );
-        scrollFX.setFX(".imageFadeIn" + i, (elem) =>
-          scrollFX.imageFadeIn(elem)
-        );
-        scrollFX.setFX(".iconFadeIn" + i, (elem) => scrollFX.iconFadeIn(elem));
+  useLayoutEffect(
+    () => {
+      let ctx = gsap.context(() => {
+        scrollFX.init(fgClr, bgClr, mainClr);
+        //*
+        for (let i = 0; i < 20; i++) {
+          scrollFX.setFX(".pinPage" + i, (elem) => scrollFX.pinPage(elem));
+          scrollFX.setFX(".borderFadeInCenter" + i, (elem) =>
+            scrollFX.borderFadeInCenter(elem)
+          );
+          scrollFX.setFX(".borderFadeInLeft" + i, (elem) =>
+            scrollFX.borderFadeInCenter(elem)
+          );
+          scrollFX.setFX(".borderFadeInRight", (elem) =>
+            scrollFX.borderFadeInRight(elem)
+          );
+          scrollFX.setFX(".imageFadeIn" + i, (elem) =>
+            scrollFX.imageFadeIn(elem)
+          );
+          scrollFX.setFX(".iconFadeIn" + i, (elem) =>
+            scrollFX.iconFadeIn(elem)
+          );
 
-        scrollFX.setFX(".buttonFadeIn" + i, (elem) =>
-          scrollFX.buttonFadeIn(elem)
+          scrollFX.setFX(".buttonFadeIn" + i, (elem) =>
+            scrollFX.buttonFadeIn(elem)
+          );
+        }
+        //NOTE: Should be called last, else may cause bug where it will trigger early
+        scrollFX.setFX(".wordFadeIn", (elem) => scrollFX.wordFadeIn(elem));
+        scrollFX.setFX(".lettersFadeIn", (elem) =>
+          scrollFX.lettersFadeIn(elem)
         );
-      }
-      //NOTE: Should be called last, else may cause bug where it will trigger early
-      scrollFX.setFX(".wordFadeIn", (elem) => scrollFX.wordFadeIn(elem));
-      scrollFX.setFX(".lettersFadeIn", (elem) => scrollFX.lettersFadeIn(elem));
-      
-      //*/
-    });
-    return () => ctx.revert(); // <- cleanup!
-  }, 
-  //Adding the color states as dependencies will cause lag when changing color themes
-  []);
+
+        //*/
+      });
+      return () => ctx.revert(); // <- cleanup!
+    },
+    //Adding the color states as dependencies will cause lag when changing color themes
+    []
+  );
 
   return (
     <>
@@ -129,7 +156,6 @@ function App() {
         mainClr={mainClr}
       />
       <Header
-        className={"lg:px-[20vw] px-[15vw]"}
         clrTheme={clrTheme}
         clrThemeOnClick={() =>
           clrTheme === "light-theme"
@@ -137,8 +163,8 @@ function App() {
             : setClrTheme("light-theme")
         }
       />
-      <Main className={"lg:px-[20vw] px-[15vw]"} />
-      <Footer className={"lg:px-[20vw] px-[15vw]"} />
+      <Main/>
+      <Footer/>
     </>
   );
 }
@@ -146,12 +172,9 @@ function App() {
 const Header = ({ ...props }) => {
   return (
     <>
-      <header className={`${props.className} fixed top-0 left-0 z-10 w-full`}>
-        <nav
-          className={"pt-4 w-full h-fit flex justify-between items-center"}
-        >
+      <header className={`${props.className || ""} fixed top-0 left-0 z-10`}>
+        <nav className={"pt-[10%] flex justify-between items-center"}>
           <NavButton download={""} icon={<TbFileCv />} />
-
           {props.clrTheme === "light-theme" ? (
             <NavButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
           ) : (
@@ -166,7 +189,7 @@ const Header = ({ ...props }) => {
 const Main = ({ ...props }) => {
   return (
     <>
-      <main className={`${props.className} pt-[70vh]`}>
+      <main className={`${props.className || ""} pt-[70vh]`}>
         <Home />
         <About />
         <Work />
@@ -179,17 +202,20 @@ const Main = ({ ...props }) => {
 const Footer = ({ ...props }) => {
   return (
     <>
-      <footer className={`${props.className} w-full pb-4`}>
+      <footer className={`${props.className || ""} pb-[10%] `}>
         <Grid12ColsContainer>
           <BorderLine
-            className={"col-start-1 col-end-5"}
+            className={"col-span-3"}
             scrollFX={"borderFadeInLeft1"}
           ></BorderLine>
-          <Span scrollFX={""} className={"col-start-5 col-end-9 text-center text-fgClr"}>
+          <Span
+            scrollFX={""}
+            className={"col-span-6 text-center text-fgClr"}
+          >
             Designed & Built by Johncent © 2024
           </Span>
           <BorderLine
-            className={"col-start-9 col-end-13"}
+            className={"col-span-3"}
             scrollFX={"borderFadeInRight1"}
           ></BorderLine>
         </Grid12ColsContainer>

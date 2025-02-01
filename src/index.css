@@ -18,36 +18,13 @@
   --mainClr: #35aa90;
 }
 
-/*
-@layer base {
-  html {
-    font-size: 11px;
-    @screen sm {
-      font-size: 12px;
-    }
-    @screen md {
-      font-size: 13px;
-    }
-    @screen lg {
-      font-size: 14px;
-    }
-    @screen xl {
-      font-size: 15px;
-    }
-    @screen 2xl {
-      font-size: 16px;
-    }
-  }
-}
-*/
-
 @layer components {
   * {
     @apply box-border;
   }
 
   body {
-    @apply relative overflow-hidden;
+    @apply relative overflow-x-hidden overflow-y-auto;
   }
 
   #particles canvas {
@@ -56,39 +33,64 @@
 
   header,
   main,
-  section,
   footer {
-    @apply relative size-fit flex flex-col justify-start items-center;
+    @apply relative w-full h-fit xl:px-[20%] md:px-[15%] px-[10%];
   }
 
   div,
   ul,
   li {
-    @apply relative font-mainFont;
+    @apply relative;
   }
 
-  svg {
-    @apply relative size-full;
+  h1 {
+    @apply relative font-semibold text-5xl md:text-7xl xl:text-9xl;
   }
 
-  img {
-    @apply relative size-full object-fill border-4 border-fgClr 
-    hover:border-[8px] hover:border-mainClr;
+  h2 {
+    @apply relative font-semibold text-2xl md:text-4xl xl:text-6xl;
+  }
+
+  h3 {
+    @apply relative font-medium text-xl md:text-3xl xl:text-5xl;
+  }
+
+  h4 {
+    @apply relative text-lg md:text-2xl xl:text-4xl;
+  }
+
+  p {
+    @apply relative text-base md:text-xl xl:text-3xl;
+  }
+
+  span {
+    @apply relative text-sm md:text-lg xl:text-2xl;
   }
 
   a,
   .char,
   .word {
-    @apply relative text-fgClr hover:text-mainClr;
+    @apply relative font-mainFont text-fgClr hover:text-mainClr;
   }
 
+  svg {
+    @apply relative block size-full;
+  }
+
+  img {
+    @apply relative block size-full object-fill border-4 border-fgClr 
+    hover:border-[8px] hover:border-mainClr;
+  }
+}
+
+/*
   h1 {
     @apply relative 
     2xl:text-[5.9rem] xl:text-[5.1rem] 
     lg:text-[4.1rem] md:text-[3.6rem]
     sm:text-5xl text-4xl;
   }
-
+   
   h2 {
     @apply relative 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl;
   }
@@ -103,9 +105,9 @@
 
   p {
     @apply relative 2xl:text-2xl lg:text-xl md:text-lg text-base;
-  }
+  } 
 
   span {
     @apply relative 2xl:text-lg lg:text-base md:text-sm text-xs;
   }
-}
+    */
