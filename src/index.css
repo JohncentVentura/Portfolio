@@ -34,9 +34,10 @@
   header,
   main,
   footer {
-    @apply relative w-full h-fit xl:px-[20%] md:px-[15%] px-[10%];
+    @apply relative w-full px-[10%] sm:px-[15%] lg:px-[20%];
   }
 
+  section,
   div,
   ul,
   li {
@@ -44,27 +45,27 @@
   }
 
   h1 {
-    @apply relative font-semibold text-5xl md:text-7xl xl:text-9xl;
+    @apply relative font-bold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl;
   }
 
   h2 {
-    @apply relative font-semibold text-2xl md:text-4xl xl:text-6xl;
+    @apply relative font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
   }
 
   h3 {
-    @apply relative font-medium text-xl md:text-3xl xl:text-5xl;
+    @apply relative font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
   }
 
   h4 {
-    @apply relative text-lg md:text-2xl xl:text-4xl;
+    @apply relative font-semibold text-lg sm:text-xl lg:text-2xl xl:text-3xl;
   }
 
   p {
-    @apply relative text-base md:text-xl xl:text-3xl;
+    @apply relative font-normal text-base sm:text-lg lg:text-xl;
   }
 
   span {
-    @apply relative text-sm md:text-lg xl:text-2xl;
+    @apply relative font-light text-sm sm:text-base lg:text-lg ;
   }
 
   a,
@@ -73,41 +74,8 @@
     @apply relative font-mainFont text-fgClr hover:text-mainClr;
   }
 
+  img,
   svg {
-    @apply relative block size-full;
-  }
-
-  img {
-    @apply relative block size-full object-fill border-4 border-fgClr 
-    hover:border-[8px] hover:border-mainClr;
+    @apply relative block size-full object-fill;
   }
 }
-
-/*
-  h1 {
-    @apply relative 
-    2xl:text-[5.9rem] xl:text-[5.1rem] 
-    lg:text-[4.1rem] md:text-[3.6rem]
-    sm:text-5xl text-4xl;
-  }
-   
-  h2 {
-    @apply relative 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl;
-  }
-
-  h3 {
-    @apply relative 2xl:text-5xl lg:text-4xl md:text-3xl text-2xl;
-  }
-
-  h4 {
-    @apply relative 2xl:text-4xl lg:text-3xl md:text-2xl text-xl;
-  }
-
-  p {
-    @apply relative 2xl:text-2xl lg:text-xl md:text-lg text-base;
-  } 
-
-  span {
-    @apply relative 2xl:text-lg lg:text-base md:text-sm text-xs;
-  }
-    */

@@ -8,7 +8,7 @@ import { IoIosMoon, IoIosSunny } from "react-icons/io";
 
 import {
   Section,
-  Grid12ColsContainer,
+  Grid3ColsContainer,
   Heading1,
   Heading2,
   Heading3,
@@ -16,11 +16,12 @@ import {
   Paragraph,
   Span,
   BorderLine,
-  IconLink,
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavButton,
+  NavBtn,
+  SmIconBtn,
+  LgIconBtn,
   Button,
 } from "./components/Components";
 import ParticlesComponent from "./components/Particles";
@@ -44,24 +45,24 @@ function App() {
 
   //DEBUG: Log breakpoints for responsiveness test
   useEffect(() => {
-    printBreakpoint();
-    window.addEventListener("resize", () => printBreakpoint());
+    PrintBreakpoint();
+    window.addEventListener("resize", () => PrintBreakpoint());
 
-    function printBreakpoint() {
+    function PrintBreakpoint() {
       if (window.innerWidth >= 1536) {
-        console.log("2xl desktop"); //Desktop
+        console.log("2xl xl-desktop");
       } else if (window.innerWidth >= 1280) {
-        console.log("xl laptop"); //Laptop
+        console.log("xl desktop-laptop");
       } else if (window.innerWidth >= 1024) {
-        console.log("lg h-tablet"); //Horizontal Tablet
+        console.log("lg h-tablet");
       } else if (window.innerWidth >= 768) {
-        console.log("md v-tablet"); //Vertical Tablet
+        console.log("md v-tablet");
       } else if (window.innerWidth >= 640) {
-        console.log("sm h-phone"); //Horizontal Phone
+        console.log("sm h-mobile");
       } else if (window.innerWidth >= 320) {
-        console.log("df v-phone"); //Vertical Phone
+        console.log("df v-mobile");
       } else {
-        console.log("invalid"); //Limit
+        console.log("invalid size");
       }
     }
   });
@@ -119,7 +120,7 @@ function App() {
           scrollFX.setFX(".borderFadeInLeft" + i, (elem) =>
             scrollFX.borderFadeInCenter(elem)
           );
-          scrollFX.setFX(".borderFadeInRight", (elem) =>
+          scrollFX.setFX(".borderFadeInRight" + i, (elem) =>
             scrollFX.borderFadeInRight(elem)
           );
           scrollFX.setFX(".imageFadeIn" + i, (elem) =>
@@ -128,17 +129,13 @@ function App() {
           scrollFX.setFX(".iconFadeIn" + i, (elem) =>
             scrollFX.iconFadeIn(elem)
           );
-
           scrollFX.setFX(".buttonFadeIn" + i, (elem) =>
             scrollFX.buttonFadeIn(elem)
           );
         }
         //NOTE: Should be called last, else may cause bug where it will trigger early
-        scrollFX.setFX(".wordFadeIn", (elem) => scrollFX.wordFadeIn(elem));
-        scrollFX.setFX(".lettersFadeIn", (elem) =>
-          scrollFX.lettersFadeIn(elem)
-        );
-
+        scrollFX.setFX(".wordsFadeIn", (elem) => scrollFX.wordsFadeIn(elem));
+        scrollFX.setFX(".charsFadeIn", (elem) => scrollFX.charsFadeIn(elem));
         //*/
       });
       return () => ctx.revert(); // <- cleanup!
@@ -163,8 +160,8 @@ function App() {
             : setClrTheme("light-theme")
         }
       />
-      <Main/>
-      <Footer/>
+      <Main />
+      <Footer />
     </>
   );
 }
@@ -172,13 +169,15 @@ function App() {
 const Header = ({ ...props }) => {
   return (
     <>
-      <header className={`${props.className || ""} fixed top-0 left-0 z-10`}>
-        <nav className={"pt-[10%] flex justify-between items-center"}>
-          <NavButton download={""} icon={<TbFileCv />} />
+      <header
+        className={`${props.className || ""} fixed top-10 left-0 z-10`}
+      >
+        <nav className={"flex justify-between items-center"}>
+          <NavBtn icon={<TbFileCv />} />
           {props.clrTheme === "light-theme" ? (
-            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
+            <NavBtn onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
           ) : (
-            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
+            <NavBtn onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
           )}
         </nav>
       </header>
@@ -202,23 +201,23 @@ const Main = ({ ...props }) => {
 const Footer = ({ ...props }) => {
   return (
     <>
-      <footer className={`${props.className || ""} pb-[10%] `}>
-        <Grid12ColsContainer>
+      <footer className={`${props.className || ""} pb-8`}>
+        <Grid3ColsContainer>
           <BorderLine
-            className={"col-span-3"}
+            className={""}
             scrollFX={"borderFadeInLeft1"}
           ></BorderLine>
           <Span
             scrollFX={""}
-            className={"col-span-6 text-center text-fgClr"}
+            className={"font-mainFont text-fgClr text-center"}
           >
             Designed & Built by Johncent © 2024
           </Span>
           <BorderLine
-            className={"col-span-3"}
+            className={""}
             scrollFX={"borderFadeInRight1"}
           ></BorderLine>
-        </Grid12ColsContainer>
+        </Grid3ColsContainer>
       </footer>
     </>
   );

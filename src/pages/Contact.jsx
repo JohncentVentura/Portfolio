@@ -2,7 +2,7 @@
 
 import {
   Section,
-  Grid12ColsContainer,
+  Grid3ColsContainer,
   Heading1,
   Heading2,
   Heading3,
@@ -10,11 +10,12 @@ import {
   Paragraph,
   Span,
   BorderLine,
-  IconLink,
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavButton,
+  NavBtn,
+  SmIconBtn,
+  LgIconBtn,
   Button,
 } from "../components/Components";
 import { ImagePaths } from "../components/Utilities";
@@ -25,50 +26,46 @@ const Contact = () => {
     <>
       <Section scrollFX={"pinPage1"}>
         <AvatarImage
-          className={""}
           scrollFX={"imageFadeIn2"}
           href={"#"}
           imgSrc={ImagePaths.avatar}
         ></AvatarImage>
 
-        <Grid12ColsContainer>
-          <BorderLine
-            className={"col-span-3"}
-            scrollFX={"borderFadeInLeft1"}
-          ></BorderLine>
-          <Heading2 className={"col-span-6"}>Contact Me</Heading2>
-          <BorderLine
-            className={"col-span-3"}
-            scrollFX={"borderFadeInRight1"}
-          ></BorderLine>
-        </Grid12ColsContainer>
+        <Grid3ColsContainer>
+          <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
+          <Heading2 scrollFX={"wordsFadeIn"}>Contact Me</Heading2>
+          <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
+        </Grid3ColsContainer>
 
-        <Heading4 className={"pt-8 text-center"} scrollFX={"wordFadeIn"}>
+        <Heading4
+          className={"pt-4 w-[75%] text-center"}
+          scrollFX={"wordsFadeIn"}
+        >
           Send me a message if you have opportunities for collaboration or want
           to build something amazing.
         </Heading4>
 
-        <div className={"pt-8 flex justify-center gap-4"}>
-          <IconLink
+        <div className={"pt-8 flex justify-center gap-2 sm:gap-4"}>
+          <LgIconBtn
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<SiMessenger />}
-          ></IconLink>
-          <IconLink
+          ></LgIconBtn>
+          <LgIconBtn
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<SiDiscord />}
-          ></IconLink>
-          <IconLink
+          ></LgIconBtn>
+          <LgIconBtn
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<SiGmail />}
-          ></IconLink>
-          <IconLink
+          ></LgIconBtn>
+          <LgIconBtn
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<SiLinkedin />}
-          ></IconLink>
+          ></LgIconBtn>
         </div>
       </Section>
     </>

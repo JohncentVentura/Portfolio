@@ -1,16 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import { SiAseprite } from "react-icons/si";
-import {
-  FaSquareFacebook,
-  FaSquareGithub,
-  FaSquarePinterest,
-  FaLinkedin,
-} from "react-icons/fa6";
+import { FaGithub, FaExternalLinkAlt, FaPinterest } from "react-icons/fa";
 
 import {
   Section,
-  Grid12ColsContainer,
+  Grid3ColsContainer,
   Heading1,
   Heading2,
   Heading3,
@@ -18,12 +12,31 @@ import {
   Paragraph,
   Span,
   BorderLine,
-  IconLink,
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavButton,
+  NavBtn,
+  SmIconBtn,
+  LgIconBtn,
   Button,
+  BtnAdobePhotoshop,
+  BtnAseprite,
+  BtnCSharp,
+  BtnCSS,
+  BtnExpressJS,
+  BtnFigma,
+  BtnGit,
+  BtnGSAP,
+  BtnHTML,
+  BtnInk,
+  BtnJavaScript,
+  BtnMongoDB,
+  BtnMySQL,
+  BtnNodeJS,
+  BtnReactJS,
+  BtnTailwindCSS,
+  BtnUnity,
+  BtnVisualBasic,
 } from "../components/Components";
 import { ImagePaths } from "../components/Utilities";
 
@@ -32,193 +45,183 @@ const Work = () => {
     <>
       <Section className={"pt-[20vh] pb-[20vh]"}>
         <AvatarImage
-          className={""}
           scrollFX={"imageFadeIn2"}
           href={"#"}
           imgSrc={ImagePaths.avatar}
         ></AvatarImage>
 
-        <Grid12ColsContainer>
-          <BorderLine
-            className={"col-span-3"}
-            scrollFX={"borderFadeInLeft1"}
-          ></BorderLine>
-          <Heading2 className={"col-span-6"}>My Works</Heading2>
-          <BorderLine
-            className={"col-span-3"}
-            scrollFX={"borderFadeInRight1"}
-          ></BorderLine>
-        </Grid12ColsContainer>
+        <Grid3ColsContainer>
+          <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
+          <Heading2 scrollFX={"wordsFadeIn"}>My Works</Heading2>
+          <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
+        </Grid3ColsContainer>
 
-        <Heading3 className={"pt-8"}>Featured Projects</Heading3>
-        <ul className={"pt-8 flex flex-col gap-8"}>
-          <li className={"flex flex-col gap-4"}>
-            <div
-              className={
-                "flex justify-center items-center md:flex-row flex-col gap-4 "
-              }
-            >
+        <div>
+          <Heading3 className={"pt-8"}>Featured Projects</Heading3>
+          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+        </div>
+        <ul className={"pt-8 flex flex-col gap-16"}>
+          <li className={"flex flex-col gap-8"}>
+            <div className="flex flex-col xl:flex-row gap-8 ">
               <ProjectImage
-                className={"justify-start items-center"}
+                className={"self-center"}
                 scrollFX={"imageFadeIn2"}
                 href={"#"}
                 imgSrc={ImagePaths.pulpRPG}
               ></ProjectImage>
-              <div className={"flex flex-col text-start gap-4"}>
+              <div className={"flex flex-col items-center gap-4"}>
                 <Heading4>Jourdan's Snack Corner</Heading4>
-                <Paragraph className={""}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                   fugit enim illo recusandae, adipisci earum ea qui cupiditate
                   maiores magni id asperiores possimus officia non deleniti
                   consequatur explicabo sed praesentium.
                 </Paragraph>
-                <Paragraph className={""}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                   fugit enim illo recusandae.
                 </Paragraph>
               </div>
             </div>
-            <div className={"flex flex-wrap justify-start gap-4"}>
-              <Button
-                scrollFX={"buttonFadeIn0"}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                href={"#"}
-                icon={<SiAseprite />}
-              >
-                Aseprite
-              </Button>
-              <Button
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Aseprite
-              </Button>
+            <div className={"flex flex-wrap justify-center gap-4"}>
+              <BtnAdobePhotoshop />
+              <BtnAseprite />
+              <BtnCSS />
             </div>
-            <BorderLine
-              className={""}
-              scrollFX={"borderFadeInRight1"}
-            ></BorderLine>
+            <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
           </li>
-          <li className={"flex flex-col gap-4"}>
-            <div
-              className={
-                "flex justify-center items-center md:flex-row-reverse flex-col gap-4 "
-              }
-            >
+          <li className={"flex flex-col gap-8"}>
+            <div className="flex flex-col xl:flex-row gap-8 ">
               <ProjectImage
-                className={"justify-end items-center"}
+                className={"self-center"}
                 scrollFX={"imageFadeIn2"}
                 href={"#"}
                 imgSrc={ImagePaths.pulpRPG}
               ></ProjectImage>
-              <div className={"flex flex-col text-end gap-4"}>
+              <div className={"flex flex-col items-center gap-4"}>
                 <Heading4>Jourdan's Snack Corner</Heading4>
-                <Paragraph className={""}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                   fugit enim illo recusandae, adipisci earum ea qui cupiditate
                   maiores magni id asperiores possimus officia non deleniti
                   consequatur explicabo sed praesentium.
                 </Paragraph>
-                <Paragraph className={""}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                   fugit enim illo recusandae.
                 </Paragraph>
               </div>
             </div>
-            <div className={"flex flex-wrap justify-end gap-4"}>
-              <Button
-                scrollFX={"buttonFadeIn0"}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                href={"#"}
-                icon={<SiAseprite />}
-              >
-                Aseprite
-              </Button>
-              <Button
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Aseprite
-              </Button>
+            <div className={"flex flex-wrap justify-center gap-4"}>
+              <BtnAdobePhotoshop />
+              <BtnAseprite />
+              <BtnCSS />
             </div>
-            <BorderLine
-              className={""}
-              scrollFX={"borderFadeInRight1"}
-            ></BorderLine>
+            <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
           </li>
         </ul>
 
-        <Heading3 className={"pt-8"}>Other Projects</Heading3>
-        <ul className={"pt-8 grid md:grid-cols-2 grid-cols-1 gap-8"}>
-          <li className={"flex flex-col gap-4"}>
-            <div className={"flex flex-col gap-4"}>
-              <Heading4>Jourdan's Snack Corner</Heading4>
-              <Paragraph className={""}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                fugit enim illo recusandae, adipisci earum ea qui cupiditate
-                maiores magni id asperiores possimus officia non deleniti
-                consequatur explicabo sed praesentium.
+        <div className={"pt-8 flex flex-col items-center gap-8"}>
+          <div>
+            <Heading3 className={"pt-8"}>Other Projects</Heading3>
+            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+          </div>
+          <Paragraph>
+            I'm a graduate from the University of Luzon, Dagupan City with a
+            Bachelor's Degree in Information Technology and Latin Honour of Cum
+            Laude. Little did I know that playing video games since I was a kid
+            will eventually led me into game development that helps me chose
+            this course.
+          </Paragraph>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            <li className="flex flex-col justify-center items-center gap-4">
+              <Heading4>To-Do App</Heading4>
+              <Paragraph>
+                A simple to-do app built using React.js and Tailwind CSS. It
+                allows users to add tasks, mark them as completed, and delete
+                them.
               </Paragraph>
-            </div>
-            <div className={"flex justify-center gap-4"}>
-              <Button
-                className={""}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Github
-              </Button>
-              <Button
-                className={""}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Link
-              </Button>
-            </div>
-            <BorderLine
-              className={""}
-              scrollFX={"borderFadeInRight1"}
-            ></BorderLine>
-          </li>
-          <li className={"flex flex-col gap-4"}>
-            <div className={"flex flex-col gap-4"}>
-              <Heading4>Jourdan's Snack Corner</Heading4>
-              <Paragraph className={""}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                fugit enim illo recusandae, adipisci earum ea qui cupiditate
-                maiores magni id asperiores possimus officia non deleniti
-                consequatur explicabo sed praesentium.
+              <div className="flex gap-4">
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaGithub />}
+                ></SmIconBtn>
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaExternalLinkAlt />}
+                ></SmIconBtn>
+              </div>
+              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            </li>
+            <li className="flex flex-col justify-center items-center gap-4">
+              <Heading4>To-Do App</Heading4>
+              <Paragraph>
+                A simple to-do app built using React.js and Tailwind CSS. It
+                allows users to add tasks, mark them as completed, and delete
+                them.A simple to-do app built using React.js and Tailwind CSS. It
+                allows users to add tasks, mark them as completed, and delete
+                them.
               </Paragraph>
-            </div>
-            <div className={"flex justify-center gap-4"}>
-              <Button
-                className={""}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Github
-              </Button>
-              <Button
-                className={""}
-                color={"border-[#ff7133] hover:bg-[#ff7133]"}
-                scrollFX={"buttonFadeIn0"}
-                href={"#"}
-              >
-                Link
-              </Button>
-            </div>
-            <BorderLine
-              className={""}
-              scrollFX={"borderFadeInRight1"}
-            ></BorderLine>
-          </li>
-        </ul>
+              <div className="flex gap-4">
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaGithub />}
+                ></SmIconBtn>
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaExternalLinkAlt />}
+                ></SmIconBtn>
+              </div>
+              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            </li>
+            <li className="flex flex-col justify-center items-center gap-4">
+              <Heading4>To-Do App</Heading4>
+              <Paragraph>
+                A simple to-do app built using React.js and Tailwind CSS. It
+                allows users to add tasks, mark them as completed, and delete
+                them.
+              </Paragraph>
+              <div className="flex gap-4">
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaGithub />}
+                ></SmIconBtn>
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaExternalLinkAlt />}
+                ></SmIconBtn>
+              </div>
+              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            </li>
+            <li className="flex flex-col justify-center items-center gap-4">
+              <Heading4>To-Do App</Heading4>
+              <Paragraph>
+                A simple to-do app built using React.js and Tailwind CSS. It
+                allows users to add tasks, mark them as completed, and delete
+                them.
+              </Paragraph>
+              <div className="flex gap-4">
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaGithub />}
+                ></SmIconBtn>
+                <SmIconBtn
+                  scrollFX={"iconFadeIn0"}
+                  href={"#"}
+                  icon={<FaExternalLinkAlt />}
+                ></SmIconBtn>
+              </div>
+              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            </li>
+          </ul>
+        </div>
       </Section>
     </>
   );

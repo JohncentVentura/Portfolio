@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { TbBrandCSharp } from "react-icons/tb";
 import {
   SiAseprite,
   SiTailwindcss,
@@ -17,8 +16,11 @@ import {
   SiReact,
   SiUnity,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { RiInkBottleFill } from "react-icons/ri";
+import { DiVisualstudio } from "react-icons/di";
 
-import { ExternalPaths } from "./Utilities";
+//import { ExternalPaths } from "./Utilities";
 
 function CheckScrollFX(scrollFX, defaultScrollFX) {
   return scrollFX === undefined ? defaultScrollFX : scrollFX;
@@ -26,6 +28,10 @@ function CheckScrollFX(scrollFX, defaultScrollFX) {
 
 function CheckColor(color, defaultColor) {
   return color === undefined ? defaultColor : color;
+}
+
+function GetImageClass() {
+  return "border-4 border-fgClr hover:border-[8px] hover:border-mainClr";
 }
 
 function GetHoverClass() {
@@ -43,7 +49,7 @@ export const Section = ({ className, scrollFX, children }) => {
       <section
         className={`${
           className || ""
-        } ${scrollFX} relative w-full h-fit flex flex-col justify-start items-center`}
+        } ${scrollFX} w-full flex flex-col justify-start items-center`}
       >
         {children}
       </section>
@@ -51,11 +57,11 @@ export const Section = ({ className, scrollFX, children }) => {
   );
 };
 
-export const Grid12ColsContainer = ({ className, children }) => {
+export const Grid3ColsContainer = ({ className, children }) => {
   return (
     <>
       <div
-        className={`${className || ""} w-full grid grid-cols-12 text-center`}
+        className={`${className || ""} w-full grid grid-cols-3 text-center `}
       >
         {children}
       </div>
@@ -66,7 +72,7 @@ export const Grid12ColsContainer = ({ className, children }) => {
 /********************************************Texts*******************************************/
 //Really Large Text
 export const Heading1 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -77,7 +83,7 @@ export const Heading1 = ({ className, scrollFX, children }) => {
 
 //Section Header Title
 export const Heading2 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -86,9 +92,9 @@ export const Heading2 = ({ className, scrollFX, children }) => {
   );
 };
 
-//Section Header Subtitles
+//Section Header Subtitle
 export const Heading3 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -99,7 +105,7 @@ export const Heading3 = ({ className, scrollFX, children }) => {
 
 //Larger than Paragraph
 export const Heading4 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -110,7 +116,7 @@ export const Heading4 = ({ className, scrollFX, children }) => {
 
 //Long Text
 export const Paragraph = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -121,7 +127,7 @@ export const Paragraph = ({ className, scrollFX, children }) => {
 
 //Smaller than Paragraph
 export const Span = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "lettersFadeIn");
+  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
 
   return (
     <>
@@ -148,29 +154,12 @@ export const BorderLine = ({ className, scrollFX }) => {
   );
 };
 
-export const IconLink = ({ className, scrollFX, href, icon }) => {
-  return (
-    <>
-      <div className={`${className || ""} size-12`}>
-        <a
-          className={`${scrollFX} ${GetHoverClass()} block size-full`}
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icon}
-        </a>
-      </div>
-    </>
-  );
-};
-
 export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
   return (
     <>
-      <div className={`${className || ""} size-32`}>
+      <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block size-full`}
+          className={`${scrollFX} block size-32 sm:size-48 lg:size-64`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -179,7 +168,7 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-full ${GetHoverClass()}`}
+            className={`rounded-full ${GetImageClass()} ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -190,9 +179,9 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
 export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
   return (
     <>
-      <div className={`${className || ""} size-20`}>
+      <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block size-full`}
+          className={`${scrollFX} block size-20 sm:size-24 lg:size-28`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -200,7 +189,7 @@ export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-full ${GetHoverClass()}`}
+            className={`rounded-full ${GetImageClass()} ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -211,13 +200,9 @@ export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
 export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
   return (
     <>
-      <div
-        className={`${
-          className || ""
-        } flex justify-center items-center w-64 h-48`}
-      >
+      <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block size-full`}
+          className={`${scrollFX} block size-full w-64 h-48 sm:w-80 sm:h-56 lg:w-[24rem] lg:h-[16rem]`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -225,7 +210,7 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-3xl ${GetHoverClass()}`}
+            className={`rounded-3xl ${GetImageClass()} ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -234,14 +219,76 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
 };
 
 /********************************************Buttons*******************************************/
-export const NavButton = ({ onClick, download, icon }) => {
+export const NavBtn = ({
+  className,
+  onClick,
+  scrollFX,
+  href,
+  target,
+  download,
+  icon,
+}) => {
   return (
     <>
-      <button className={`w-fit`} onClick={onClick || null}>
+      <button className={`${className || ""} `} onClick={onClick || null}>
         <a
-          className={`block rounded-full border-2 border-fgClr bg-fgClr text-bgClr 
-            hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()}
-            size-8`}
+          className={`${
+            scrollFX || ""
+          } block rounded-full border-2 border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()}
+            size-8 sm:size-10 lg:size-12`}
+          href={href}
+          target={target}
+          rel="noreferrer"
+          download={download || null}
+        >
+          {icon}
+        </a>
+      </button>
+    </>
+  );
+};
+
+export const SmIconBtn = ({
+  className,
+  onClick,
+  scrollFX,
+  href,
+  download,
+  icon,
+}) => {
+  return (
+    <>
+      <button className={`${className || ""}`} onClick={onClick || null}>
+        <a
+          className={`${scrollFX} ${GetHoverClass()} block size-8 sm:size-10 lg:size-12`}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          download={download || null}
+        >
+          {icon}
+        </a>
+      </button>
+    </>
+  );
+};
+
+export const LgIconBtn = ({
+  className,
+  onClick,
+  scrollFX,
+  href,
+  download,
+  icon,
+}) => {
+  return (
+    <>
+      <button className={`${className || ""}`} onClick={onClick || null}>
+        <a
+          className={`${scrollFX} ${GetHoverClass()} block size-12 sm:size-16 lg:size-20`}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
           download={download || null}
         >
           {icon}
@@ -257,7 +304,6 @@ export const Button = ({
   scrollFX,
   color,
   href,
-  target,
   download,
   icon,
   children,
@@ -274,7 +320,7 @@ export const Button = ({
           className={`${scrollFX} ${color} border-2 rounded-3xl bg-bgClr px-4 py-2 flex justify-center items-center gap-2 
           group ${GetHoverClass()}`}
           href={href || null}
-          target={target || "_blank"}
+          target={"_blank"}
           rel="noreferrer"
           download={download || null}
         >
@@ -304,8 +350,8 @@ export const BtnAdobePhotoshop = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#31a8ff] hover:bg-[#31a8ff]"}
         href={"#"}
         icon={<SiAdobephotoshop />}
@@ -320,8 +366,8 @@ export const BtnAseprite = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-fgClr hover:bg-fgClr"}
         href={"#"}
         icon={<SiAseprite />}
@@ -336,8 +382,8 @@ export const BtnCSharp = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#8065e0] hover:bg-[#8065e0]"}
         href={"#"}
         icon={<TbBrandCSharp />}
@@ -352,9 +398,9 @@ export const BtnCSS = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
-        color={"border-[#35a8db] hover:bg-[#35a8db]"}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        color={"border-[#1572b6] hover:bg-[#1572b6]"}
         href={"#"}
         icon={<SiCss3 />}
       >
@@ -368,8 +414,8 @@ export const BtnExpressJS = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#545454] hover:bg-[#545454]"}
         href={"#"}
         icon={<SiExpress />}
@@ -384,8 +430,8 @@ export const BtnFigma = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#8850e8] hover:bg-[#8850e8]"}
         href={"#"}
         icon={<SiFigma />}
@@ -400,8 +446,8 @@ export const BtnGit = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#f05033] hover:bg-[#f05033]"}
         href={"#"}
         icon={<SiGit />}
@@ -416,8 +462,8 @@ export const BtnGSAP = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#8ac640] hover:bg-[#8ac640]"}
         href={"#"}
         icon={<SiGreensock />}
@@ -432,8 +478,8 @@ export const BtnHTML = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#ef6429] hover:bg-[#ef6429]"}
         href={"#"}
         icon={<SiHtml5 />}
@@ -444,16 +490,17 @@ export const BtnHTML = ({ className, scrollFX }) => {
   );
 };
 
-export const BtnInky = ({ className, scrollFX }) => {
+export const BtnInk = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-fgClr hover:bg-fgClr"}
         href={"#"}
+        icon={<RiInkBottleFill/>}
       >
-        Inky
+        Ink
       </Button>
     </>
   );
@@ -463,8 +510,8 @@ export const BtnJavaScript = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#cfc146] hover:bg-[#cfc146]"}
         href={"#"}
         icon={<SiJavascript />}
@@ -479,8 +526,8 @@ export const BtnMongoDB = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#4faa41] hover:bg-[#4faa41]"}
         href={"#"}
         icon={<SiMongodb />}
@@ -495,8 +542,8 @@ export const BtnMySQL = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#e68f00] hover:bg-[#e68f00]"}
         href={"#"}
         icon={<SiMysql />}
@@ -511,8 +558,8 @@ export const BtnNodeJS = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#8cc84b] hover:bg-[#8cc84b]"}
         href={"#"}
         icon={<SiNodedotjs />}
@@ -527,8 +574,8 @@ export const BtnReactJS = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#07b6d5] hover:bg-[#07b6d5]"}
         href={"#"}
         icon={<SiReact />}
@@ -543,8 +590,8 @@ export const BtnTailwindCSS = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#07b6d5] hover:bg-[#07b6d5]"}
         href={"#"}
         icon={<SiTailwindcss />}
@@ -559,8 +606,8 @@ export const BtnUnity = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#808080] hover:bg-[#808080]"}
         href={"#"}
         icon={<SiUnity />}
@@ -575,10 +622,11 @@ export const BtnVisualBasic = ({ className, scrollFX }) => {
   return (
     <>
       <Button
-        className={`${className}`}
-        scrollFX={`${scrollFX}`}
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
         color={"border-[#136099] hover:bg-[#136099]"}
         href={"#"}
+        icon={<DiVisualstudio />}
       >
         Visual Basic
       </Button>

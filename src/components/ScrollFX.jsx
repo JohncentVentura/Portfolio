@@ -67,7 +67,7 @@ export const scrollFX = {
       //*/
     });
   },
-  lettersFadeIn(elem) {
+  charsFadeIn(elem) {
     this.createTimeline({
       trigger: elem,
       markers: false,
@@ -82,7 +82,7 @@ export const scrollFX = {
       }
     );
   },
-  wordFadeIn(elem) {
+  wordsFadeIn(elem) {
     this.createTimeline({
       trigger: elem,
       markers: false,
