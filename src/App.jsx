@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState, useEffect, useLayoutEffect } from "react";
-import gsap from "gsap";
+/* eslint-disable react/prop-types */
 import Lenis from "lenis";
-import { TbFileCv } from "react-icons/tb";
+import gsap from "gsap";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
+import { TbFileCv } from "react-icons/tb";
 
 import {
   Section,
@@ -19,13 +19,13 @@ import {
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavBtn,
-  SmIconBtn,
-  LgIconBtn,
+  NavButton,
+  IconButton,
   Button,
 } from "./components/Components";
 import ParticlesComponent from "./components/Particles";
 import { scrollFX } from "./components/ScrollFX";
+import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "./components/Utilities";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
@@ -43,7 +43,7 @@ function App() {
     getComputedStyle(document.body).getPropertyValue("--mainClr")
   );
 
-  //DEBUG: Log breakpoints for responsiveness test
+  //* DEBUG: Log breakpoints for responsiveness test
   useEffect(() => {
     PrintBreakpoint();
     window.addEventListener("resize", () => PrintBreakpoint());
@@ -66,6 +66,7 @@ function App() {
       }
     }
   });
+  //*/
 
   //Effect for setting color theme
   useEffect(() => {
@@ -88,15 +89,7 @@ function App() {
 
   //Effect for smooth scrolling
   useEffect(() => {
-    const lenis = new Lenis({
-      /*
-      duration: 2.5, //2.5, // Slows down the scroll
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Custom easing for smooth scroll
-      lerp: 0.07, //0.07, // Lower value for slower scrolling
-      smooth: false,
-      smoothTouch: false,
-      //*/
-    });
+    const lenis = new Lenis({});
     //lenis.on("scroll", (e) => console.log(e));
     function raf(time) {
       lenis;
@@ -111,8 +104,8 @@ function App() {
     () => {
       let ctx = gsap.context(() => {
         scrollFX.init(fgClr, bgClr, mainClr);
-        //*
-        for (let i = 0; i < 20; i++) {
+
+        for (let i = 0; i < 99; i++) {
           scrollFX.setFX(".pinPage" + i, (elem) => scrollFX.pinPage(elem));
           scrollFX.setFX(".borderFadeInCenter" + i, (elem) =>
             scrollFX.borderFadeInCenter(elem)
@@ -133,14 +126,14 @@ function App() {
             scrollFX.buttonFadeIn(elem)
           );
         }
+
         //NOTE: Should be called last, else may cause bug where it will trigger early
         scrollFX.setFX(".wordsFadeIn", (elem) => scrollFX.wordsFadeIn(elem));
         scrollFX.setFX(".charsFadeIn", (elem) => scrollFX.charsFadeIn(elem));
-        //*/
       });
       return () => ctx.revert(); // <- cleanup!
     },
-    //Adding the color states as dependencies will cause lag when changing color themes
+    //Adding the color states as dependencies will cause a lag when changing color themes
     []
   );
 
@@ -169,15 +162,13 @@ function App() {
 const Header = ({ ...props }) => {
   return (
     <>
-      <header
-        className={`${props.className || ""} fixed top-10 left-0 z-10`}
-      >
-        <nav className={"flex justify-between items-center"}>
-          <NavBtn icon={<TbFileCv />} />
+      <header className={`${props.className || ""} fixed top-10 left-0 z-10`}>
+        <nav className="flex justify-between items-center">
+          <NavButton icon={<TbFileCv />} href={AccPaths.resume} target={"_blank"} />
           {props.clrTheme === "light-theme" ? (
-            <NavBtn onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
+            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
           ) : (
-            <NavBtn onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
+            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
           )}
         </nav>
       </header>
@@ -202,21 +193,15 @@ const Footer = ({ ...props }) => {
   return (
     <>
       <footer className={`${props.className || ""} pb-8`}>
-        <Grid3ColsContainer>
-          <BorderLine
-            className={""}
-            scrollFX={"borderFadeInLeft1"}
-          ></BorderLine>
+        <Grid3ColsContainer className={"gap-2"}>
+          <BorderLine></BorderLine>
           <Span
             scrollFX={""}
             className={"font-mainFont text-fgClr text-center"}
           >
             Designed & Built by Johncent © 2024
           </Span>
-          <BorderLine
-            className={""}
-            scrollFX={"borderFadeInRight1"}
-          ></BorderLine>
+          <BorderLine></BorderLine>
         </Grid3ColsContainer>
       </footer>
     </>

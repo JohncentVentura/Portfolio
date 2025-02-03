@@ -1,24 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import {
-  SiAseprite,
-  SiTailwindcss,
-  SiAdobephotoshop,
-  SiCss3,
-  SiExpress,
-  SiGreensock,
-  SiGit,
-  SiJavascript,
-  SiMongodb,
-  SiHtml5,
-  SiMysql,
-  SiNodedotjs,
-  SiReact,
-  SiUnity,
-} from "react-icons/si";
-import { TbBrandCSharp } from "react-icons/tb";
-import { VscPreview } from "react-icons/vsc";
+/* eslint-disable react/no-unescaped-entities */
 import { FaFilePdf } from "react-icons/fa6";
+import { VscPreview } from "react-icons/vsc";
 
 import {
   Section,
@@ -33,30 +16,32 @@ import {
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavBtn,
-  SmIconBtn,
-  LgIconBtn,
+  NavButton,
+  IconButton,
   Button,
+  BtnGithub,
   BtnAdobePhotoshop,
   BtnAseprite,
   BtnCSharp,
-  BtnCSS,
+  BtnCSS3,
   BtnExpressJS,
   BtnFigma,
   BtnGit,
   BtnGSAP,
-  BtnHTML,
+  BtnHTML5,
   BtnInk,
   BtnJavaScript,
   BtnMongoDB,
   BtnMySQL,
   BtnNodeJS,
+  BtnPostgresSQL,
   BtnReactJS,
+  BtnSass,
   BtnTailwindCSS,
   BtnUnity,
   BtnVisualBasic,
 } from "../components/Components";
-import { ImagePaths } from "../components/Utilities";
+import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const About = () => {
   return (
@@ -66,19 +51,22 @@ const About = () => {
           className={""}
           scrollFX={"imageFadeIn2"}
           href={"#"}
-          imgSrc={ImagePaths.avatar}
+          imgSrc={ImgPaths.avatarHome}
         ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <Heading2 scrollFX={"wordsFadeIn"}>About Me</Heading2>
+          <Heading2>About Me</Heading2>
           <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
         </Grid3ColsContainer>
 
-        <div className={"pt-8 flex flex-col items-center gap-8"}>
+        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
           <div>
-            <Heading3>Background</Heading3>
-            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+            <Heading3 scrollFX={"charsFadeIn"}>Background</Heading3>
+            <BorderLine
+              scrollFX={"borderFadeInCenter0"}
+              border={"border"}
+            ></BorderLine>
           </div>
           <Paragraph>
             I'm a graduate from the University of Luzon, Dagupan City with a
@@ -94,7 +82,7 @@ const About = () => {
             share the same passion, and I hope I can continue creating and
             learning more things with you.
           </Paragraph>
-          <div className={"flex flex-col sm:flex-row gap-4"}>
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button scrollFX={"buttonFadeIn0"} href={"#"} icon={<VscPreview />}>
               View Resume
             </Button>
@@ -102,23 +90,29 @@ const About = () => {
               Download Resume
             </Button>
           </div>
-          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
         </div>
+        <BorderLine
+          className={"pt-8 sm:pt-12"}
+          scrollFX={"borderFadeInCenter0"}
+        ></BorderLine>
 
-        <div className={"pt-8 w-full flex flex-col items-center gap-8"}>
+        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
           <div>
-            <Heading3>Education</Heading3>
-            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+            <Heading3 scrollFX={"charsFadeIn"}>Education</Heading3>
+            <BorderLine
+              scrollFX={"borderFadeInCenter0"}
+              border={"border"}
+            ></BorderLine>
           </div>
-          <ul className={"flex flex-wrap justify-center gap-12"}>
+          <ul className="flex flex-wrap justify-center gap-12">
             <li className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
-                imgSrc={ImagePaths.avatar}
+                imgSrc={ImgPaths.avatarHome}
               ></LogoImage>
               <div>
-                <Span>2023</Span>
+                <Span scrollFX={"charsFadeIn"}>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
@@ -128,33 +122,39 @@ const About = () => {
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
-                imgSrc={ImagePaths.avatar}
+                imgSrc={ImgPaths.avatarHome}
               ></LogoImage>
               <div>
-                <Span>2023</Span>
+                <Span scrollFX={"charsFadeIn"}>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
               </div>
             </li>
           </ul>
-          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
         </div>
+        <BorderLine
+          className={"pt-8 sm:pt-12"}
+          scrollFX={"borderFadeInCenter0"}
+        ></BorderLine>
 
-        <div className={"pt-8 w-full flex flex-col items-center gap-8"}>
+        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
           <div>
-            <Heading3>Experience</Heading3>
-            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+            <Heading3 scrollFX={"charsFadeIn"}>Experience</Heading3>
+            <BorderLine
+              scrollFX={"borderFadeInCenter0"}
+              border={"border"}
+            ></BorderLine>
           </div>
-          <ul className={"flex flex-wrap justify-center gap-12 text-end"}>
+          <ul className="flex flex-wrap justify-center gap-12 text-end">
             <li className="flex flex-row-reverse flex-wrap justify-center items-center gap-2 sm:gap-4">
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
-                imgSrc={ImagePaths.avatar}
+                imgSrc={ImgPaths.avatarHome}
               ></LogoImage>
               <div>
-                <Span>2023</Span>
+                <Span scrollFX={"charsFadeIn"}>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
@@ -164,46 +164,57 @@ const About = () => {
               <LogoImage
                 scrollFX={"imageFadeIn3"}
                 href={"#"}
-                imgSrc={ImagePaths.avatar}
+                imgSrc={ImgPaths.avatarHome}
               ></LogoImage>
               <div>
-                <Span>2023</Span>
+                <Span scrollFX={"charsFadeIn"}>2023</Span>
                 <Heading4>Bachelor of Science in</Heading4>
                 <Heading4>Information Technology</Heading4>
                 <Span>University of Luzon</Span>
               </div>
             </li>
           </ul>
-          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
         </div>
+        <BorderLine
+          className={"pt-8 sm:pt-12"}
+          scrollFX={"borderFadeInCenter0"}
+        ></BorderLine>
 
-        <div className={"pt-8 w-full flex flex-col items-center gap-8"}>
+        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
           <div>
-            <Heading3>Tools</Heading3>
-            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+            <Heading3 scrollFX={"charsFadeIn"}>Tools</Heading3>
+            <BorderLine
+              scrollFX={"borderFadeInCenter0"}
+              border={"border"}
+            ></BorderLine>
           </div>
-          <div className={"flex flex-wrap justify-center gap-4"}>
+          <div className="flex flex-wrap justify-center gap-4">
             <BtnAdobePhotoshop scrollFX={"buttonFadeIn0"}></BtnAdobePhotoshop>
             <BtnAseprite scrollFX={"buttonFadeIn1"}></BtnAseprite>
             <BtnCSharp scrollFX={"buttonFadeIn2"}></BtnCSharp>
-            <BtnCSS scrollFX={"buttonFadeIn3"}></BtnCSS>
+            <BtnCSS3 scrollFX={"buttonFadeIn3"}></BtnCSS3>
             <BtnExpressJS scrollFX={"buttonFadeIn4"}></BtnExpressJS>
             <BtnFigma scrollFX={"buttonFadeIn5"}></BtnFigma>
             <BtnGit scrollFX={"buttonFadeIn5"}></BtnGit>
             <BtnGSAP scrollFX={"buttonFadeIn6"}></BtnGSAP>
-            <BtnHTML scrollFX={"buttonFadeIn7"}></BtnHTML>
+            <BtnHTML5 scrollFX={"buttonFadeIn7"}></BtnHTML5>
             <BtnInk scrollFX={"buttonFadeIn8"}></BtnInk>
             <BtnJavaScript scrollFX={"buttonFadeIn9"}></BtnJavaScript>
             <BtnMongoDB scrollFX={"buttonFadeIn10"}></BtnMongoDB>
             <BtnMySQL scrollFX={"buttonFadeIn11"}></BtnMySQL>
             <BtnNodeJS scrollFX={"buttonFadeIn12"}></BtnNodeJS>
+            <BtnPostgresSQL scrollFX={"buttonFadeIn12"}></BtnPostgresSQL>
             <BtnReactJS scrollFX={"buttonFadeIn13"}></BtnReactJS>
+            <BtnSass scrollFX={"buttonFadeIn14"}></BtnSass>
             <BtnTailwindCSS scrollFX={"buttonFadeIn14"}></BtnTailwindCSS>
             <BtnUnity scrollFX={"buttonFadeIn15"}></BtnUnity>
             <BtnVisualBasic scrollFX={"buttonFadeIn16"}></BtnVisualBasic>
           </div>
-          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
         </div>
+        <BorderLine
+          className={"pt-8 sm:pt-12"}
+          scrollFX={"borderFadeInCenter0"}
+        ></BorderLine>
       </Section>
     </>
   );

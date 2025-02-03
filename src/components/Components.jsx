@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
   SiAseprite,
-  SiTailwindcss,
   SiAdobephotoshop,
   SiCss3,
   SiExpress,
@@ -13,9 +12,13 @@ import {
   SiHtml5,
   SiMysql,
   SiNodedotjs,
+  SiPostgresql,
   SiReact,
+  SiSass,
+  SiTailwindcss,
   SiUnity,
 } from "react-icons/si";
+import { FaGithub } from "react-icons/fa6";
 import { TbBrandCSharp } from "react-icons/tb";
 import { RiInkBottleFill } from "react-icons/ri";
 import { DiVisualstudio } from "react-icons/di";
@@ -28,10 +31,6 @@ function CheckScrollFX(scrollFX, defaultScrollFX) {
 
 function CheckColor(color, defaultColor) {
   return color === undefined ? defaultColor : color;
-}
-
-function GetImageClass() {
-  return "border-4 border-fgClr hover:border-[8px] hover:border-mainClr";
 }
 
 function GetHoverClass() {
@@ -72,72 +71,100 @@ export const Grid3ColsContainer = ({ className, children }) => {
 /********************************************Texts*******************************************/
 //Really Large Text
 export const Heading1 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <h1 className={`${className || ""} ${scrollFX}`}>{children}</h1>
+      <h1
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )}`}
+      >
+        {children}
+      </h1>
     </>
   );
 };
 
 //Section Header Title
 export const Heading2 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <h2 className={`${className || ""} ${scrollFX}`}>{children}</h2>
+      <h2
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )}`}
+      >
+        {children}
+      </h2>
     </>
   );
 };
 
 //Section Header Subtitle
 export const Heading3 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <h3 className={`${className || ""} ${scrollFX}`}>{children}</h3>
+      <h3
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )}`}
+      >
+        {children}
+      </h3>
     </>
   );
 };
 
 //Larger than Paragraph
 export const Heading4 = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <h4 className={`${className || ""} ${scrollFX}`}>{children}</h4>
+      <h4
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )}`}
+      >
+        {children}
+      </h4>
     </>
   );
 };
 
 //Long Text
 export const Paragraph = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <p className={`${className || ""} ${scrollFX}`}>{children}</p>
+      <p
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )}`}
+      >
+        {children}
+      </p>
     </>
   );
 };
 
 //Smaller than Paragraph
 export const Span = ({ className, scrollFX, children }) => {
-  scrollFX = CheckScrollFX(scrollFX, "charsFadeIn");
-
   return (
     <>
-      <span className={`${className || ""} ${scrollFX} block`}>{children}</span>
+      <span
+        className={`${className || ""} 
+        ${CheckScrollFX(scrollFX, "wordsFadeIn")} block`}
+      >
+        {children}
+      </span>
     </>
   );
 };
 
 /********************************************Visuals*******************************************/
-export const BorderLine = ({ className, scrollFX }) => {
+export const BorderLine = ({ className, scrollFX, border }) => {
   return (
     <>
       <div
@@ -146,8 +173,9 @@ export const BorderLine = ({ className, scrollFX }) => {
         } size-full flex justify-center items-center`}
       >
         <div
-          className={`${scrollFX} w-full h-auto border-2 border-fgClr
-          hover:border-mainClr ${GetHoverClass()} `}
+          className={`${scrollFX} w-full h-auto ${
+            border || "border-2"
+          } border-fgClr hover:border-mainClr ${GetHoverClass()} `}
         ></div>
       </div>
     </>
@@ -168,7 +196,7 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-full ${GetImageClass()} ${GetHoverClass()}`}
+            className={`rounded-full ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -185,11 +213,12 @@ export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
           href={href || null}
           target="_blank"
           rel="noreferrer"
+          loading="lazy"
         >
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-full ${GetImageClass()} ${GetHoverClass()}`}
+            className={`rounded-full ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -206,11 +235,12 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
           href={href || null}
           target="_blank"
           rel="noreferrer"
+          loading="lazy"
         >
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-3xl ${GetImageClass()} ${GetHoverClass()}`}
+            className={`rounded-3xl ${GetHoverClass()}`}
           />
         </a>
       </div>
@@ -219,7 +249,7 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
 };
 
 /********************************************Buttons*******************************************/
-export const NavBtn = ({
+export const NavButton = ({
   className,
   onClick,
   scrollFX,
@@ -234,8 +264,7 @@ export const NavBtn = ({
         <a
           className={`${
             scrollFX || ""
-          } block rounded-full border-2 border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()}
-            size-8 sm:size-10 lg:size-12`}
+          } block border-2 rounded-full border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()} size-8 sm:size-10 lg:size-12`}
           href={href}
           target={target}
           rel="noreferrer"
@@ -248,36 +277,12 @@ export const NavBtn = ({
   );
 };
 
-export const SmIconBtn = ({
+export const IconButton = ({
   className,
   onClick,
   scrollFX,
   href,
-  download,
-  icon,
-}) => {
-  return (
-    <>
-      <button className={`${className || ""}`} onClick={onClick || null}>
-        <a
-          className={`${scrollFX} ${GetHoverClass()} block size-8 sm:size-10 lg:size-12`}
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          download={download || null}
-        >
-          {icon}
-        </a>
-      </button>
-    </>
-  );
-};
-
-export const LgIconBtn = ({
-  className,
-  onClick,
-  scrollFX,
-  href,
+  target,
   download,
   icon,
 }) => {
@@ -287,7 +292,7 @@ export const LgIconBtn = ({
         <a
           className={`${scrollFX} ${GetHoverClass()} block size-12 sm:size-16 lg:size-20`}
           href={href}
-          target="_blank"
+          target={target || "_blank"}
           rel="noreferrer"
           download={download || null}
         >
@@ -304,6 +309,7 @@ export const Button = ({
   scrollFX,
   color,
   href,
+  target,
   download,
   icon,
   children,
@@ -315,12 +321,11 @@ export const Button = ({
 
   return (
     <>
-      <button className={`${className || ""} w-fit`} onClick={onClick || null}>
+      <button className={`${className || ""}`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${color} border-2 rounded-3xl bg-bgClr px-4 py-2 flex justify-center items-center gap-2 
-          group ${GetHoverClass()}`}
+          className={`${scrollFX} ${color} border-2 rounded-3xl px-4 py-2 bg-bgClr w-fit flex justify-center items-center gap-2 group ${GetHoverClass()}`}
           href={href || null}
-          target={"_blank"}
+          target={target || "_blank"}
           rel="noreferrer"
           download={download || null}
         >
@@ -332,8 +337,7 @@ export const Button = ({
           </Span>
           {icon !== undefined ? (
             <div
-              className={`group-hover:text-bgClr ${GetGroupHoverClass()}
-              size-6`}
+              className={`group-hover:text-bgClr ${GetGroupHoverClass()} size-6 sm:size-7 lg:size-8`}
             >
               {icon}
             </div>
@@ -342,6 +346,22 @@ export const Button = ({
           )}
         </a>
       </button>
+    </>
+  );
+};
+
+/********************************************Tool Buttons*******************************************/
+export const BtnGithub = ({ className, scrollFX }) => {
+  return (
+    <>
+      <Button
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        href={"#"}
+        icon={<FaGithub />}
+      >
+        Source
+      </Button>
     </>
   );
 };
@@ -394,7 +414,7 @@ export const BtnCSharp = ({ className, scrollFX }) => {
   );
 };
 
-export const BtnCSS = ({ className, scrollFX }) => {
+export const BtnCSS3 = ({ className, scrollFX }) => {
   return (
     <>
       <Button
@@ -404,7 +424,7 @@ export const BtnCSS = ({ className, scrollFX }) => {
         href={"#"}
         icon={<SiCss3 />}
       >
-        CSS
+        CSS3
       </Button>
     </>
   );
@@ -474,7 +494,7 @@ export const BtnGSAP = ({ className, scrollFX }) => {
   );
 };
 
-export const BtnHTML = ({ className, scrollFX }) => {
+export const BtnHTML5 = ({ className, scrollFX }) => {
   return (
     <>
       <Button
@@ -484,7 +504,7 @@ export const BtnHTML = ({ className, scrollFX }) => {
         href={"#"}
         icon={<SiHtml5 />}
       >
-        HTML
+        HTML5
       </Button>
     </>
   );
@@ -498,7 +518,7 @@ export const BtnInk = ({ className, scrollFX }) => {
         scrollFX={`${scrollFX || ""}`}
         color={"border-fgClr hover:bg-fgClr"}
         href={"#"}
-        icon={<RiInkBottleFill/>}
+        icon={<RiInkBottleFill />}
       >
         Ink
       </Button>
@@ -570,6 +590,22 @@ export const BtnNodeJS = ({ className, scrollFX }) => {
   );
 };
 
+export const BtnPostgresSQL = ({ className, scrollFX }) => {
+  return (
+    <>
+      <Button
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        color={"border-[#2f6792] hover:bg-[#2f6792]"}
+        href={"#"}
+        icon={<SiPostgresql />}
+      >
+        PostgresSQL
+      </Button>
+    </>
+  );
+};
+
 export const BtnReactJS = ({ className, scrollFX }) => {
   return (
     <>
@@ -581,6 +617,22 @@ export const BtnReactJS = ({ className, scrollFX }) => {
         icon={<SiReact />}
       >
         ReactJS
+      </Button>
+    </>
+  );
+};
+
+export const BtnSass = ({ className, scrollFX }) => {
+  return (
+    <>
+      <Button
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        color={"border-[#d483a9] hover:bg-[#d483a9]"}
+        href={"#"}
+        icon={<SiSass />}
+      >
+        Sass
       </Button>
     </>
   );

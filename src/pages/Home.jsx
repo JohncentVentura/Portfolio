@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import {
   FaSquareFacebook,
   FaSquareGithub,
@@ -20,12 +19,11 @@ import {
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavBtn,
-  SmIconBtn,
-  LgIconBtn,
+  NavButton,
+  IconButton,
   Button,
 } from "../components/Components";
-import { ExternalPaths, ImagePaths } from "../components/Utilities";
+import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const Home = () => {
   return (
@@ -34,12 +32,15 @@ const Home = () => {
         <AvatarImage
           scrollFX={"imageFadeIn0"}
           href={"#"}
-          imgSrc={ImagePaths.avatar}
+          imgSrc={ImgPaths.avatarHome}
         ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <Heading4 scrollFX={"wordsFadeIn"}>Hi! My name is</Heading4>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Heading4>Hi! My</Heading4>
+            <Heading4>name is</Heading4>
+          </div>
           <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
         </Grid3ColsContainer>
 
@@ -48,32 +49,32 @@ const Home = () => {
           <Heading1>Ventura</Heading1>
         </div>
 
-        <Heading4 className={"pt-4 w-[75%] text-center"} scrollFX={"wordsFadeIn"}>
+        <Heading4 className={"pt-4 w-[75%] text-center"}>
           Just another fool chasing the dream of Web Development, Game
           Development, & Graphic Design
         </Heading4>
 
-        <div className={"pt-8 flex justify-center gap-2 sm:gap-4"}>
-          <LgIconBtn
+        <div className="pt-8 flex justify-center gap-2 sm:gap-4">
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<FaSquareFacebook />}
-          ></LgIconBtn>
-          <LgIconBtn
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<FaSquareGithub />}
-          ></LgIconBtn>
-          <LgIconBtn
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<FaSquarePinterest />}
-          ></LgIconBtn>
-          <LgIconBtn
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
             icon={<FaLinkedin />}
-          ></LgIconBtn>
+          ></IconButton>
         </div>
       </Section>
     </>

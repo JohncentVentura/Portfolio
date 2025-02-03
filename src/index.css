@@ -34,7 +34,7 @@
   header,
   main,
   footer {
-    @apply relative w-full px-[10%] sm:px-[15%] lg:px-[20%];
+    @apply relative w-full px-[10%] lg:px-[20%];
   }
 
   section,
@@ -65,7 +65,7 @@
   }
 
   span {
-    @apply relative font-light text-sm sm:text-base lg:text-lg ;
+    @apply relative font-light text-sm sm:text-base lg:text-lg;
   }
 
   a,
@@ -74,8 +74,11 @@
     @apply relative font-mainFont text-fgClr hover:text-mainClr;
   }
 
-  img,
   svg {
-    @apply relative block size-full object-fill;
+    @apply relative block size-full;
+  }
+
+  img {
+    @apply relative block size-full object-fill border-4 border-fgClr hover:border-[8px] hover:border-mainClr;
   }
 }

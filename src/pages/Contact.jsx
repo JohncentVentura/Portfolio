@@ -1,4 +1,11 @@
 /* eslint-disable no-unused-vars */
+import { BiLogoGmail } from "react-icons/bi";
+import {
+  FaFacebookMessenger,
+  FaDiscord,
+  FaTelegram,
+  FaLinkedin,
+} from "react-icons/fa6";
 
 import {
   Section,
@@ -13,13 +20,11 @@ import {
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavBtn,
-  SmIconBtn,
-  LgIconBtn,
+  NavButton,
+  IconButton,
   Button,
 } from "../components/Components";
-import { ImagePaths } from "../components/Utilities";
-import { SiMessenger, SiDiscord, SiGmail, SiLinkedin } from "react-icons/si";
+import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const Contact = () => {
   return (
@@ -28,44 +33,52 @@ const Contact = () => {
         <AvatarImage
           scrollFX={"imageFadeIn2"}
           href={"#"}
-          imgSrc={ImagePaths.avatar}
+          imgSrc={ImgPaths.avatarHome}
         ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <Heading2 scrollFX={"wordsFadeIn"}>Contact Me</Heading2>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Heading2>Contact</Heading2>
+            <Heading2>Me</Heading2>
+          </div>
           <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
         </Grid3ColsContainer>
 
         <Heading4
-          className={"pt-4 w-[75%] text-center"}
+          className={"pt-8 sm:pt-12 w-[75%] text-center"}
           scrollFX={"wordsFadeIn"}
         >
           Send me a message if you have opportunities for collaboration or want
           to build something amazing.
         </Heading4>
 
-        <div className={"pt-8 flex justify-center gap-2 sm:gap-4"}>
-          <LgIconBtn
+        <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-2 sm:gap-4">
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
-            icon={<SiMessenger />}
-          ></LgIconBtn>
-          <LgIconBtn
+            icon={<FaFacebookMessenger />}
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
-            icon={<SiDiscord />}
-          ></LgIconBtn>
-          <LgIconBtn
+            icon={<FaDiscord />}
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
-            icon={<SiGmail />}
-          ></LgIconBtn>
-          <LgIconBtn
+            icon={<BiLogoGmail />}
+          ></IconButton>
+          <IconButton
             scrollFX={"iconFadeIn0"}
             href={"#"}
-            icon={<SiLinkedin />}
-          ></LgIconBtn>
+            icon={<FaLinkedin />}
+          ></IconButton>
+          <IconButton
+            scrollFX={"iconFadeIn0"}
+            href={"#"}
+            icon={<FaTelegram />}
+          ></IconButton>
         </div>
       </Section>
     </>

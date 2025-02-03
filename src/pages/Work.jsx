@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import { FaGithub, FaExternalLinkAlt, FaPinterest } from "react-icons/fa";
-
+/* eslint-disable react/no-unescaped-entities */
 import {
   Section,
   Grid3ColsContainer,
@@ -15,30 +13,31 @@ import {
   AvatarImage,
   LogoImage,
   ProjectImage,
-  NavBtn,
-  SmIconBtn,
-  LgIconBtn,
+  NavButton,
+  IconButton,
   Button,
   BtnAdobePhotoshop,
   BtnAseprite,
   BtnCSharp,
-  BtnCSS,
+  BtnCSS3,
   BtnExpressJS,
   BtnFigma,
   BtnGit,
   BtnGSAP,
-  BtnHTML,
+  BtnHTML5,
   BtnInk,
   BtnJavaScript,
   BtnMongoDB,
   BtnMySQL,
   BtnNodeJS,
+  BtnPostgresSQL,
   BtnReactJS,
+  BtnSass,
   BtnTailwindCSS,
   BtnUnity,
   BtnVisualBasic,
 } from "../components/Components";
-import { ImagePaths } from "../components/Utilities";
+import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const Work = () => {
   return (
@@ -47,29 +46,32 @@ const Work = () => {
         <AvatarImage
           scrollFX={"imageFadeIn2"}
           href={"#"}
-          imgSrc={ImagePaths.avatar}
+          imgSrc={ImgPaths.avatarHome}
         ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <Heading2 scrollFX={"wordsFadeIn"}>My Works</Heading2>
+          <Heading2>My Works</Heading2>
           <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
         </Grid3ColsContainer>
 
-        <div>
-          <Heading3 className={"pt-8"}>Featured Projects</Heading3>
-          <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+        <div className="pt-8 sm:pt-12">
+          <Heading3 scrollFX={"charsFadeIn"}>Featured Projects</Heading3>
+          <BorderLine
+            scrollFX={"borderFadeInCenter0"}
+            border={"border"}
+          ></BorderLine>
         </div>
-        <ul className={"pt-8 flex flex-col gap-16"}>
-          <li className={"flex flex-col gap-8"}>
-            <div className="flex flex-col xl:flex-row gap-8 ">
+        <ul className="pt-8 sm:pt-24 flex flex-col gap-8 sm:gap-12">
+          <li className="flex flex-col">
+            <div className="flex flex-col xl:flex-row gap-8">
               <ProjectImage
                 className={"self-center"}
                 scrollFX={"imageFadeIn2"}
                 href={"#"}
-                imgSrc={ImagePaths.pulpRPG}
+                imgSrc={ImgPaths.pulpRPG}
               ></ProjectImage>
-              <div className={"flex flex-col items-center gap-4"}>
+              <div className="flex flex-col items-center gap-4">
                 <Heading4>Jourdan's Snack Corner</Heading4>
                 <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
@@ -83,22 +85,31 @@ const Work = () => {
                 </Paragraph>
               </div>
             </div>
-            <div className={"flex flex-wrap justify-center gap-4"}>
-              <BtnAdobePhotoshop />
-              <BtnAseprite />
-              <BtnCSS />
+            <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-4">
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
             </div>
-            <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            <BorderLine
+              className={"pt-8 sm:pt-12"}
+              scrollFX={"borderFadeInRight19"}
+            ></BorderLine>
           </li>
-          <li className={"flex flex-col gap-8"}>
-            <div className="flex flex-col xl:flex-row gap-8 ">
+          <li className="flex flex-col">
+            <div className="flex flex-col xl:flex-row-reverse gap-8">
               <ProjectImage
                 className={"self-center"}
                 scrollFX={"imageFadeIn2"}
                 href={"#"}
-                imgSrc={ImagePaths.pulpRPG}
+                imgSrc={ImgPaths.pulpRPG}
               ></ProjectImage>
-              <div className={"flex flex-col items-center gap-4"}>
+              <div className="flex flex-col items-center gap-4">
                 <Heading4>Jourdan's Snack Corner</Heading4>
                 <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
@@ -112,19 +123,31 @@ const Work = () => {
                 </Paragraph>
               </div>
             </div>
-            <div className={"flex flex-wrap justify-center gap-4"}>
-              <BtnAdobePhotoshop />
-              <BtnAseprite />
-              <BtnCSS />
+            <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-4">
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
+              <BtnAdobePhotoshop scrollFX={"buttonFadeIn1"} />
+              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnCSS3 scrollFX={"buttonFadeIn1"} />
             </div>
-            <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
+            <BorderLine
+              className={"pt-8 sm:pt-12"}
+              scrollFX={"borderFadeInRight19"}
+            ></BorderLine>
           </li>
         </ul>
 
-        <div className={"pt-8 flex flex-col items-center gap-8"}>
+        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8 sm:gap-12">
           <div>
-            <Heading3 className={"pt-8"}>Other Projects</Heading3>
-            <BorderLine scrollFX={"borderFadeInCenter0"}></BorderLine>
+            <Heading3 scrollFX={"charsFadeIn"}>Other Projects</Heading3>
+            <BorderLine
+              scrollFX={"borderFadeInCenter0"}
+              border={"border"}
+            ></BorderLine>
           </div>
           <Paragraph>
             I'm a graduate from the University of Luzon, Dagupan City with a
@@ -133,7 +156,50 @@ const Work = () => {
             will eventually led me into game development that helps me chose
             this course.
           </Paragraph>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <li className="flex md:flex-col justify-center items-center gap-2 sm:gap-4 text-start">
+              <LogoImage
+                scrollFX={"imageFadeIn3"}
+                href={"#"}
+                imgSrc={ImgPaths.avatarHome}
+              ></LogoImage>
+              <div>
+                <Heading4>Random Quote Machine</Heading4>
+                <Span>
+                  An interactive web application that dynamically fetches and
+                  displays a variety of quotes with each click.
+                </Span>
+              </div>
+            </li>
+            <li className="flex flex-row-reverse md:flex-col justify-center items-center gap-2 sm:gap-4 text-end md:text-start">
+              <LogoImage
+                scrollFX={"imageFadeIn3"}
+                href={"#"}
+                imgSrc={ImgPaths.avatarHome}
+              ></LogoImage>
+              <div>
+                <Heading4>Calculator</Heading4>
+                <Span>
+                  An interactive web application that dynamically fetches and
+                  displays a variety of quotes with each click.
+                </Span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <BorderLine
+          className={"pt-8 sm:pt-12"}
+          scrollFX={"borderFadeInRight19"}
+        ></BorderLine>
+      </Section>
+    </>
+  );
+};
+
+export default Work;
+
+/*
+<ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             <li className="flex flex-col justify-center items-center gap-4">
               <Heading4>To-Do App</Heading4>
               <Paragraph>
@@ -160,8 +226,8 @@ const Work = () => {
               <Paragraph>
                 A simple to-do app built using React.js and Tailwind CSS. It
                 allows users to add tasks, mark them as completed, and delete
-                them.A simple to-do app built using React.js and Tailwind CSS. It
-                allows users to add tasks, mark them as completed, and delete
+                them.A simple to-do app built using React.js and Tailwind CSS.
+                It allows users to add tasks, mark them as completed, and delete
                 them.
               </Paragraph>
               <div className="flex gap-4">
@@ -221,10 +287,4 @@ const Work = () => {
               <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
             </li>
           </ul>
-        </div>
-      </Section>
-    </>
-  );
-};
-
-export default Work;
+*/
