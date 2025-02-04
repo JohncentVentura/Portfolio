@@ -9,6 +9,8 @@ import {
 import {
   Section,
   Grid3ColsContainer,
+  ListItemImgLeft,
+  ListItemImgRight,
   Heading1,
   Heading2,
   Heading3,
@@ -17,13 +19,13 @@ import {
   Span,
   BorderLine,
   AvatarImage,
-  LogoImage,
   ProjectImage,
-  NavButton,
+  ImgIconButton,
+  NavIconButton,
   IconButton,
   Button,
 } from "../components/Components";
-import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
+import { AccPaths, EduPaths, ExpPaths, ImgPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const Home = () => {
   return (
@@ -37,7 +39,7 @@ const Home = () => {
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
             <Heading4>Hi! My</Heading4>
             <Heading4>name is</Heading4>
           </div>
@@ -57,23 +59,23 @@ const Home = () => {
         <div className="pt-8 flex justify-center gap-2 sm:gap-4">
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.facebook}
             icon={<FaSquareFacebook />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.linkedIn}
+            icon={<FaLinkedin />}
+          ></IconButton>
+          <IconButton
+            scrollFX={"iconFadeIn0"}
+            href={AccPaths.gitHub}
             icon={<FaSquareGithub />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.pinterest}
             icon={<FaSquarePinterest />}
-          ></IconButton>
-          <IconButton
-            scrollFX={"iconFadeIn0"}
-            href={"#"}
-            icon={<FaLinkedin />}
           ></IconButton>
         </div>
       </Section>

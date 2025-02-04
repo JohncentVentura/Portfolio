@@ -56,7 +56,7 @@ export const scrollFX = {
     this.createTimeline({
       trigger: elem,
       start: `top ${this.pinnedScrollerPosition}`,
-      end: `bottom-=50% ${this.pinnedScrollerPosition}`,
+      end: `bottom-=65% ${this.pinnedScrollerPosition}`,
       pin: true,
       pinSpacing: false,
       /*

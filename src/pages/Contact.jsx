@@ -10,6 +10,8 @@ import {
 import {
   Section,
   Grid3ColsContainer,
+  ListItemImgLeft,
+  ListItemImgRight,
   Heading1,
   Heading2,
   Heading3,
@@ -18,13 +20,13 @@ import {
   Span,
   BorderLine,
   AvatarImage,
-  LogoImage,
   ProjectImage,
-  NavButton,
+  ImgIconButton,
+  NavIconButton,
   IconButton,
   Button,
 } from "../components/Components";
-import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
+import { AccPaths, EduPaths, ExpPaths, ImgPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
 
 const Contact = () => {
   return (
@@ -33,7 +35,7 @@ const Contact = () => {
         <AvatarImage
           scrollFX={"imageFadeIn2"}
           href={"#"}
-          imgSrc={ImgPaths.avatarHome}
+          imgSrc={ImgPaths.avatarContact}
         ></AvatarImage>
 
         <Grid3ColsContainer>
@@ -56,27 +58,27 @@ const Contact = () => {
         <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-2 sm:gap-4">
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.facebook}
             icon={<FaFacebookMessenger />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.discord}
             icon={<FaDiscord />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.gmail}
             icon={<BiLogoGmail />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.linkedIn}
             icon={<FaLinkedin />}
           ></IconButton>
           <IconButton
             scrollFX={"iconFadeIn0"}
-            href={"#"}
+            href={AccPaths.telegram}
             icon={<FaTelegram />}
           ></IconButton>
         </div>

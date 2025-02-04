@@ -79,6 +79,6 @@
   }
 
   img {
-    @apply relative block size-full object-fill border-4 border-fgClr hover:border-[8px] hover:border-mainClr;
+    @apply relative block size-full object-fill border-[6px] border-fgClr hover:border-mainClr;
   }
 }

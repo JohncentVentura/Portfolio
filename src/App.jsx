@@ -9,6 +9,8 @@ import { TbFileCv } from "react-icons/tb";
 import {
   Section,
   Grid3ColsContainer,
+  ListItemImgLeft,
+  ListItemImgRight,
   Heading1,
   Heading2,
   Heading3,
@@ -17,15 +19,15 @@ import {
   Span,
   BorderLine,
   AvatarImage,
-  LogoImage,
   ProjectImage,
-  NavButton,
+  ImgIconButton,
+  NavIconButton,
   IconButton,
   Button,
 } from "./components/Components";
 import ParticlesComponent from "./components/Particles";
 import { scrollFX } from "./components/ScrollFX";
-import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "./components/Utilities";
+import { AccPaths, EduPaths, ExpPaths, ImgPaths, ToolsPaths, ProjPaths } from "./components/Utilities";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
@@ -164,11 +166,11 @@ const Header = ({ ...props }) => {
     <>
       <header className={`${props.className || ""} fixed top-10 left-0 z-10`}>
         <nav className="flex justify-between items-center">
-          <NavButton icon={<TbFileCv />} href={AccPaths.resume} target={"_blank"} />
+          <NavIconButton icon={<TbFileCv />} href={AccPaths.resume} target={"_blank"} />
           {props.clrTheme === "light-theme" ? (
-            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
+            <NavIconButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
           ) : (
-            <NavButton onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
+            <NavIconButton onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
           )}
         </nav>
       </header>

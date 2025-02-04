@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
   SiAseprite,
@@ -7,23 +8,30 @@ import {
   SiFigma,
   SiGreensock,
   SiGit,
+  SiGithub,
   SiJavascript,
   SiMongodb,
   SiHtml5,
   SiMysql,
   SiNodedotjs,
+  SiPinterest,
   SiPostgresql,
   SiReact,
   SiSass,
   SiTailwindcss,
   SiUnity,
 } from "react-icons/si";
-import { FaGithub } from "react-icons/fa6";
 import { TbBrandCSharp } from "react-icons/tb";
 import { RiInkBottleFill } from "react-icons/ri";
 import { DiVisualstudio } from "react-icons/di";
-
-//import { ExternalPaths } from "./Utilities";
+import {
+  AccPaths,
+  EduPaths,
+  ExpPaths,
+  ImgPaths,
+  ToolsPaths,
+  ProjPaths,
+} from "./Utilities";
 
 function CheckScrollFX(scrollFX, defaultScrollFX) {
   return scrollFX === undefined ? defaultScrollFX : scrollFX;
@@ -33,11 +41,11 @@ function CheckColor(color, defaultColor) {
   return color === undefined ? defaultColor : color;
 }
 
-function GetHoverClass() {
+function GetHoverTransition() {
   return "hover:transition-all hover:duration-[0.5s] hover:ease-in-out";
 }
 
-function GetGroupHoverClass() {
+function GetGroupHoverTransition() {
   return "group-hover:transition-all group-hover:duration-[0.5s] group-hover:ease-in-out";
 }
 
@@ -64,6 +72,26 @@ export const Grid3ColsContainer = ({ className, children }) => {
       >
         {children}
       </div>
+    </>
+  );
+};
+
+export const ListItemImgLeft = ({ children }) => {
+  return (
+    <>
+      <li className="flex flex-row sm:flex-col items-center gap-2 sm:gap-4 text-start sm:text-center">
+        {children}
+      </li>
+    </>
+  );
+};
+
+export const ListItemImgRight = ({ children }) => {
+  return (
+    <>
+      <li className="flex flex-row-reverse sm:flex-col items-center gap-2 sm:gap-4 text-end sm:text-center">
+        {children}
+      </li>
     </>
   );
 };
@@ -154,8 +182,10 @@ export const Span = ({ className, scrollFX, children }) => {
   return (
     <>
       <span
-        className={`${className || ""} 
-        ${CheckScrollFX(scrollFX, "wordsFadeIn")} block`}
+        className={`${className || ""} ${CheckScrollFX(
+          scrollFX,
+          "wordsFadeIn"
+        )} block`}
       >
         {children}
       </span>
@@ -175,7 +205,7 @@ export const BorderLine = ({ className, scrollFX, border }) => {
         <div
           className={`${scrollFX} w-full h-auto ${
             border || "border-2"
-          } border-fgClr hover:border-mainClr ${GetHoverClass()} `}
+          } border-fgClr hover:border-mainClr ${GetHoverTransition()} `}
         ></div>
       </div>
     </>
@@ -196,29 +226,7 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-full ${GetHoverClass()}`}
-          />
-        </a>
-      </div>
-    </>
-  );
-};
-
-export const LogoImage = ({ className, scrollFX, href, imgSrc }) => {
-  return (
-    <>
-      <div className={`${className || ""} `}>
-        <a
-          className={`${scrollFX} block size-20 sm:size-24 lg:size-28`}
-          href={href || null}
-          target="_blank"
-          rel="noreferrer"
-          loading="lazy"
-        >
-          <img
-            src={imgSrc}
-            alt={imgSrc}
-            className={`rounded-full ${GetHoverClass()}`}
+            className={`rounded-full ${GetHoverTransition()}`}
           />
         </a>
       </div>
@@ -231,7 +239,7 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
     <>
       <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block size-full w-64 h-48 sm:w-80 sm:h-56 lg:w-[24rem] lg:h-[16rem]`}
+          className={`${scrollFX} block w-64 h-48 sm:w-80 sm:h-56 lg:w-[24rem] lg:h-[16rem]`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
@@ -240,7 +248,7 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
           <img
             src={imgSrc}
             alt={imgSrc}
-            className={`rounded-3xl ${GetHoverClass()}`}
+            className={`rounded-3xl ${GetHoverTransition()}`}
           />
         </a>
       </div>
@@ -249,7 +257,51 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
 };
 
 /********************************************Buttons*******************************************/
-export const NavButton = ({
+export const ImgIconButton = ({
+  className,
+  onClick,
+  scrollFX,
+  href,
+  target,
+  download,
+  imgSrc,
+  icon,
+}) => {
+  return (
+    <>
+      <button className={`${className || ""} `} onClick={onClick || null}>
+        <a
+          className={`${
+            scrollFX || ""
+          } block size-20 sm:size-24 lg:size-28 rounded-full border-2 border-fgClr bg-fgClr text-bgClr group hover:border-mainClr hover:bg-mainClr ${GetHoverTransition()}
+          `}
+          href={href}
+          target={target || "_blank"}
+          rel="noreferrer"
+          download={download || null}
+        >
+          {icon !== undefined ? (
+            <div
+              className={`p-[15%] group-hover:text-fgClr ${GetGroupHoverTransition()}`}
+            >
+              {icon}
+            </div>
+          ) : (
+            <>
+              <img
+                src={imgSrc}
+                alt={imgSrc}
+                className={`border-2 rounded-full ${GetGroupHoverTransition()}`}
+              />
+            </>
+          )}
+        </a>
+      </button>
+    </>
+  );
+};
+
+export const NavIconButton = ({
   className,
   onClick,
   scrollFX,
@@ -264,7 +316,7 @@ export const NavButton = ({
         <a
           className={`${
             scrollFX || ""
-          } block border-2 rounded-full border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-bgClr ${GetHoverClass()} size-8 sm:size-10 lg:size-12`}
+          } block size-8 sm:size-10 lg:size-12 rounded-full border-2 border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-fgClr ${GetHoverTransition()}`}
           href={href}
           target={target}
           rel="noreferrer"
@@ -290,7 +342,7 @@ export const IconButton = ({
     <>
       <button className={`${className || ""}`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${GetHoverClass()} block size-12 sm:size-16 lg:size-20`}
+          className={`${scrollFX} ${GetHoverTransition()} block size-12 sm:size-16 lg:size-20`}
           href={href}
           target={target || "_blank"}
           rel="noreferrer"
@@ -323,21 +375,21 @@ export const Button = ({
     <>
       <button className={`${className || ""}`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${color} border-2 rounded-3xl px-4 py-2 bg-bgClr w-fit flex justify-center items-center gap-2 group ${GetHoverClass()}`}
+          className={`${scrollFX} ${color} border-2 rounded-3xl px-4 py-2 bg-bgClr w-fit flex justify-center items-center gap-2 group ${GetHoverTransition()}`}
           href={href || null}
           target={target || "_blank"}
           rel="noreferrer"
           download={download || null}
         >
           <Span
-            className={`group-hover:text-bgClr ${GetGroupHoverClass()}`}
+            className={`group-hover:text-bgClr ${GetGroupHoverTransition()}`}
             scrollFX={""}
           >
             {children}
           </Span>
           {icon !== undefined ? (
             <div
-              className={`group-hover:text-bgClr ${GetGroupHoverClass()} size-6 sm:size-7 lg:size-8`}
+              className={`text-fgClr group-hover:text-bgClr ${GetGroupHoverTransition()} size-6 sm:size-7 lg:size-8`}
             >
               {icon}
             </div>
@@ -351,21 +403,6 @@ export const Button = ({
 };
 
 /********************************************Tool Buttons*******************************************/
-export const BtnGithub = ({ className, scrollFX }) => {
-  return (
-    <>
-      <Button
-        className={`${className || ""}`}
-        scrollFX={`${scrollFX || ""}`}
-        href={"#"}
-        icon={<FaGithub />}
-      >
-        Source
-      </Button>
-    </>
-  );
-};
-
 export const BtnAdobePhotoshop = ({ className, scrollFX }) => {
   return (
     <>
@@ -373,7 +410,7 @@ export const BtnAdobePhotoshop = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#31a8ff] hover:bg-[#31a8ff]"}
-        href={"#"}
+        href={ToolsPaths.adobePhotoshop}
         icon={<SiAdobephotoshop />}
       >
         Adobe Photoshop
@@ -389,7 +426,7 @@ export const BtnAseprite = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-fgClr hover:bg-fgClr"}
-        href={"#"}
+        href={ToolsPaths.aseprite}
         icon={<SiAseprite />}
       >
         Aseprite
@@ -404,8 +441,8 @@ export const BtnCSharp = ({ className, scrollFX }) => {
       <Button
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
-        color={"border-[#8065e0] hover:bg-[#8065e0]"}
-        href={"#"}
+        color={"border-[#a771e0] hover:bg-[#a771e0]"}
+        href={ToolsPaths.cSharp}
         icon={<TbBrandCSharp />}
       >
         C-Sharp
@@ -421,7 +458,7 @@ export const BtnCSS3 = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#1572b6] hover:bg-[#1572b6]"}
-        href={"#"}
+        href={ToolsPaths.css3}
         icon={<SiCss3 />}
       >
         CSS3
@@ -437,7 +474,7 @@ export const BtnExpressJS = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#545454] hover:bg-[#545454]"}
-        href={"#"}
+        href={ToolsPaths.expressJS}
         icon={<SiExpress />}
       >
         ExpressJS
@@ -453,7 +490,7 @@ export const BtnFigma = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#8850e8] hover:bg-[#8850e8]"}
-        href={"#"}
+        href={ToolsPaths.figma}
         icon={<SiFigma />}
       >
         Figma
@@ -469,10 +506,25 @@ export const BtnGit = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#f05033] hover:bg-[#f05033]"}
-        href={"#"}
+        href={ToolsPaths.git}
         icon={<SiGit />}
       >
         Git
+      </Button>
+    </>
+  );
+};
+
+export const BtnGitHub = ({ className, scrollFX, href }) => {
+  return (
+    <>
+      <Button
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        href={href}
+        icon={<SiGithub />}
+      >
+        Source
       </Button>
     </>
   );
@@ -485,7 +537,7 @@ export const BtnGSAP = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#8ac640] hover:bg-[#8ac640]"}
-        href={"#"}
+        href={ToolsPaths.gsap}
         icon={<SiGreensock />}
       >
         GSAP
@@ -501,7 +553,7 @@ export const BtnHTML5 = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#ef6429] hover:bg-[#ef6429]"}
-        href={"#"}
+        href={ToolsPaths.html5}
         icon={<SiHtml5 />}
       >
         HTML5
@@ -517,7 +569,7 @@ export const BtnInk = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-fgClr hover:bg-fgClr"}
-        href={"#"}
+        href={ToolsPaths.ink}
         icon={<RiInkBottleFill />}
       >
         Ink
@@ -533,7 +585,7 @@ export const BtnJavaScript = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#cfc146] hover:bg-[#cfc146]"}
-        href={"#"}
+        href={ToolsPaths.javaScript}
         icon={<SiJavascript />}
       >
         JavaScript
@@ -549,7 +601,7 @@ export const BtnMongoDB = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#4faa41] hover:bg-[#4faa41]"}
-        href={"#"}
+        href={ToolsPaths.mongoDB}
         icon={<SiMongodb />}
       >
         MongoDB
@@ -565,7 +617,7 @@ export const BtnMySQL = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#e68f00] hover:bg-[#e68f00]"}
-        href={"#"}
+        href={ToolsPaths.mySQL}
         icon={<SiMysql />}
       >
         MySQL
@@ -581,10 +633,25 @@ export const BtnNodeJS = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#8cc84b] hover:bg-[#8cc84b]"}
-        href={"#"}
+        href={ToolsPaths.nodeJS}
         icon={<SiNodedotjs />}
       >
         NodeJS
+      </Button>
+    </>
+  );
+};
+
+export const BtnPinterest = ({ className, scrollFX, href }) => {
+  return (
+    <>
+      <Button
+        className={`${className || ""}`}
+        scrollFX={`${scrollFX || ""}`}
+        href={href}
+        icon={<SiPinterest />}
+      >
+        Source
       </Button>
     </>
   );
@@ -597,7 +664,7 @@ export const BtnPostgresSQL = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#2f6792] hover:bg-[#2f6792]"}
-        href={"#"}
+        href={ToolsPaths.postgresSQL}
         icon={<SiPostgresql />}
       >
         PostgresSQL
@@ -613,7 +680,7 @@ export const BtnReactJS = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#07b6d5] hover:bg-[#07b6d5]"}
-        href={"#"}
+        href={ToolsPaths.reactJS}
         icon={<SiReact />}
       >
         ReactJS
@@ -629,7 +696,7 @@ export const BtnSass = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#d483a9] hover:bg-[#d483a9]"}
-        href={"#"}
+        href={ToolsPaths.sass}
         icon={<SiSass />}
       >
         Sass
@@ -645,7 +712,7 @@ export const BtnTailwindCSS = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#07b6d5] hover:bg-[#07b6d5]"}
-        href={"#"}
+        href={ToolsPaths.tailwindCSS}
         icon={<SiTailwindcss />}
       >
         Tailwind CSS
@@ -661,7 +728,7 @@ export const BtnUnity = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#808080] hover:bg-[#808080]"}
-        href={"#"}
+        href={ToolsPaths.unity}
         icon={<SiUnity />}
       >
         Unity
@@ -677,7 +744,7 @@ export const BtnVisualBasic = ({ className, scrollFX }) => {
         className={`${className || ""}`}
         scrollFX={`${scrollFX || ""}`}
         color={"border-[#136099] hover:bg-[#136099]"}
-        href={"#"}
+        href={ToolsPaths.visualBasic}
         icon={<DiVisualstudio />}
       >
         Visual Basic

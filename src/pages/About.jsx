@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import { FaFilePdf } from "react-icons/fa6";
-import { VscPreview } from "react-icons/vsc";
+/* eslint-disable react/prop-types */
+import { FaServer, FaDatabase } from "react-icons/fa";
+import { FaFilePdf, FaReact } from "react-icons/fa6";
+import { IoGlobeOutline, IoGameController } from "react-icons/io5";
+import { MdDevices } from "react-icons/md";
+import { SiJavascript } from "react-icons/si";
+import { VscPreview, VscChecklist } from "react-icons/vsc";
 
 import {
   Section,
   Grid3ColsContainer,
+  ListItemImgLeft,
+  ListItemImgRight,
   Heading1,
   Heading2,
   Heading3,
@@ -14,12 +21,11 @@ import {
   Span,
   BorderLine,
   AvatarImage,
-  LogoImage,
   ProjectImage,
-  NavButton,
+  ImgIconButton,
+  NavIconButton,
   IconButton,
   Button,
-  BtnGithub,
   BtnAdobePhotoshop,
   BtnAseprite,
   BtnCSharp,
@@ -27,6 +33,7 @@ import {
   BtnExpressJS,
   BtnFigma,
   BtnGit,
+  BtnGitHub,
   BtnGSAP,
   BtnHTML5,
   BtnInk,
@@ -34,6 +41,7 @@ import {
   BtnMongoDB,
   BtnMySQL,
   BtnNodeJS,
+  BtnPinterest,
   BtnPostgresSQL,
   BtnReactJS,
   BtnSass,
@@ -41,7 +49,14 @@ import {
   BtnUnity,
   BtnVisualBasic,
 } from "../components/Components";
-import { ImgPaths, AccPaths, EduPaths, ExpPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
+import {
+  AccPaths,
+  EduPaths,
+  ExpPaths,
+  ImgPaths,
+  ToolsPaths,
+  ProjPaths,
+} from "../components/Utilities";
 
 const About = () => {
   return (
@@ -51,7 +66,7 @@ const About = () => {
           className={""}
           scrollFX={"imageFadeIn2"}
           href={"#"}
-          imgSrc={ImgPaths.avatarHome}
+          imgSrc={ImgPaths.avatarAbout}
         ></AvatarImage>
 
         <Grid3ColsContainer>
@@ -60,7 +75,7 @@ const About = () => {
           <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
         </Grid3ColsContainer>
 
-        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
+        <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Background</Heading3>
             <BorderLine
@@ -82,11 +97,20 @@ const About = () => {
             share the same passion, and I hope I can continue creating and
             learning more things with you.
           </Paragraph>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button scrollFX={"buttonFadeIn0"} href={"#"} icon={<VscPreview />}>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Button
+              scrollFX={"buttonFadeIn0"}
+              href={AccPaths.resume}
+              icon={<VscPreview />}
+            >
               View Resume
             </Button>
-            <Button scrollFX={"buttonFadeIn0"} href={"#"} icon={<FaFilePdf />}>
+            <Button
+              scrollFX={"buttonFadeIn0"}
+              href={AccPaths.resume}
+              download={"Carlos Johncent Ventura Resume"}
+              icon={<FaFilePdf />}
+            >
               Download Resume
             </Button>
           </div>
@@ -96,7 +120,7 @@ const About = () => {
           scrollFX={"borderFadeInCenter0"}
         ></BorderLine>
 
-        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
+        <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Education</Heading3>
             <BorderLine
@@ -104,33 +128,105 @@ const About = () => {
               border={"border"}
             ></BorderLine>
           </div>
-          <ul className="flex flex-wrap justify-center gap-12">
-            <li className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
-              <LogoImage
+          <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
+            <ListItemImgLeft>
+              <ImgIconButton
                 scrollFX={"imageFadeIn3"}
-                href={"#"}
-                imgSrc={ImgPaths.avatarHome}
-              ></LogoImage>
+                href={EduPaths.qualityAssurance}
+                icon={<VscChecklist />}
+              ></ImgIconButton>
               <div>
-                <Span scrollFX={"charsFadeIn"}>2023</Span>
-                <Heading4>Bachelor of Science in</Heading4>
-                <Heading4>Information Technology</Heading4>
+                <Span>2024 / Developer Certificate</Span>
+                <Heading4>Quality Assurance</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgLeft>
+            <ListItemImgRight>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.backEndDevelopmentAndAPI}
+                icon={<FaServer />}
+              ></ImgIconButton>
+              <div>
+                <Span>2024 / Developer Certificate</Span>
+                <Heading4>Back End Development and API</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgRight>
+            <ListItemImgLeft>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.relationalDatabase}
+                icon={<FaDatabase />}
+              ></ImgIconButton>
+              <div>
+                <Span>2024 / Developer Certificate</Span>
+                <Heading4>Relational Database</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgLeft>
+            <ListItemImgRight>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.tesdaCSS}
+                imgSrc={ImgPaths.eduTesda}
+              ></ImgIconButton>
+              <div>
+                <Span>2024 / National Certificate II</Span>
+                <Heading4>TESDA Computer System Servicing</Heading4>
+                <Span>Pangasinan School of Excellence Incorporated</Span>
+              </div>
+            </ListItemImgRight>
+            <ListItemImgLeft>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.frontEndDevelopmentLibraries}
+                icon={<FaReact />}
+              ></ImgIconButton>
+              <div>
+                <Span>2024 / Developer Certificate</Span>
+                <Heading4>Front End Development Libraries</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgLeft>
+            <ListItemImgRight>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.javaScriptAlgorithmAndDataStructures}
+                icon={<SiJavascript />}
+              ></ImgIconButton>
+              <div>
+                <Span>2023 / Developer Certificate</Span>
+                <Heading4>JavaScript Algorithms and Data Structures</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgRight>
+            <ListItemImgLeft>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.responsiveWebDesign}
+                icon={<MdDevices />}
+              ></ImgIconButton>
+              <div>
+                <Span>2023 / Developer Certificate</Span>
+                <Heading4>Responsive Web Design</Heading4>
+                <Span>freeCodeCamp.org</Span>
+              </div>
+            </ListItemImgLeft>
+            <ListItemImgRight>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={EduPaths.college}
+                imgSrc={ImgPaths.eduCollege}
+              ></ImgIconButton>
+              <div>
+                <Span>2019-2023 / College Diploma</Span>
+                <Heading4>
+                  Bachelor of Science in Information Technology
+                </Heading4>
                 <Span>University of Luzon</Span>
               </div>
-            </li>
-            <li className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
-              <LogoImage
-                scrollFX={"imageFadeIn3"}
-                href={"#"}
-                imgSrc={ImgPaths.avatarHome}
-              ></LogoImage>
-              <div>
-                <Span scrollFX={"charsFadeIn"}>2023</Span>
-                <Heading4>Bachelor of Science in</Heading4>
-                <Heading4>Information Technology</Heading4>
-                <Span>University of Luzon</Span>
-              </div>
-            </li>
+            </ListItemImgRight>
           </ul>
         </div>
         <BorderLine
@@ -138,7 +234,7 @@ const About = () => {
           scrollFX={"borderFadeInCenter0"}
         ></BorderLine>
 
-        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
+        <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Experience</Heading3>
             <BorderLine
@@ -146,33 +242,43 @@ const About = () => {
               border={"border"}
             ></BorderLine>
           </div>
-          <ul className="flex flex-wrap justify-center gap-12 text-end">
-            <li className="flex flex-row-reverse flex-wrap justify-center items-center gap-2 sm:gap-4">
-              <LogoImage
+          <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
+            <ListItemImgLeft>
+              <ImgIconButton
                 scrollFX={"imageFadeIn3"}
-                href={"#"}
-                imgSrc={ImgPaths.avatarHome}
-              ></LogoImage>
+                href={ExpPaths.webDeveloper}
+                icon={<IoGlobeOutline />}
+              ></ImgIconButton>
               <div>
-                <Span scrollFX={"charsFadeIn"}>2023</Span>
-                <Heading4>Bachelor of Science in</Heading4>
-                <Heading4>Information Technology</Heading4>
+                <Span>2024-Present</Span>
+                <Heading4>Web Developer</Heading4>
+                <Span>Freelancer</Span>
+              </div>
+            </ListItemImgLeft>
+            <ListItemImgRight>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={ExpPaths.gameDeveloper}
+                icon={<IoGameController />}
+              ></ImgIconButton>
+              <div>
+                <Span>2023-Present</Span>
+                <Heading4>Indie Game Developer</Heading4>
+                <Span>Independent</Span>
+              </div>
+            </ListItemImgRight>
+            <ListItemImgLeft>
+              <ImgIconButton
+                scrollFX={"imageFadeIn3"}
+                href={ExpPaths.college}
+                imgSrc={ImgPaths.eduCollege}
+              ></ImgIconButton>
+              <div>
+                <Span>2022 / On-the-Job Training</Span>
+                <Heading4>IT Assistant</Heading4>
                 <Span>University of Luzon</Span>
               </div>
-            </li>
-            <li className="flex flex-row-reverse flex-wrap justify-center items-center gap-2 sm:gap-4">
-              <LogoImage
-                scrollFX={"imageFadeIn3"}
-                href={"#"}
-                imgSrc={ImgPaths.avatarHome}
-              ></LogoImage>
-              <div>
-                <Span scrollFX={"charsFadeIn"}>2023</Span>
-                <Heading4>Bachelor of Science in</Heading4>
-                <Heading4>Information Technology</Heading4>
-                <Span>University of Luzon</Span>
-              </div>
-            </li>
+            </ListItemImgLeft>
           </ul>
         </div>
         <BorderLine
@@ -180,7 +286,7 @@ const About = () => {
           scrollFX={"borderFadeInCenter0"}
         ></BorderLine>
 
-        <div className="pt-8 sm:pt-12 flex flex-col items-center gap-8">
+        <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Tools</Heading3>
             <BorderLine

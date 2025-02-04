@@ -1,11 +1,3 @@
-export const ImgPaths = {
-  avatarHome: "/avatar square.jpg",
-  avatarAbout: "/avatar square.jpg",
-  avatarWork: "/avatar square.jpg",
-  avatarContact: "/avatar square.jpg",
-  pulpRPG: "/PULP RPG.png",
-};
-
 export const AccPaths = {
   discord: "https://discord.com/users/1262701083856211998",
   facebook: "https://www.facebook.com/johncent.ventura.7",
@@ -20,7 +12,7 @@ export const AccPaths = {
 export const EduPaths = {
   backEndDevelopmentAndAPI:
     "https://www.freecodecamp.org/certification/Johncent-Developer/back-end-development-and-apis",
-  collegeDiploma:
+  college:
     "https://www.facebook.com/photo/?fbid=616436970579239&set=a.427670096122595",
   frontEndDevelopmentLibraries:
     "https://www.freecodecamp.org/certification/Johncent-Developer/front-end-development-libraries",
@@ -36,16 +28,40 @@ export const EduPaths = {
     "https://www.facebook.com/photo?fbid=387383134255760&set=pcb.387388560921884",
 };
 
-export const ExpPaths = {};
+export const ExpPaths = {
+  gameDeveloper: "",
+  college:
+    "https://www.facebook.com/photo/?fbid=616436970579239&set=a.427670096122595",
+  webDeveloper: "",
+};
+
+export const ImgPaths = {
+  avatarAbout: "/avatar square.jpg",
+  avatarContact: "/avatar square.jpg",
+  avatarHome: "/avatar square.jpg",
+  avatarWork: "/avatar square.jpg",
+  eduCollege: "https://ul.edu.ph/wp-content/themes/ul/images/ul-logo-2.png",
+  eduTesda:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/TESDA_OFFICIAL_LOGO.jpg/640px-TESDA_OFFICIAL_LOGO.jpg",
+  projGraphicDesign: "/Graphics Design.jpg",
+  projJourdansSnackCorner: "/Jourdans Snack Corner.png",
+  projMusicPlayer: "/Music Player.png",
+  projPixelArt: "/Pixel Art.png",
+  projPulpRPGDocumentation: "/PULP RPG Documentation.png",
+  projPulpRPG: "/PULP RPG.png",
+  projRandomQuoteMachine: "/Random Quote Machine.png",
+};
 
 export const ToolsPaths = {
   adobePhotoshop: "https://www.adobe.com/products/photoshop.html",
   aseprite: "https://aseprite.org/",
   cSharp: "https://docs.unity3d.com/Manual/ScriptingSection.html",
-  css: "https://www.w3schools.com/css/",
+  css3: "https://www.w3schools.com/css/",
   expressJS: "https://expressjs.com/",
+  figma: "https://www.figma.com/",
   git: "https://www.git-scm.com/",
-  html: "https://www.w3schools.com/html/",
+  gsap: "https://gsap.com/",
+  html5: "https://www.w3schools.com/html/",
   ink: "https://www.inklestudios.com/ink/",
   javaScript: "https://www.javascript.com/",
   mongoDB:
@@ -53,7 +69,7 @@ export const ToolsPaths = {
   mySQL: "https://www.mysql.com/",
   nodeJS: "https://nodejs.org/en",
   postgresSQL: "https://www.postgresql.org/",
-  react: "https://react.dev/",
+  reactJS: "https://react.dev/",
   sass: "https://sass-lang.com/",
   tailwindCSS: "https://tailwindcss.com/",
   unity: "https://unity.com/",
@@ -61,33 +77,17 @@ export const ToolsPaths = {
 };
 
 export const ProjPaths = {
+  gameOfGrimoires: "#",
+  graphicDesign: "https://ph.pinterest.com/johncentventura/graphics-design/",
   jourdansSnackCorner: "https://jourdans-snack-corner.netlify.app",
-  gitJourdansSnackCorner:
+  jourdansSnackCornerGitHub:
     "https://github.com/JohncentVentura/Jourdans-Snack-Corner",
-  randomQuoteMachine: "https://cjv-random-quote-machine.netlify.app",
-  gitRandomQuoteMachine:
-    "https://github.com/JohncentVentura/Random-Quote-Machine",
-  drumMachine: "https://cjv-drum-machine.netlify.app",
-  gitDrumMachine: "https://github.com/JohncentVentura/Drum-Machine",
-  todoApp: "https://cjv-todo-app.netlify.app",
-  gitTodoApp: "https://github.com/JohncentVentura/Todo-App",
   musicPlayer: "https://cjv-music-player.netlify.app",
-  gitMusicPlayer: "https://github.com/JohncentVentura/Music-Player",
-  urlShortener: "https://url-shortener-microservice-frse.onrender.com",
-  gitUrlShortener:
-    "https://github.com/JohncentVentura/URL-Shortener-Microservice",
-  exerciseTracker: "https://exercise-tracker-9k5u.onrender.com",
-  gitExerciseTracker: "https://github.com/JohncentVentura/Exercise-Tracker",
   pulpRpg:
     "https://drive.google.com/file/d/1UoWxtuWfohXF-6YLGBBe0MQ9s2_f3GDN/view?usp=sharing",
-  gitPulpRpg: "https://github.com/JohncentVentura/PULP-RPG-Scripts",
-  pulpRpgDoc: "https://pulp-rpg-doc.netlify.app",
-  gitPulpRpgDoc: "https://github.com/JohncentVentura/PULP-RPG-Documentation",
-  graphicsDesign: "https://ph.pinterest.com/johncentventura/graphics-design/  ",
+  pulpRPGDocumentation: "https://pulp-rpg-doc.netlify.app",
+  pulpRPGGitHub: "https://github.com/JohncentVentura/PULP-RPG-Scripts",
   pixelArt: "https://ph.pinterest.com/johncentventura/pixel-art/",
-  vbStudentSystem: "",
-  gitVbStudentSystem:
-    "https://github.com/JohncentVentura/Student-Registration-System",
-  mernCrudApp: "",
-  gitMernCrudApp: "https://github.com/JohncentVentura/MERN-CRUD-APP",
+  randomQuoteMachine: "https://cjv-random-quote-machine.netlify.app",
+  vbStudentSystem: "#",
 };
