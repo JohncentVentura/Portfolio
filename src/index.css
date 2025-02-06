@@ -9,13 +9,23 @@
 .light-theme {
   --fgClr: #191d2b;
   --bgClr: #e6e6e6;
-  --mainClr: #3f4493;
+  --mainClr: #2b93c2;
 }
 
 .dark-theme {
   --fgClr: #e6e6e6;
   --bgClr: #191d2b;
   --mainClr: #35aa90;
+}
+
+.anim-glow-drop-shadow:hover{
+  animation: glowing-drop-shadow 3s infinite ease-in-out;
+}
+
+@keyframes glowing-drop-shadow{
+  0% { filter: drop-shadow(0 0 4px var(--mainClr))}
+  50% { filter: drop-shadow(0 0 16px var(--mainClr)) }
+  100% { filter: drop-shadow(0 0 4px var(--mainClr))}
 }
 
 @layer components {
@@ -73,7 +83,7 @@
   .word {
     @apply relative font-mainFont text-fgClr hover:text-mainClr;
   }
-
+  
   svg {
     @apply relative block size-full;
   }

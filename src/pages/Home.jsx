@@ -5,6 +5,7 @@ import {
   FaSquarePinterest,
   FaLinkedin,
 } from "react-icons/fa6";
+import { useEffect } from "react";
 
 import {
   Section,
@@ -25,25 +26,28 @@ import {
   IconButton,
   Button,
 } from "../components/Components";
-import { AccPaths, EduPaths, ExpPaths, ImgPaths, ToolsPaths, ProjPaths } from "../components/Utilities";
+import {
+  AccPaths,
+  EduPaths,
+  ExpPaths,
+  ImgPaths,
+  ToolsPaths,
+  ProjPaths,
+} from "../components/Utilities";
 
 const Home = () => {
   return (
     <>
-      <Section scrollFX={"pinPage0"}>
-        <AvatarImage
-          scrollFX={"imageFadeIn0"}
-          href={"#"}
-          imgSrc={ImgPaths.avatarHome}
-        ></AvatarImage>
+      <Section scrollFX={"pinPage"}>
+        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarHome}></AvatarImage>
 
         <Grid3ColsContainer>
-          <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
-          <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
+          <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
+          <div id="scrollRef" className="flex flex-wrap justify-center gap-1 sm:gap-2">
             <Heading4>Hi! My</Heading4>
             <Heading4>name is</Heading4>
           </div>
-          <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
+          <BorderLine scrollFX={"borderFadeInRight"}></BorderLine>
         </Grid3ColsContainer>
 
         <div className="flex flex-wrap justify-center gap-4">
@@ -58,22 +62,18 @@ const Home = () => {
 
         <div className="pt-8 flex justify-center gap-2 sm:gap-4">
           <IconButton
-            scrollFX={"iconFadeIn0"}
             href={AccPaths.facebook}
             icon={<FaSquareFacebook />}
           ></IconButton>
           <IconButton
-            scrollFX={"iconFadeIn0"}
             href={AccPaths.linkedIn}
             icon={<FaLinkedin />}
           ></IconButton>
           <IconButton
-            scrollFX={"iconFadeIn0"}
             href={AccPaths.gitHub}
             icon={<FaSquareGithub />}
           ></IconButton>
           <IconButton
-            scrollFX={"iconFadeIn0"}
             href={AccPaths.pinterest}
             icon={<FaSquarePinterest />}
           ></IconButton>

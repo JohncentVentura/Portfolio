@@ -58,31 +58,23 @@ const Work = () => {
   return (
     <>
       <Section className={"pt-[20vh] pb-[20vh]"}>
-        <AvatarImage
-          scrollFX={"imageFadeIn2"}
-          href={"#"}
-          imgSrc={ImgPaths.avatarWork}
-        ></AvatarImage>
+        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarWork}></AvatarImage>
 
         <Grid3ColsContainer>
-          <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
+          <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
           <Heading2>My Works</Heading2>
-          <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
+          <BorderLine scrollFX={"borderFadeInRight"}></BorderLine>
         </Grid3ColsContainer>
 
         <div className="pt-8 sm:pt-12">
           <Heading3 scrollFX={"charsFadeIn"}>Featured Projects</Heading3>
-          <BorderLine
-            scrollFX={"borderFadeInCenter0"}
-            border={"border"}
-          ></BorderLine>
+          <BorderLine border={"border"}></BorderLine>
         </div>
         <ul className="pt-8 sm:pt-24 flex flex-col gap-8 sm:gap-12">
           <li className="flex flex-col">
             <div className="flex flex-col xl:flex-row gap-8">
               <ProjectImage
                 className={"self-center"}
-                scrollFX={"imageFadeIn2"}
                 href={ProjPaths.pulpRpg}
                 imgSrc={ImgPaths.projPulpRPG}
               ></ProjectImage>
@@ -101,25 +93,18 @@ const Work = () => {
               </div>
             </div>
             <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-4">
-              <BtnGitHub
-                scrollFX={"buttonFadeIn15"}
-                href={ProjPaths.pulpRPGGitHub}
-              ></BtnGitHub>
-              <BtnAseprite scrollFX={"buttonFadeIn1"}></BtnAseprite>
-              <BtnCSharp scrollFX={"buttonFadeIn2"}></BtnCSharp>
-              <BtnInk scrollFX={"buttonFadeIn8"}></BtnInk>
-              <BtnUnity scrollFX={"buttonFadeIn15"}></BtnUnity>
+              <BtnGitHub href={ProjPaths.pulpRPGGitHub}></BtnGitHub>
+              <BtnAseprite></BtnAseprite>
+              <BtnCSharp></BtnCSharp>
+              <BtnInk></BtnInk>
+              <BtnUnity></BtnUnity>
             </div>
-            <BorderLine
-              className={"pt-8 sm:pt-12"}
-              scrollFX={"borderFadeInRight19"}
-            ></BorderLine>
+            <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
           </li>
           <li className="flex flex-col">
             <div className="flex flex-col xl:flex-row-reverse gap-8">
               <ProjectImage
                 className={"self-center"}
-                scrollFX={"imageFadeIn2"}
                 href={ProjPaths.jourdansSnackCorner}
                 imgSrc={ImgPaths.projJourdansSnackCorner}
               ></ProjectImage>
@@ -138,28 +123,21 @@ const Work = () => {
               </div>
             </div>
             <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-4">
-              <BtnGitHub
-                scrollFX={"buttonFadeIn15"}
-                href={ProjPaths.jourdansSnackCornerGitHub}
-              ></BtnGitHub>
-              <BtnCSS3 scrollFX={"buttonFadeIn3"}></BtnCSS3>
-              <BtnExpressJS scrollFX={"buttonFadeIn4"}></BtnExpressJS>
-              <BtnHTML5 scrollFX={"buttonFadeIn7"}></BtnHTML5>
-              <BtnJavaScript scrollFX={"buttonFadeIn9"}></BtnJavaScript>
-              <BtnMongoDB scrollFX={"buttonFadeIn10"}></BtnMongoDB>
-              <BtnNodeJS scrollFX={"buttonFadeIn12"}></BtnNodeJS>
-              <BtnReactJS scrollFX={"buttonFadeIn13"}></BtnReactJS>
+              <BtnGitHub href={ProjPaths.jourdansSnackCornerGitHub}></BtnGitHub>
+              <BtnCSS3></BtnCSS3>
+              <BtnExpressJS></BtnExpressJS>
+              <BtnHTML5></BtnHTML5>
+              <BtnJavaScript></BtnJavaScript>
+              <BtnMongoDB></BtnMongoDB>
+              <BtnNodeJS></BtnNodeJS>
+              <BtnReactJS></BtnReactJS>
             </div>
-            <BorderLine
-              className={"pt-8 sm:pt-12"}
-              scrollFX={"borderFadeInRight19"}
-            ></BorderLine>
+            <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
           </li>
           <li className="flex flex-col">
             <div className="flex flex-col xl:flex-row gap-8">
               <ProjectImage
                 className={"self-center"}
-                scrollFX={"imageFadeIn2"}
                 href={ProjPaths.pixelArt}
                 imgSrc={ImgPaths.projPixelArt}
               ></ProjectImage>
@@ -178,26 +156,17 @@ const Work = () => {
               </div>
             </div>
             <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-4">
-              <BtnPinterest
-                scrollFX={"buttonFadeIn1"}
-                href={ProjPaths.pixelArt}
-              />
-              <BtnAseprite scrollFX={"buttonFadeIn1"} />
+              <BtnPinterest href={ProjPaths.pixelArt} />
+              <BtnAseprite />
             </div>
-            <BorderLine
-              className={"pt-8 sm:pt-12"}
-              scrollFX={"borderFadeInRight19"}
-            ></BorderLine>
+            <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
           </li>
         </ul>
 
         <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Other Projects</Heading3>
-            <BorderLine
-              scrollFX={"borderFadeInCenter0"}
-              border={"border"}
-            ></BorderLine>
+            <BorderLine border={"border"}></BorderLine>
           </div>
           <Paragraph>
             I'm a graduate from the University of Luzon, Dagupan City with a
@@ -209,9 +178,8 @@ const Work = () => {
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.vbStudentSystem}
-                icon={<DiVisualstudio/>}
+                icon={<DiVisualstudio />}
               ></ImgIconButton>
               <div>
                 <Heading4>Student Registration System</Heading4>
@@ -223,9 +191,8 @@ const Work = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.gameOfGrimoires}
-                icon={<IoGameController/>}
+                icon={<IoGameController />}
               ></ImgIconButton>
               <div>
                 <Heading4>Game of Grimoires</Heading4>
@@ -237,7 +204,6 @@ const Work = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.graphicDesign}
                 imgSrc={ImgPaths.projGraphicDesign}
               ></ImgIconButton>
@@ -251,7 +217,6 @@ const Work = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.randomQuoteMachine}
                 imgSrc={ImgPaths.projRandomQuoteMachine}
               ></ImgIconButton>
@@ -265,7 +230,6 @@ const Work = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.musicPlayer}
                 imgSrc={ImgPaths.projMusicPlayer}
               ></ImgIconButton>
@@ -279,7 +243,6 @@ const Work = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ProjPaths.pulpRPGDocumentation}
                 imgSrc={ImgPaths.projPulpRPGDocumentation}
               ></ImgIconButton>
@@ -293,104 +256,10 @@ const Work = () => {
             </ListItemImgRight>
           </ul>
         </div>
-        <BorderLine
-          className={"pt-8 sm:pt-12"}
-          scrollFX={"borderFadeInRight19"}
-        ></BorderLine>
+        <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
       </Section>
     </>
   );
 };
 
 export default Work;
-
-/*
-<ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-            <li className="flex flex-col justify-center items-center gap-4">
-              <Heading4>To-Do App</Heading4>
-              <Paragraph>
-                A simple to-do app built using React.js and Tailwind CSS. It
-                allows users to add tasks, mark them as completed, and delete
-                them.
-              </Paragraph>
-              <div className="flex gap-4">
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaGithub />}
-                ></SmIconBtn>
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaExternalLinkAlt />}
-                ></SmIconBtn>
-              </div>
-              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
-            </li>
-            <li className="flex flex-col justify-center items-center gap-4">
-              <Heading4>To-Do App</Heading4>
-              <Paragraph>
-                A simple to-do app built using React.js and Tailwind CSS. It
-                allows users to add tasks, mark them as completed, and delete
-                them.A simple to-do app built using React.js and Tailwind CSS.
-                It allows users to add tasks, mark them as completed, and delete
-                them.
-              </Paragraph>
-              <div className="flex gap-4">
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaGithub />}
-                ></SmIconBtn>
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaExternalLinkAlt />}
-                ></SmIconBtn>
-              </div>
-              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
-            </li>
-            <li className="flex flex-col justify-center items-center gap-4">
-              <Heading4>To-Do App</Heading4>
-              <Paragraph>
-                A simple to-do app built using React.js and Tailwind CSS. It
-                allows users to add tasks, mark them as completed, and delete
-                them.
-              </Paragraph>
-              <div className="flex gap-4">
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaGithub />}
-                ></SmIconBtn>
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaExternalLinkAlt />}
-                ></SmIconBtn>
-              </div>
-              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
-            </li>
-            <li className="flex flex-col justify-center items-center gap-4">
-              <Heading4>To-Do App</Heading4>
-              <Paragraph>
-                A simple to-do app built using React.js and Tailwind CSS. It
-                allows users to add tasks, mark them as completed, and delete
-                them.
-              </Paragraph>
-              <div className="flex gap-4">
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaGithub />}
-                ></SmIconBtn>
-                <SmIconBtn
-                  scrollFX={"iconFadeIn0"}
-                  href={"#"}
-                  icon={<FaExternalLinkAlt />}
-                ></SmIconBtn>
-              </div>
-              <BorderLine scrollFX={"borderFadeInRight1"}></BorderLine>
-            </li>
-          </ul>
-*/

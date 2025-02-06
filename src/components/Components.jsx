@@ -33,14 +33,6 @@ import {
   ProjPaths,
 } from "./Utilities";
 
-function CheckScrollFX(scrollFX, defaultScrollFX) {
-  return scrollFX === undefined ? defaultScrollFX : scrollFX;
-}
-
-function CheckColor(color, defaultColor) {
-  return color === undefined ? defaultColor : color;
-}
-
 function GetHoverTransition() {
   return "hover:transition-all hover:duration-[0.5s] hover:ease-in-out";
 }
@@ -101,12 +93,7 @@ export const ListItemImgRight = ({ children }) => {
 export const Heading1 = ({ className, scrollFX, children }) => {
   return (
     <>
-      <h1
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )}`}
-      >
+      <h1 className={`${className || ""} ${scrollFX || "wordsFadeIn"}`}>
         {children}
       </h1>
     </>
@@ -117,12 +104,7 @@ export const Heading1 = ({ className, scrollFX, children }) => {
 export const Heading2 = ({ className, scrollFX, children }) => {
   return (
     <>
-      <h2
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )}`}
-      >
+      <h2 className={`${className || ""} ${scrollFX || "wordsFadeIn"}`}>
         {children}
       </h2>
     </>
@@ -133,12 +115,7 @@ export const Heading2 = ({ className, scrollFX, children }) => {
 export const Heading3 = ({ className, scrollFX, children }) => {
   return (
     <>
-      <h3
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )}`}
-      >
+      <h3 className={`${className || ""} ${scrollFX || "wordsFadeIn"}`}>
         {children}
       </h3>
     </>
@@ -149,12 +126,7 @@ export const Heading3 = ({ className, scrollFX, children }) => {
 export const Heading4 = ({ className, scrollFX, children }) => {
   return (
     <>
-      <h4
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )}`}
-      >
+      <h4 className={`${className || ""} ${scrollFX || "wordsFadeIn"}`}>
         {children}
       </h4>
     </>
@@ -165,12 +137,7 @@ export const Heading4 = ({ className, scrollFX, children }) => {
 export const Paragraph = ({ className, scrollFX, children }) => {
   return (
     <>
-      <p
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )}`}
-      >
+      <p className={`${className || ""} ${scrollFX || "wordsFadeIn"}`}>
         {children}
       </p>
     </>
@@ -181,12 +148,7 @@ export const Paragraph = ({ className, scrollFX, children }) => {
 export const Span = ({ className, scrollFX, children }) => {
   return (
     <>
-      <span
-        className={`${className || ""} ${CheckScrollFX(
-          scrollFX,
-          "wordsFadeIn"
-        )} block`}
-      >
+      <span className={`${className || ""} ${scrollFX || "wordsFadeIn"} block`}>
         {children}
       </span>
     </>
@@ -203,9 +165,9 @@ export const BorderLine = ({ className, scrollFX, border }) => {
         } size-full flex justify-center items-center`}
       >
         <div
-          className={`${scrollFX} w-full h-auto ${
+          className={`${scrollFX || "borderFadeInCenter"} ${
             border || "border-2"
-          } border-fgClr hover:border-mainClr ${GetHoverTransition()} `}
+          } anim-glow-drop-shadow w-full h-auto border-fgClr hover:border-mainClr ${GetHoverTransition()} `}
         ></div>
       </div>
     </>
@@ -217,16 +179,18 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
     <>
       <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block size-32 sm:size-48 lg:size-64`}
+          className={`${
+            scrollFX || "imageFadeIn"
+          } anim-glow-drop-shadow block size-32 sm:size-48 lg:size-64`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
-          loading="lazy"
         >
           <img
             src={imgSrc}
             alt={imgSrc}
             className={`rounded-full ${GetHoverTransition()}`}
+            loading="lazy"
           />
         </a>
       </div>
@@ -239,16 +203,18 @@ export const ProjectImage = ({ className, scrollFX, href, imgSrc }) => {
     <>
       <div className={`${className || ""} `}>
         <a
-          className={`${scrollFX} block w-64 h-48 sm:w-80 sm:h-56 lg:w-[24rem] lg:h-[16rem]`}
+          className={`${
+            scrollFX || "imageFadeIn"
+          } anim-glow-drop-shadow block w-64 h-48 sm:w-80 sm:h-56 lg:w-[24rem] lg:h-[16rem]`}
           href={href || null}
           target="_blank"
           rel="noreferrer"
-          loading="lazy"
         >
           <img
             src={imgSrc}
             alt={imgSrc}
             className={`rounded-3xl ${GetHoverTransition()}`}
+            loading="lazy"
           />
         </a>
       </div>
@@ -272,9 +238,8 @@ export const ImgIconButton = ({
       <button className={`${className || ""} `} onClick={onClick || null}>
         <a
           className={`${
-            scrollFX || ""
-          } block size-20 sm:size-24 lg:size-28 rounded-full border-2 border-fgClr bg-fgClr text-bgClr group hover:border-mainClr hover:bg-mainClr ${GetHoverTransition()}
-          `}
+            scrollFX || "iconFadeIn"
+          } anim-glow-drop-shadow block size-20 sm:size-[5.5rem] lg:size-24 rounded-full border-2 border-fgClr bg-fgClr text-bgClr group hover:border-mainClr hover:bg-mainClr ${GetHoverTransition()}`}
           href={href}
           target={target || "_blank"}
           rel="noreferrer"
@@ -292,6 +257,7 @@ export const ImgIconButton = ({
                 src={imgSrc}
                 alt={imgSrc}
                 className={`border-2 rounded-full ${GetGroupHoverTransition()}`}
+                loading="lazy"
               />
             </>
           )}
@@ -316,7 +282,7 @@ export const NavIconButton = ({
         <a
           className={`${
             scrollFX || ""
-          } block size-8 sm:size-10 lg:size-12 rounded-full border-2 border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-fgClr ${GetHoverTransition()}`}
+          } anim-glow-drop-shadow block size-8 sm:size-10 lg:size-12 rounded-full border-2 border-fgClr bg-fgClr text-bgClr hover:border-mainClr hover:bg-mainClr hover:text-fgClr ${GetHoverTransition()}`}
           href={href}
           target={target}
           rel="noreferrer"
@@ -342,7 +308,9 @@ export const IconButton = ({
     <>
       <button className={`${className || ""}`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${GetHoverTransition()} block size-12 sm:size-16 lg:size-20`}
+          className={`${
+            scrollFX || "iconFadeIn"
+          } ${GetHoverTransition()} block size-12 sm:size-16 lg:size-20`}
           href={href}
           target={target || "_blank"}
           rel="noreferrer"
@@ -366,30 +334,27 @@ export const Button = ({
   icon,
   children,
 }) => {
-  color = CheckColor(
-    color,
-    "border-fgClr hover:border-mainClr hover:bg-mainClr"
-  );
-
   return (
     <>
       <button className={`${className || ""}`} onClick={onClick || null}>
         <a
-          className={`${scrollFX} ${color} border-2 rounded-3xl px-4 py-2 bg-bgClr w-fit flex justify-center items-center gap-2 group ${GetHoverTransition()}`}
+          className={`${scrollFX || "buttonFadeIn"} ${
+            color || "border-fgClr hover:border-mainClr hover:bg-mainClr"
+          } border-2 rounded-3xl px-4 py-2 bg-bgClr w-fit flex justify-center items-center gap-2 group ${GetHoverTransition()}`}
           href={href || null}
           target={target || "_blank"}
           rel="noreferrer"
           download={download || null}
         >
           <Span
-            className={`group-hover:text-bgClr ${GetGroupHoverTransition()}`}
-            scrollFX={""}
+            className={`text-fgClr group-hover:text-bgClr ${GetGroupHoverTransition()}`}
+            scrollFX={"noFX"}
           >
             {children}
           </Span>
           {icon !== undefined ? (
             <div
-              className={`text-fgClr group-hover:text-bgClr ${GetGroupHoverTransition()} size-6 sm:size-7 lg:size-8`}
+              className={`text-fgClr size-6 sm:size-7 lg:size-8 group-hover:text-bgClr ${GetGroupHoverTransition()}`}
             >
               {icon}
             </div>

@@ -3,7 +3,11 @@
 import Lenis from "lenis";
 import gsap from "gsap";
 import { useState, useEffect, useLayoutEffect } from "react";
-import { IoIosMoon, IoIosSunny } from "react-icons/io";
+import {
+  IoIosArrowDropdownCircle,
+  IoIosMoon,
+  IoIosSunny,
+} from "react-icons/io";
 import { TbFileCv } from "react-icons/tb";
 
 import {
@@ -27,7 +31,14 @@ import {
 } from "./components/Components";
 import ParticlesComponent from "./components/Particles";
 import { scrollFX } from "./components/ScrollFX";
-import { AccPaths, EduPaths, ExpPaths, ImgPaths, ToolsPaths, ProjPaths } from "./components/Utilities";
+import {
+  AccPaths,
+  EduPaths,
+  ExpPaths,
+  ImgPaths,
+  ToolsPaths,
+  ProjPaths,
+} from "./components/Utilities";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
@@ -44,10 +55,11 @@ function App() {
   const [mainClr, setMainClr] = useState(
     getComputedStyle(document.body).getPropertyValue("--mainClr")
   );
+  const [scrollFXCount, setScrollFXCount] = useState(99);
 
   //* DEBUG: Log breakpoints for responsiveness test
   useEffect(() => {
-    PrintBreakpoint();
+    //PrintBreakpoint();
     window.addEventListener("resize", () => PrintBreakpoint());
 
     function PrintBreakpoint() {
@@ -107,25 +119,38 @@ function App() {
       let ctx = gsap.context(() => {
         scrollFX.init(fgClr, bgClr, mainClr);
 
-        for (let i = 0; i < 99; i++) {
+        AutoIncrementClass("pinPage");
+        AutoIncrementClass("borderFadeInCenter");
+        AutoIncrementClass("borderFadeInLeft");
+        AutoIncrementClass("borderFadeInRight");
+        AutoIncrementClass("buttonFadeIn");
+        AutoIncrementClass("iconFadeIn");
+        AutoIncrementClass("iconFadeOut");
+        AutoIncrementClass("imageFadeIn");
+
+        //NOTE: Should be called in order, else may cause bug where it will trigger early
+        for (let i = 0; i < scrollFXCount; i++) {
           scrollFX.setFX(".pinPage" + i, (elem) => scrollFX.pinPage(elem));
           scrollFX.setFX(".borderFadeInCenter" + i, (elem) =>
             scrollFX.borderFadeInCenter(elem)
           );
           scrollFX.setFX(".borderFadeInLeft" + i, (elem) =>
-            scrollFX.borderFadeInCenter(elem)
+            scrollFX.borderFadeInLeft(elem)
           );
           scrollFX.setFX(".borderFadeInRight" + i, (elem) =>
             scrollFX.borderFadeInRight(elem)
           );
-          scrollFX.setFX(".imageFadeIn" + i, (elem) =>
-            scrollFX.imageFadeIn(elem)
+          scrollFX.setFX(".buttonFadeIn" + i, (elem) =>
+            scrollFX.buttonFadeIn(elem)
           );
           scrollFX.setFX(".iconFadeIn" + i, (elem) =>
             scrollFX.iconFadeIn(elem)
           );
-          scrollFX.setFX(".buttonFadeIn" + i, (elem) =>
-            scrollFX.buttonFadeIn(elem)
+          scrollFX.setFX(".iconFadeOut" + i, (elem) =>
+            scrollFX.iconFadeOut(elem)
+          );
+          scrollFX.setFX(".imageFadeIn" + i, (elem) =>
+            scrollFX.imageFadeIn(elem)
           );
         }
 
@@ -135,7 +160,7 @@ function App() {
       });
       return () => ctx.revert(); // <- cleanup!
     },
-    //Adding the color states as dependencies will cause a lag when changing color themes
+    //Adding the color states as dependencies will re-render again when changing color themes
     []
   );
 
@@ -166,11 +191,21 @@ const Header = ({ ...props }) => {
     <>
       <header className={`${props.className || ""} fixed top-10 left-0 z-10`}>
         <nav className="flex justify-between items-center">
-          <NavIconButton icon={<TbFileCv />} href={AccPaths.resume} target={"_blank"} />
+          <NavIconButton
+            icon={<TbFileCv />}
+            href={AccPaths.resume}
+            target={"_blank"}
+          />
           {props.clrTheme === "light-theme" ? (
-            <NavIconButton onClick={props.clrThemeOnClick} icon={<IoIosMoon />} />
+            <NavIconButton
+              onClick={props.clrThemeOnClick}
+              icon={<IoIosMoon />}
+            />
           ) : (
-            <NavIconButton onClick={props.clrThemeOnClick} icon={<IoIosSunny />} />
+            <NavIconButton
+              onClick={props.clrThemeOnClick}
+              icon={<IoIosSunny />}
+            />
           )}
         </nav>
       </header>
@@ -181,7 +216,18 @@ const Header = ({ ...props }) => {
 const Main = ({ ...props }) => {
   return (
     <>
-      <main className={`${props.className || ""} pt-[70vh]`}>
+      <main className={`${props.className || ""} pt-[65vh]`}>
+        <div className="w-full h-[10vh] flex flex-col justify-end items-center">
+          <IconButton
+            scrollFX={"iconFadeOut"}
+            onClick={() => {
+              document
+                .getElementById("scrollRef")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+            icon={<IoIosArrowDropdownCircle />}
+          ></IconButton>
+        </div>
         <Home />
         <About />
         <Work />
@@ -196,18 +242,33 @@ const Footer = ({ ...props }) => {
     <>
       <footer className={`${props.className || ""} pb-8`}>
         <Grid3ColsContainer className={"gap-2"}>
-          <BorderLine></BorderLine>
+          <BorderLine scrollFX={"noFX"}></BorderLine>
           <Span
-            scrollFX={""}
+            scrollFX={"noFX"}
             className={"font-mainFont text-fgClr text-center"}
           >
             Designed & Built by Johncent © 2024
           </Span>
-          <BorderLine></BorderLine>
+          <BorderLine scrollFX={"noFX"}></BorderLine>
         </Grid3ColsContainer>
       </footer>
     </>
   );
 };
+
+function AutoIncrementClass(className) {
+  const elemsCollection = document.getElementsByClassName(className);
+  const elemsArray = [];
+
+  //Collection to Array
+  for (let i = 0; i < elemsCollection.length; i++) {
+    elemsArray.push(elemsCollection[i]);
+  }
+
+  //Replacing className with auto incrementing className
+  elemsArray.forEach((element, i) => {
+    element.classList.replace(`${className}`, `${className}` + i);
+  });
+}
 
 export default App;

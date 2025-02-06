@@ -1,3 +1,28 @@
+import { useState, useEffect } from 'react';
+
+export const GetClassCount = ({className}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const updateCount = () => {
+      setCount(document.getElementsByClassName(className).length);
+    };
+
+    updateCount();
+    const observer = new MutationObserver(updateCount);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, [count, className]);
+
+  return document.getElementsByClassName(className);
+}
+
 export const AccPaths = {
   discord: "https://discord.com/users/1262701083856211998",
   facebook: "https://www.facebook.com/johncent.ventura.7",
@@ -30,8 +55,7 @@ export const EduPaths = {
 
 export const ExpPaths = {
   gameDeveloper: "",
-  college:
-    "https://www.facebook.com/photo/?fbid=616436970579239&set=a.427670096122595",
+  college: "https://ul.edu.ph/",
   webDeveloper: "",
 };
 
@@ -40,9 +64,8 @@ export const ImgPaths = {
   avatarContact: "/avatar square.jpg",
   avatarHome: "/avatar square.jpg",
   avatarWork: "/avatar square.jpg",
-  eduCollege: "https://ul.edu.ph/wp-content/themes/ul/images/ul-logo-2.png",
-  eduTesda:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/TESDA_OFFICIAL_LOGO.jpg/640px-TESDA_OFFICIAL_LOGO.jpg",
+  eduCollege: "/University of Luzon Logo.png",
+  eduTesda: "/TESDA Logo.png",
   projGraphicDesign: "/Graphics Design.jpg",
   projJourdansSnackCorner: "/Jourdans Snack Corner.png",
   projMusicPlayer: "/Music Player.png",

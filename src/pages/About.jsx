@@ -62,26 +62,18 @@ const About = () => {
   return (
     <>
       <Section className={"pt-[20vh]"}>
-        <AvatarImage
-          className={""}
-          scrollFX={"imageFadeIn2"}
-          href={"#"}
-          imgSrc={ImgPaths.avatarAbout}
-        ></AvatarImage>
+        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarAbout}></AvatarImage>
 
         <Grid3ColsContainer>
-          <BorderLine scrollFX={"borderFadeInLeft0"}></BorderLine>
+          <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
           <Heading2>About Me</Heading2>
-          <BorderLine scrollFX={"borderFadeInRight0"}></BorderLine>
+          <BorderLine scrollFX={"borderFadeInRight"}></BorderLine>
         </Grid3ColsContainer>
 
         <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Background</Heading3>
-            <BorderLine
-              scrollFX={"borderFadeInCenter0"}
-              border={"border"}
-            ></BorderLine>
+            <BorderLine border={"border"}></BorderLine>
           </div>
           <Paragraph>
             I'm a graduate from the University of Luzon, Dagupan City with a
@@ -98,15 +90,10 @@ const About = () => {
             learning more things with you.
           </Paragraph>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Button
-              scrollFX={"buttonFadeIn0"}
-              href={AccPaths.resume}
-              icon={<VscPreview />}
-            >
+            <Button href={AccPaths.resume} icon={<VscPreview />}>
               View Resume
             </Button>
             <Button
-              scrollFX={"buttonFadeIn0"}
               href={AccPaths.resume}
               download={"Carlos Johncent Ventura Resume"}
               icon={<FaFilePdf />}
@@ -115,23 +102,16 @@ const About = () => {
             </Button>
           </div>
         </div>
-        <BorderLine
-          className={"pt-8 sm:pt-12"}
-          scrollFX={"borderFadeInCenter0"}
-        ></BorderLine>
+        <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
 
         <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Education</Heading3>
-            <BorderLine
-              scrollFX={"borderFadeInCenter0"}
-              border={"border"}
-            ></BorderLine>
+            <BorderLine border={"border"}></BorderLine>
           </div>
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.qualityAssurance}
                 icon={<VscChecklist />}
               ></ImgIconButton>
@@ -143,7 +123,6 @@ const About = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.backEndDevelopmentAndAPI}
                 icon={<FaServer />}
               ></ImgIconButton>
@@ -155,7 +134,6 @@ const About = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.relationalDatabase}
                 icon={<FaDatabase />}
               ></ImgIconButton>
@@ -167,7 +145,6 @@ const About = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.tesdaCSS}
                 imgSrc={ImgPaths.eduTesda}
               ></ImgIconButton>
@@ -179,7 +156,6 @@ const About = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.frontEndDevelopmentLibraries}
                 icon={<FaReact />}
               ></ImgIconButton>
@@ -191,7 +167,6 @@ const About = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.javaScriptAlgorithmAndDataStructures}
                 icon={<SiJavascript />}
               ></ImgIconButton>
@@ -203,7 +178,6 @@ const About = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.responsiveWebDesign}
                 icon={<MdDevices />}
               ></ImgIconButton>
@@ -215,7 +189,6 @@ const About = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={EduPaths.college}
                 imgSrc={ImgPaths.eduCollege}
               ></ImgIconButton>
@@ -229,23 +202,16 @@ const About = () => {
             </ListItemImgRight>
           </ul>
         </div>
-        <BorderLine
-          className={"pt-8 sm:pt-12"}
-          scrollFX={"borderFadeInCenter0"}
-        ></BorderLine>
+        <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
 
         <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Experience</Heading3>
-            <BorderLine
-              scrollFX={"borderFadeInCenter0"}
-              border={"border"}
-            ></BorderLine>
+            <BorderLine border={"border"}></BorderLine>
           </div>
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ExpPaths.webDeveloper}
                 icon={<IoGlobeOutline />}
               ></ImgIconButton>
@@ -257,7 +223,6 @@ const About = () => {
             </ListItemImgLeft>
             <ListItemImgRight>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ExpPaths.gameDeveloper}
                 icon={<IoGameController />}
               ></ImgIconButton>
@@ -269,7 +234,6 @@ const About = () => {
             </ListItemImgRight>
             <ListItemImgLeft>
               <ImgIconButton
-                scrollFX={"imageFadeIn3"}
                 href={ExpPaths.college}
                 imgSrc={ImgPaths.eduCollege}
               ></ImgIconButton>
@@ -281,46 +245,37 @@ const About = () => {
             </ListItemImgLeft>
           </ul>
         </div>
-        <BorderLine
-          className={"pt-8 sm:pt-12"}
-          scrollFX={"borderFadeInCenter0"}
-        ></BorderLine>
+        <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
 
         <div className="pt-8 sm:pt-12 w-full flex flex-col items-center gap-8 sm:gap-12">
           <div>
             <Heading3 scrollFX={"charsFadeIn"}>Tools</Heading3>
-            <BorderLine
-              scrollFX={"borderFadeInCenter0"}
-              border={"border"}
-            ></BorderLine>
+            <BorderLine border={"border"}></BorderLine>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
-            <BtnAdobePhotoshop scrollFX={"buttonFadeIn0"}></BtnAdobePhotoshop>
-            <BtnAseprite scrollFX={"buttonFadeIn1"}></BtnAseprite>
-            <BtnCSharp scrollFX={"buttonFadeIn2"}></BtnCSharp>
-            <BtnCSS3 scrollFX={"buttonFadeIn3"}></BtnCSS3>
-            <BtnExpressJS scrollFX={"buttonFadeIn4"}></BtnExpressJS>
-            <BtnFigma scrollFX={"buttonFadeIn5"}></BtnFigma>
-            <BtnGit scrollFX={"buttonFadeIn5"}></BtnGit>
-            <BtnGSAP scrollFX={"buttonFadeIn6"}></BtnGSAP>
-            <BtnHTML5 scrollFX={"buttonFadeIn7"}></BtnHTML5>
-            <BtnInk scrollFX={"buttonFadeIn8"}></BtnInk>
-            <BtnJavaScript scrollFX={"buttonFadeIn9"}></BtnJavaScript>
-            <BtnMongoDB scrollFX={"buttonFadeIn10"}></BtnMongoDB>
-            <BtnMySQL scrollFX={"buttonFadeIn11"}></BtnMySQL>
-            <BtnNodeJS scrollFX={"buttonFadeIn12"}></BtnNodeJS>
-            <BtnPostgresSQL scrollFX={"buttonFadeIn12"}></BtnPostgresSQL>
-            <BtnReactJS scrollFX={"buttonFadeIn13"}></BtnReactJS>
-            <BtnSass scrollFX={"buttonFadeIn14"}></BtnSass>
-            <BtnTailwindCSS scrollFX={"buttonFadeIn14"}></BtnTailwindCSS>
-            <BtnUnity scrollFX={"buttonFadeIn15"}></BtnUnity>
-            <BtnVisualBasic scrollFX={"buttonFadeIn16"}></BtnVisualBasic>
+            <BtnAdobePhotoshop></BtnAdobePhotoshop>
+            <BtnAseprite></BtnAseprite>
+            <BtnCSharp></BtnCSharp>
+            <BtnCSS3></BtnCSS3>
+            <BtnExpressJS></BtnExpressJS>
+            <BtnFigma></BtnFigma>
+            <BtnGit></BtnGit>
+            <BtnGSAP></BtnGSAP>
+            <BtnHTML5></BtnHTML5>
+            <BtnInk></BtnInk>
+            <BtnJavaScript></BtnJavaScript>
+            <BtnMongoDB></BtnMongoDB>
+            <BtnMySQL></BtnMySQL>
+            <BtnNodeJS></BtnNodeJS>
+            <BtnPostgresSQL></BtnPostgresSQL>
+            <BtnReactJS></BtnReactJS>
+            <BtnSass></BtnSass>
+            <BtnTailwindCSS></BtnTailwindCSS>
+            <BtnUnity></BtnUnity>
+            <BtnVisualBasic></BtnVisualBasic>
           </div>
         </div>
-        <BorderLine
-          className={"pt-8 sm:pt-12"}
-          scrollFX={"borderFadeInCenter0"}
-        ></BorderLine>
+        <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
       </Section>
     </>
   );
