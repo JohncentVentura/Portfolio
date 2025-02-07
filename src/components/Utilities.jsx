@@ -1,28 +1,3 @@
-import { useState, useEffect } from 'react';
-
-export const GetClassCount = ({className}) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const updateCount = () => {
-      setCount(document.getElementsByClassName(className).length);
-    };
-
-    updateCount();
-    const observer = new MutationObserver(updateCount);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, [count, className]);
-
-  return document.getElementsByClassName(className);
-}
-
 export const AccPaths = {
   discord: "https://discord.com/users/1262701083856211998",
   facebook: "https://www.facebook.com/johncent.ventura.7",

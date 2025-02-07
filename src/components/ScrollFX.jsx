@@ -109,11 +109,11 @@ export const scrollFX = {
       `.${elem.className.split(" ")[0]}`,
       {
         opacity: 0,
-        scaleX: 0,
+        scale: 0,
       },
       {
         opacity: 1,
-        scaleX: 1,
+        scale: 1,
       }
     );
   },

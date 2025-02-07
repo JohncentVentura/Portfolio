@@ -180,7 +180,7 @@ export const AvatarImage = ({ className, scrollFX, href, imgSrc }) => {
       <div className={`${className || ""} `}>
         <a
           className={`${
-            scrollFX || "imageFadeIn"
+            scrollFX || "iconFadeIn"
           } anim-glow-drop-shadow block size-32 sm:size-48 lg:size-64`}
           href={href || null}
           target="_blank"
@@ -622,7 +622,7 @@ export const BtnPinterest = ({ className, scrollFX, href }) => {
   );
 };
 
-export const BtnPostgresSQL = ({ className, scrollFX }) => {
+export const BtnPostgreSQL = ({ className, scrollFX }) => {
   return (
     <>
       <Button
@@ -632,7 +632,7 @@ export const BtnPostgresSQL = ({ className, scrollFX }) => {
         href={ToolsPaths.postgresSQL}
         icon={<SiPostgresql />}
       >
-        PostgresSQL
+        PostgreSQL
       </Button>
     </>
   );

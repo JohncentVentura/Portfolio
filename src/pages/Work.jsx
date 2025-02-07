@@ -38,7 +38,7 @@ import {
   BtnMySQL,
   BtnNodeJS,
   BtnPinterest,
-  BtnPostgresSQL,
+  BtnPostgreSQL,
   BtnReactJS,
   BtnSass,
   BtnTailwindCSS,
@@ -81,14 +81,15 @@ const Work = () => {
               <div className="flex flex-col items-center gap-4">
                 <Heading4>PULP RPG</Heading4>
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae, adipisci earum ea qui cupiditate
-                  maiores magni id asperiores possimus officia non deleniti
-                  consequatur explicabo sed praesentium.
+                  Project of University of Luzon Pozorrubio Role Playing Game or
+                  “PULP RPG” is a free and educational game for Windows 10 that
+                  is exclusive for both campuses.
                 </Paragraph>
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae.
+                  The project takes the design of a merged platformer game and a
+                  role-playing game incorporated with learning materials and
+                  referencing real life environments where the campus is
+                  located.
                 </Paragraph>
               </div>
             </div>
@@ -111,14 +112,11 @@ const Work = () => {
               <div className="flex flex-col items-center gap-4">
                 <Heading4>Jourdan's Snack Corner</Heading4>
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae, adipisci earum ea qui cupiditate
-                  maiores magni id asperiores possimus officia non deleniti
-                  consequatur explicabo sed praesentium.
-                </Paragraph>
-                <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae.
+                  A local food business located in my hometown, created the
+                  website for free as support for local businesses in my area.
+                  The store sells a variety of goods and have a delivery service
+                  since the business operates and process their products at the
+                  owner's house.
                 </Paragraph>
               </div>
             </div>
@@ -144,14 +142,11 @@ const Work = () => {
               <div className="flex flex-col items-center gap-4">
                 <Heading4>Pixel Artwork</Heading4>
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae, adipisci earum ea qui cupiditate
-                  maiores magni id asperiores possimus officia non deleniti
-                  consequatur explicabo sed praesentium.
-                </Paragraph>
-                <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  fugit enim illo recusandae.
+                  Art works where each tiny pixel tells a part of a larger
+                  story. This gallery features a variety of pixel art projects,
+                  from intricate character designs to vibrant game landscapes.
+                  My work combines classic pixel aesthetics with modern
+                  creativity, resulting in unique and captivating pieces.
                 </Paragraph>
               </div>
             </div>
@@ -169,11 +164,9 @@ const Work = () => {
             <BorderLine border={"border"}></BorderLine>
           </div>
           <Paragraph>
-            I'm a graduate from the University of Luzon, Dagupan City with a
-            Bachelor's Degree in Information Technology and Latin Honour of Cum
-            Laude. Little did I know that playing video games since I was a kid
-            will eventually led me into game development that helps me chose
-            this course.
+            The following projects are either still in development, passion
+            projects, academic projects, or required projects for acquiring
+            certificates in freeCodeCamp.org.
           </Paragraph>
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
@@ -184,8 +177,9 @@ const Work = () => {
               <div>
                 <Heading4>Student Registration System</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  Built using Visual Basic and MS Access, a simple CRUD App
+                  designed to register students, courses, subjects, &
+                  instructors
                 </Span>
               </div>
             </ListItemImgLeft>
@@ -197,8 +191,8 @@ const Work = () => {
               <div>
                 <Heading4>Game of Grimoires</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  A passion project built using the Unity Game Engine. A hobby
+                  project
                 </Span>
               </div>
             </ListItemImgRight>
@@ -210,8 +204,9 @@ const Work = () => {
               <div>
                 <Heading4>Graphic Design</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  Where creativity meets functionality. Each piece reflects my
+                  commitment to visual excellence, innovative thinking, and
+                  attention to detail.
                 </Span>
               </div>
             </ListItemImgLeft>
@@ -223,8 +218,9 @@ const Work = () => {
               <div>
                 <Heading4>Random Qoute Machine</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  Built using ReactJS, an interactive web application that
+                  dynamically fetches and displays a variety of quotes with each
+                  click.
                 </Span>
               </div>
             </ListItemImgRight>
@@ -236,8 +232,10 @@ const Work = () => {
               <div>
                 <Heading4>Music Player</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  Built using Vanilla JS, This project covers fundamental
+                  concepts such as handling audio playback, managing a playlist,
+                  implementing play, pause, next, previous, and shuffle
+                  functionalities.
                 </Span>
               </div>
             </ListItemImgLeft>
@@ -249,8 +247,8 @@ const Work = () => {
               <div>
                 <Heading4>Technical Documentation</Heading4>
                 <Span>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Minus fugiat sint maiores porro itaque? Blanditiis!
+                  Manuscript of PULP RPG that can be referenced in related
+                  capstone projects.
                 </Span>
               </div>
             </ListItemImgRight>

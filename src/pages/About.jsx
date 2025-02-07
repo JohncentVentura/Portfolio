@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
-import { FaServer, FaDatabase } from "react-icons/fa";
+import { FaServer, FaDatabase, FaQuestionCircle } from "react-icons/fa";
 import { FaFilePdf, FaReact } from "react-icons/fa6";
 import { IoGlobeOutline, IoGameController } from "react-icons/io5";
 import { MdDevices } from "react-icons/md";
@@ -42,7 +42,7 @@ import {
   BtnMySQL,
   BtnNodeJS,
   BtnPinterest,
-  BtnPostgresSQL,
+  BtnPostgreSQL,
   BtnReactJS,
   BtnSass,
   BtnTailwindCSS,
@@ -193,7 +193,7 @@ const About = () => {
                 imgSrc={ImgPaths.eduCollege}
               ></ImgIconButton>
               <div>
-                <Span>2019-2023 / College Diploma</Span>
+                <Span>2019-2023 / Bachelor's Degree</Span>
                 <Heading4>
                   Bachelor of Science in Information Technology
                 </Heading4>
@@ -212,37 +212,28 @@ const About = () => {
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                href={ExpPaths.webDeveloper}
-                icon={<IoGlobeOutline />}
+                href={
+                  "https://www.intouchglobal.org/watch/sermons/how-should-we-wait#:~:text=Psalm%2027%3A14%20says%2C%20%E2%80%9C,an%20extended%20period%20of%20time."
+                }
+                icon={<FaQuestionCircle />}
               ></ImgIconButton>
               <div>
-                <Span>2024-Present</Span>
-                <Heading4>Web Developer</Heading4>
-                <Span>Freelancer</Span>
+                <Span>20??</Span>
+                <Heading4>Coming Soon</Heading4>
+                <Span>Psalm 27:14</Span>
               </div>
             </ListItemImgLeft>
             <ListItemImgRight>
-              <ImgIconButton
-                href={ExpPaths.gameDeveloper}
-                icon={<IoGameController />}
-              ></ImgIconButton>
-              <div>
-                <Span>2023-Present</Span>
-                <Heading4>Indie Game Developer</Heading4>
-                <Span>Independent</Span>
-              </div>
-            </ListItemImgRight>
-            <ListItemImgLeft>
               <ImgIconButton
                 href={ExpPaths.college}
                 imgSrc={ImgPaths.eduCollege}
               ></ImgIconButton>
               <div>
                 <Span>2022 / On-the-Job Training</Span>
-                <Heading4>IT Assistant</Heading4>
+                <Heading4>IT Intern</Heading4>
                 <Span>University of Luzon</Span>
               </div>
-            </ListItemImgLeft>
+            </ListItemImgRight>
           </ul>
         </div>
         <BorderLine className={"pt-8 sm:pt-12"}></BorderLine>
@@ -267,7 +258,7 @@ const About = () => {
             <BtnMongoDB></BtnMongoDB>
             <BtnMySQL></BtnMySQL>
             <BtnNodeJS></BtnNodeJS>
-            <BtnPostgresSQL></BtnPostgresSQL>
+            <BtnPostgreSQL></BtnPostgreSQL>
             <BtnReactJS></BtnReactJS>
             <BtnSass></BtnSass>
             <BtnTailwindCSS></BtnTailwindCSS>
