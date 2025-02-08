@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/prop-types */
 import { FaServer, FaDatabase, FaQuestionCircle } from "react-icons/fa";
 import { FaFilePdf, FaReact } from "react-icons/fa6";
 import { IoGlobeOutline, IoGameController } from "react-icons/io5";

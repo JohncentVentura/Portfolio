@@ -29,16 +29,15 @@ export const EduPaths = {
 };
 
 export const ExpPaths = {
-  gameDeveloper: "",
   college: "https://ul.edu.ph/",
-  webDeveloper: "",
 };
 
 export const ImgPaths = {
-  avatarAbout: "/avatar square.jpg",
-  avatarContact: "/avatar square.jpg",
-  avatarHome: "/avatar square.jpg",
-  avatarWork: "/avatar square.jpg",
+  avatarAbout: "/Avatar About.png",
+  avatarContact: "/Avatar Contact.png",
+  avatarHome: "/Avatar Home.png",
+  avatarThumbnail: "/Avatar Thumbnail.png",
+  avatarWork: "/Avatar Work.png",
   eduCollege: "/University of Luzon Logo.png",
   eduTesda: "/TESDA Logo.png",
   projGraphicDesign: "/Graphics Design.jpg",
