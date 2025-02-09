@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import { BiLogoGmail } from "react-icons/bi";
 import {
   FaFacebookMessenger,
@@ -28,6 +29,7 @@ import {
 } from "../components/Components";
 import {
   AccPaths,
+  AvatarPaths,
   EduPaths,
   ExpPaths,
   ImgPaths,
@@ -39,7 +41,10 @@ const Contact = () => {
   return (
     <>
       <Section scrollFX={"pinPage"}>
-        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarContact}></AvatarImage>
+        <AvatarImage
+          href={AvatarPaths.avatarContact}
+          imgSrc={ImgPaths.avatarContact}
+        ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
@@ -51,10 +56,10 @@ const Contact = () => {
         </Grid3ColsContainer>
 
         <Heading4 className={"pt-8 sm:pt-12 w-[75%] text-center"}>
-          Send me a message if you have opportunities for collaboration or want
-          to build something amazing.
+          Feel free to message me if you have feedbacks, inquiries, criticism,
+          or opportunities for collaboration to develop or design something
+          amazing.
         </Heading4>
-
         <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-2 sm:gap-4">
           <IconButton
             href={AccPaths.facebook}

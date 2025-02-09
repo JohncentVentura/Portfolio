@@ -28,6 +28,7 @@ import {
 } from "../components/Components";
 import {
   AccPaths,
+  AvatarPaths,
   EduPaths,
   ExpPaths,
   ImgPaths,
@@ -39,7 +40,7 @@ const Home = () => {
   return (
     <>
       <Section scrollFX={"pinPage"}>
-        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarHome}></AvatarImage>
+        <AvatarImage href={AvatarPaths.avatarHome} imgSrc={ImgPaths.avatarHome}></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>

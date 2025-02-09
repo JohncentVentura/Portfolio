@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import Lenis from "lenis";
 import gsap from "gsap";
 import { useState, useEffect, useLayoutEffect } from "react";
@@ -33,6 +34,7 @@ import ParticlesComponent from "./components/Particles";
 import { scrollFX } from "./components/ScrollFX";
 import {
   AccPaths,
+  AvatarPaths,
   EduPaths,
   ExpPaths,
   ImgPaths,
@@ -247,7 +249,7 @@ const Footer = ({ ...props }) => {
             scrollFX={"noFX"}
             className={"font-mainFont text-fgClr text-center"}
           >
-            Designed & Built by Johncent © 2024
+            Developed & Designed by Johncent © 2025
           </Span>
           <BorderLine scrollFX={"noFX"}></BorderLine>
         </Grid3ColsContainer>

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/prop-types */
 import { IoGameController } from "react-icons/io5";
 import { DiVisualstudio } from "react-icons/di";
 
@@ -47,6 +46,7 @@ import {
 } from "../components/Components";
 import {
   AccPaths,
+  AvatarPaths,
   EduPaths,
   ExpPaths,
   ImgPaths,
@@ -58,7 +58,10 @@ const Work = () => {
   return (
     <>
       <Section className={"pt-[20vh] pb-[20vh]"}>
-        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarWork}></AvatarImage>
+        <AvatarImage
+          href={AvatarPaths.avatarWork}
+          imgSrc={ImgPaths.avatarWork}
+        ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
@@ -142,11 +145,11 @@ const Work = () => {
               <div className="flex flex-col items-center gap-4">
                 <Heading4>Pixel Artwork</Heading4>
                 <Paragraph>
-                  Art works where each tiny pixel tells a part of a larger
-                  story. This gallery features a variety of pixel art projects,
-                  from intricate character designs to vibrant game landscapes.
-                  My work combines classic pixel aesthetics with modern
-                  creativity, resulting in unique and captivating pieces.
+                  A gallery that features a variety of pixel art, from character
+                  designs, avatar portraits, to vibrant landscapes, and many
+                  more. It brings the nostalgia of early video game graphics
+                  combined with modern creativity, resulting a work of art where
+                  each tiny pixel tells a part of a bigger story.
                 </Paragraph>
               </div>
             </div>
@@ -164,25 +167,54 @@ const Work = () => {
             <BorderLine border={"border"}></BorderLine>
           </div>
           <Paragraph>
-            The following projects are either still in development, passion
-            projects, academic projects, or required projects for acquiring
-            certificates in freeCodeCamp.org.
+            The following projects are either still in development, academic or
+            documentation projects, certification or side projects from
+            freeCodeCamp, passion projects, & other artworks.
           </Paragraph>
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                href={ProjPaths.vbStudentSystem}
-                icon={<DiVisualstudio />}
+                href={ProjPaths.pulpRPGDocumentation}
+                imgSrc={ImgPaths.projPulpRPGDocumentation}
               ></ImgIconButton>
               <div>
-                <Heading4>Student Registration System</Heading4>
+                <Heading4>PULP RPG Documentation</Heading4>
                 <Span>
-                  Built using Visual Basic and MS Access, a simple CRUD App
-                  designed to register students, courses, subjects, &
-                  instructors
+                  A technical documentation page for PULP RPG manuscript, can be
+                  used as reference in related research and capstone projects.
                 </Span>
               </div>
             </ListItemImgLeft>
+
+            <ListItemImgRight>
+              <ImgIconButton
+                href={ProjPaths.musicPlayer}
+                imgSrc={ImgPaths.projMusicPlayer}
+              ></ImgIconButton>
+              <div>
+                <Heading4>Music Player</Heading4>
+                <Span>
+                  A side project required by freeCodeCamp, it cover concepts of
+                  play, pause, next, previous, shuffle, and delete song.
+                </Span>
+              </div>
+            </ListItemImgRight>
+
+            <ListItemImgLeft>
+              <ImgIconButton
+                href={ProjPaths.randomQuoteMachine}
+                imgSrc={ImgPaths.projRandomQuoteMachine}
+              ></ImgIconButton>
+              <div>
+                <Heading4>Random Qoute Machine</Heading4>
+                <Span>
+                  A certification project required by freeCodeCamp, an
+                  interactive web application that dynamically fetches and
+                  displays a variety of quotes with each click.
+                </Span>
+              </div>
+            </ListItemImgLeft>
+
             <ListItemImgRight>
               <ImgIconButton
                 href={ProjPaths.gameOfGrimoires}
@@ -191,11 +223,12 @@ const Work = () => {
               <div>
                 <Heading4>Game of Grimoires</Heading4>
                 <Span>
-                  A passion project built using the Unity Game Engine. A hobby
-                  project
+                  A passion project built using the Unity Game Engine. A 2D
+                  Pixel Art Roguelike Game.
                 </Span>
               </div>
             </ListItemImgRight>
+
             <ListItemImgLeft>
               <ImgIconButton
                 href={ProjPaths.graphicDesign}
@@ -204,51 +237,23 @@ const Work = () => {
               <div>
                 <Heading4>Graphic Design</Heading4>
                 <Span>
-                  Where creativity meets functionality. Each piece reflects my
-                  commitment to visual excellence, innovative thinking, and
-                  attention to detail.
+                  A gallery of sample logos & tarpaulins... That's it, I like
+                  pixel art more.
                 </Span>
               </div>
             </ListItemImgLeft>
+
             <ListItemImgRight>
               <ImgIconButton
-                href={ProjPaths.randomQuoteMachine}
-                imgSrc={ImgPaths.projRandomQuoteMachine}
+                href={ProjPaths.vbStudentSystem}
+                icon={<DiVisualstudio />}
               ></ImgIconButton>
               <div>
-                <Heading4>Random Qoute Machine</Heading4>
+                <Heading4>Student Registration System</Heading4>
                 <Span>
-                  Built using ReactJS, an interactive web application that
-                  dynamically fetches and displays a variety of quotes with each
-                  click.
-                </Span>
-              </div>
-            </ListItemImgRight>
-            <ListItemImgLeft>
-              <ImgIconButton
-                href={ProjPaths.musicPlayer}
-                imgSrc={ImgPaths.projMusicPlayer}
-              ></ImgIconButton>
-              <div>
-                <Heading4>Music Player</Heading4>
-                <Span>
-                  Built using Vanilla JS, This project covers fundamental
-                  concepts such as handling audio playback, managing a playlist,
-                  implementing play, pause, next, previous, and shuffle
-                  functionalities.
-                </Span>
-              </div>
-            </ListItemImgLeft>
-            <ListItemImgRight>
-              <ImgIconButton
-                href={ProjPaths.pulpRPGDocumentation}
-                imgSrc={ImgPaths.projPulpRPGDocumentation}
-              ></ImgIconButton>
-              <div>
-                <Heading4>Technical Documentation</Heading4>
-                <Span>
-                  Manuscript of PULP RPG that can be referenced in related
-                  capstone projects.
+                  Built using Visual Basic & Microsoft Access, a CRUD App
+                  designed to register students, courses, subjects, &
+                  instructors
                 </Span>
               </div>
             </ListItemImgRight>

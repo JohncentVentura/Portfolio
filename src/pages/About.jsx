@@ -50,6 +50,7 @@ import {
 } from "../components/Components";
 import {
   AccPaths,
+  AvatarPaths,
   EduPaths,
   ExpPaths,
   ImgPaths,
@@ -61,7 +62,10 @@ const About = () => {
   return (
     <>
       <Section className={"pt-[20vh]"}>
-        <AvatarImage href={"#"} imgSrc={ImgPaths.avatarAbout}></AvatarImage>
+        <AvatarImage
+          href={AvatarPaths.avatarAbout}
+          imgSrc={ImgPaths.avatarAbout}
+        ></AvatarImage>
 
         <Grid3ColsContainer>
           <BorderLine scrollFX={"borderFadeInLeft"}></BorderLine>
@@ -75,18 +79,19 @@ const About = () => {
             <BorderLine border={"border"}></BorderLine>
           </div>
           <Paragraph>
-            I'm a graduate from the University of Luzon, Dagupan City with a
-            Bachelor's Degree in Information Technology and Latin Honour of Cum
-            Laude. Little did I know that playing video games since I was a kid
-            will eventually led me into game development that helps me chose
-            this course.
+            I graduated with a Bachelor's Degree in Information Technology and
+            Latin Honour of Cum Laude from the University of Luzon, Dagupan
+            City, Pangasinan, Philippines. Little did I know that playing video
+            games since I was a kid will eventually led me into game development
+            that helps me chose this course.
           </Paragraph>
           <Paragraph>
-            This sparks my passion in developing and designing video games that
-            makes me curious of what other things you can create using
-            technology. This also creates bonds between me and the people who
-            share the same passion, and I hope I can continue creating and
-            learning more things with you.
+            My love for developing and designing grows as I study more of what
+            I can create using technology such as websites, pixel art, and
+            more. This also create bonds between me and the people who share
+            the same passion, and I hope I can continue creating and learning
+            more things with you. Here is my resume to learn more about me or
+            just continue scrolling.
           </Paragraph>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Button href={AccPaths.resume} icon={<VscPreview />}>

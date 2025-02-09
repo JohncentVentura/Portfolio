@@ -4,9 +4,17 @@ export const AccPaths = {
   gitHub: "https://github.com/JohncentVentura",
   gmail: "mailto:johncent.ventura@gmail.com",
   linkedIn: "https://www.linkedin.com/in/johncent-ventura-424548314/",
-  pinterest: "https://ph.pinterest.com/johncentventura/pins/",
+  pinterest: "https://ph.pinterest.com/johncentventura/",
   resume: "/Carlos Johncent Ventura Resume.pdf",
   telegram: "https://t.me/JohncentVentura",
+};
+
+export const AvatarPaths = {
+  avatarAbout: "https://ph.pinterest.com/pin/907193918686558341/",
+  avatarContact: "https://ph.pinterest.com/pin/907193918686558358/",
+  avatarHome: "https://ph.pinterest.com/pin/907193918686558323/",
+  avatarThumbnail: "https://ph.pinterest.com/pin/907193918686558380/",
+  avatarWork: "https://ph.pinterest.com/pin/907193918686558349/",
 };
 
 export const EduPaths = {
@@ -74,17 +82,17 @@ export const ToolsPaths = {
 };
 
 export const ProjPaths = {
-  gameOfGrimoires: "#",
+  gameOfGrimoires: "https://github.com/JohncentVentura/Game-of-Grimoires",
   graphicDesign: "https://ph.pinterest.com/johncentventura/graphics-design/",
   jourdansSnackCorner: "https://jourdans-snack-corner.netlify.app",
   jourdansSnackCornerGitHub:
     "https://github.com/JohncentVentura/Jourdans-Snack-Corner",
-  musicPlayer: "https://cjv-music-player.netlify.app",
+  musicPlayer: "https://cjv-fcc-music-player.netlify.app",
   pulpRpg:
     "https://drive.google.com/file/d/1UoWxtuWfohXF-6YLGBBe0MQ9s2_f3GDN/view?usp=sharing",
-  pulpRPGDocumentation: "https://pulp-rpg-doc.netlify.app",
+  pulpRPGDocumentation: "https://pulp-rpg-documentation.netlify.app/",
   pulpRPGGitHub: "https://github.com/JohncentVentura/PULP-RPG-Scripts",
-  pixelArt: "https://ph.pinterest.com/johncentventura/pixel-art/",
-  randomQuoteMachine: "https://cjv-random-quote-machine.netlify.app",
-  vbStudentSystem: "#",
+  pixelArt: "https://ph.pinterest.com/johncentventura/",
+  randomQuoteMachine: "https://cjv-fcc-random-quote-machine.netlify.app",
+  vbStudentSystem: "https://github.com/JohncentVentura/Student-Registration-System",
 };
