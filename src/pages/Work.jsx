@@ -115,7 +115,7 @@ const Work = () => {
               <div className="flex flex-col items-center gap-4">
                 <Heading4>Jourdan's Snack Corner</Heading4>
                 <Paragraph>
-                  A local food business located in my hometown, created the
+                  IN RE-DEVELOPMENT, A local food business located in my hometown, created the
                   website for free as support for local businesses in my area.
                   The store sells a variety of goods and have a delivery service
                   since the business operates and process their products at the
@@ -178,9 +178,9 @@ const Work = () => {
                 imgSrc={ImgPaths.projPulpRPGDocumentation}
               ></ImgIconButton>
               <div>
-                <Heading4>PULP RPG Documentation</Heading4>
+                <Heading4>Technical Documentation</Heading4>
                 <Span>
-                  A technical documentation page for PULP RPG manuscript, can be
+                  Web page for PULP RPG manuscript, can be
                   used as reference in related research and capstone projects.
                 </Span>
               </div>
@@ -224,7 +224,7 @@ const Work = () => {
                 <Heading4>Game of Grimoires</Heading4>
                 <Span>
                   A passion project built using the Unity Game Engine. A 2D
-                  Pixel Art Roguelike Game.
+                  Pixel Art Game.
                 </Span>
               </div>
             </ListItemImgRight>

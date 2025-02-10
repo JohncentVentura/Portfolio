@@ -57,7 +57,7 @@ const Contact = () => {
 
         <Heading4 className={"pt-8 sm:pt-12 w-[75%] text-center"}>
           Feel free to message me if you have feedbacks, inquiries, criticism,
-          or opportunities for collaboration to develop or design something
+          or opportunities for collaboration to develop, design, or document something
           amazing.
         </Heading4>
         <div className="pt-8 sm:pt-12 flex flex-wrap justify-center gap-2 sm:gap-4">

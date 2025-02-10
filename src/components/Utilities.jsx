@@ -13,7 +13,7 @@ export const AvatarPaths = {
   avatarAbout: "https://ph.pinterest.com/pin/907193918686558341/",
   avatarContact: "https://ph.pinterest.com/pin/907193918686558358/",
   avatarHome: "https://ph.pinterest.com/pin/907193918686558323/",
-  avatarThumbnail: "https://ph.pinterest.com/pin/907193918686558380/",
+  avatarThumbnail: "https://ph.pinterest.com/pin/907193918686593814/",
   avatarWork: "https://ph.pinterest.com/pin/907193918686558349/",
 };
 

@@ -58,7 +58,7 @@ const Home = () => {
 
         <Heading4 className={"pt-4 w-[75%] text-center"}>
           Just another fool chasing the dream of Web Development, Game
-          Development, & Graphic Design
+          Development, Graphic Design, & More.
         </Heading4>
 
         <div className="pt-8 flex justify-center gap-2 sm:gap-4">

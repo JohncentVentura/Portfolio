@@ -87,7 +87,7 @@ const About = () => {
           </Paragraph>
           <Paragraph>
             My love for developing and designing grows as I study more of what
-            I can create using technology such as websites, pixel art, and
+            I can create using technology such as websites, pixel art, documentations, and
             more. This also create bonds between me and the people who share
             the same passion, and I hope I can continue creating and learning
             more things with you. Here is my resume to learn more about me or
