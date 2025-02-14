@@ -426,7 +426,7 @@ export const BtnCSS3 = ({ className, scrollFX }) => {
         href={ToolsPaths.css3}
         icon={<SiCss3 />}
       >
-        CSS3
+        CSS
       </Button>
     </>
   );
@@ -442,7 +442,7 @@ export const BtnExpressJS = ({ className, scrollFX }) => {
         href={ToolsPaths.expressJS}
         icon={<SiExpress />}
       >
-        ExpressJS
+        Express
       </Button>
     </>
   );
@@ -521,7 +521,7 @@ export const BtnHTML5 = ({ className, scrollFX }) => {
         href={ToolsPaths.html5}
         icon={<SiHtml5 />}
       >
-        HTML5
+        HTML
       </Button>
     </>
   );
@@ -601,7 +601,7 @@ export const BtnNodeJS = ({ className, scrollFX }) => {
         href={ToolsPaths.nodeJS}
         icon={<SiNodedotjs />}
       >
-        NodeJS
+        Node.js
       </Button>
     </>
   );
@@ -648,7 +648,7 @@ export const BtnReactJS = ({ className, scrollFX }) => {
         href={ToolsPaths.reactJS}
         icon={<SiReact />}
       >
-        ReactJS
+        React
       </Button>
     </>
   );

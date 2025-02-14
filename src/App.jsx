@@ -195,7 +195,7 @@ const Header = ({ ...props }) => {
         <nav className="flex justify-between items-center">
           <NavIconButton
             icon={<TbFileCv />}
-            href={AccPaths.resume}
+            href={AccPaths.curriculumVitae}
             target={"_blank"}
           />
           {props.clrTheme === "light-theme" ? (

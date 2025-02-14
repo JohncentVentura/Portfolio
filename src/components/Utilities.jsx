@@ -1,4 +1,5 @@
 export const AccPaths = {
+  curriculumVitae: "/Carlos Johncent Ventura CV.pdf",
   discord: "https://discord.com/users/1262701083856211998",
   facebook: "https://www.facebook.com/johncent.ventura.7",
   gitHub: "https://github.com/JohncentVentura",
