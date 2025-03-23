@@ -39,6 +39,7 @@ export const EduPaths = {
 
 export const ExpPaths = {
   college: "https://ul.edu.ph/",
+  unlala: "https://www.unlala.ph/"
 };
 
 export const ImgPaths = {
@@ -56,6 +57,7 @@ export const ImgPaths = {
   projPulpRPGDocumentation: "/PULP RPG Documentation.png",
   projPulpRPG: "/PULP RPG.png",
   projRandomQuoteMachine: "/Random Quote Machine.png",
+  workUnlala: "/Unlala.png",
 };
 
 export const ToolsPaths = {

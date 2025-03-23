@@ -86,12 +86,12 @@ const About = () => {
             that helps me chose this course.
           </Paragraph>
           <Paragraph>
-            My love for developing and designing grows as I study more of what
-            I can create using technology such as websites, pixel art, documentations, and
-            more. This also create bonds between me and the people who share
-            the same passion, and I hope I can continue creating and learning
-            more things with you. Here is my resume to learn more about me or
-            just continue scrolling.
+            My love for developing and designing grows as I study more of what I
+            can create using technology such as websites, pixel art,
+            documentations, and more. This also create bonds between me and the
+            people who share the same passion, and I hope I can continue
+            creating and learning more things with you. Here is my resume to
+            learn more about me or just continue scrolling.
           </Paragraph>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Button href={AccPaths.resume} icon={<VscPreview />}>
@@ -216,15 +216,13 @@ const About = () => {
           <ul className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12">
             <ListItemImgLeft>
               <ImgIconButton
-                href={
-                  "https://www.intouchglobal.org/watch/sermons/how-should-we-wait#:~:text=Psalm%2027%3A14%20says%2C%20%E2%80%9C,an%20extended%20period%20of%20time."
-                }
-                icon={<FaQuestionCircle />}
+                href={ExpPaths.unlala}
+                imgSrc={ImgPaths.workUnlala}
               ></ImgIconButton>
               <div>
-                <Span>20??</Span>
-                <Heading4>Coming Soon</Heading4>
-                <Span>Psalm 27:14</Span>
+                <Span>2025 - Present</Span>
+                <Heading4>Admin Assistant</Heading4>
+                <Span>UnLa La Corporation</Span>
               </div>
             </ListItemImgLeft>
             <ListItemImgRight>
